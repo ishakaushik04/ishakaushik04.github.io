@@ -1,4 +1,4 @@
-# Isha Kaushik Portfolio
+# Isha Kaushik's Portfolio
 
 Welcome to my portfolio repository! This repo showcases a curated collection of my projects spanning **neuroscience research, human-centered design, and neurotechnology applications**. Each project highlights my approach to problem-solving, research, design, and real-world impact.
 
