@@ -45,6 +45,7 @@ header {
     margin-bottom: 5px;
 }
 
+/* Sections */
 section {
     margin-bottom: 50px;
 }
@@ -57,10 +58,24 @@ section h2 {
     padding-bottom: 4px;
 }
 
-section p {
-    margin-bottom: 15px;
+section h3 {
+    font-size: 1.35em;
+    margin-bottom: 10px;
+    color: #444;
 }
 
+section h4 {
+    font-size: 1.15em;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+section p {
+    margin-bottom: 15px;
+    line-height: 1.55;
+}
+
+/* Images */
 .project-image {
     width: 100%;
     max-width: 800px;
@@ -68,7 +83,26 @@ section p {
     margin: 15px 0;
     border: 1px solid #ccc;
     padding: 5px;
-    background-color: #fff; /* subtle card-like effect */
+    background-color: #fff; /* subtle card effect */
+    border-radius: 5px;
+}
+
+/* Validation-specific styling */
+.validation-part {
+    margin-bottom: 35px;
+    padding: 15px 20px;
+    background-color: #fcfaf5; /* slightly lighter box to highlight sections */
+    border-left: 4px solid #cfa969;
+    border-radius: 5px;
+}
+
+.validation-part ul {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.validation-part li {
+    margin-bottom: 8px;
 }
 
 /* Footer */
