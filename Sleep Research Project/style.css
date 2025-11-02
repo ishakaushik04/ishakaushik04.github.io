@@ -45,6 +45,13 @@ header {
     margin-bottom: 5px;
 }
 
+.project-status,
+.project-contributors {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
 section {
     margin-bottom: 50px;
 }
@@ -68,14 +75,57 @@ section p {
     margin: 15px 0;
     border: 1px solid #ccc;
     padding: 5px;
-    background-color: #fff; /* subtle card-like effect */
+    background-color: #fff; /* subtle card effect */
+    border-radius: 5px;
+}
+
+/* Framework-specific styling */
+#ptsd-framework {
+    padding: 20px 0;
+}
+
+.framework-part {
+    margin-bottom: 25px;
+}
+
+.framework-part h3 {
+    font-size: 1.25em;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.framework-part p,
+.framework-part ul {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.framework-part ul {
+    margin-left: 20px;
+}
+
+.framework-use {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Figure styling */
+.framework-image {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 5px;
 }
 
 /* Footer */
 footer {
     text-align: center;
     margin-top: 60px;
-    padding-top: 20px;
     border-top: 1px solid #e0d4c5;
     color: #555;
     font-size: 0.9em;
