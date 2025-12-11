@@ -287,6 +287,10 @@ a.active {
     height: auto;
     margin: 15px 0;
     border: 3px solid #c9b59a;
+    display: block;           /* This was already there */
+    margin-left: auto;        /* ADD THIS - centers horizontally */
+    margin-right: auto;       /* ADD THIS - centers horizontally */
+    max-width: 700px;         /* ADD THIS - limits size to prevent blur */
 }
 
 .framework-list {
