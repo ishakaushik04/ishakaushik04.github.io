@@ -131,7 +131,13 @@ html {
     border-left: 4px solid #c9b59a;
     border-radius: 8px;
 }
-
+.reference-picture {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border: 3px solid #c9b59a;
+    display: block;
+}
 /* ===== FRAMEWORK/PHASE SECTION STYLES ===== */
 .framework-part {
     background: #f9efe4;
