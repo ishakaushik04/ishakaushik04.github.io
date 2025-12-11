@@ -251,13 +251,7 @@ a.active {
     margin-top: 10px;
 }
 
-.project-image {
-    max-width: 100%;
-    height: auto;
-    margin: 20px 0;
-    border: 3px solid #c9b59a;
-    display: block;
-}
+
 
 /* ===== FRAMEWORK SECTION STYLES ===== */
 .framework-part {
