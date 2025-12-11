@@ -132,11 +132,12 @@ html {
     border-radius: 8px;
 }
 .reference-picture {
-    max-width: 100%;
+    max-width: 500px;
     height: auto;
     margin: 20px 0;
     border: 3px solid #c9b59a;
     display: block;
+    margin: 0 auto;
 }
 /* ===== FRAMEWORK/PHASE SECTION STYLES ===== */
 .framework-part {
