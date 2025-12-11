@@ -199,10 +199,16 @@ html {
 }
 
 /* ===== ACTIVE LINK STYLE (optional navigation) ===== */
-a.active {
-  color: #8a6f47 !important;
-  font-weight: 600;
+a {
+  color: #6A5B4F;
+  text-decoration: none;
 }
+
+a:hover {
+  color: #A88A5D;
+  text-decoration: underline;
+}
+
 
 /* ===== MOBILE ADJUSTMENTS ===== */
 @media (max-width: 768px) {
