@@ -1,132 +1,385 @@
-/* Basic Reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Playfair Display', serif;
-}
-
-/* Page layout */
-body {
-    line-height: 1.6;
-    padding: 30px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: #f9f5ef; /* Slightly lighter beige for subpages */
-    color: #333;
+/* Importing a Google Font: 'Playfair Display' with different font weights */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+/* ===== Base Styles ===== */
+body{
+  font-family: 'Playfair Display', serif; /*base style is playfair and fallback style is serif*/
+  line-height: 1.5; /* Improves text readability */
+  color: #2d3e2f; /* Default text color */
+  background: #f2e5d7; /* Light beige background */
+  max-width: 1000px; /* Limits page width for readability */
+  margin: auto; /* Centers the page content horizontally */
+  padding: 20px 20px; /* Adds spacing inside the page edges */
 }
 
 header {
-    text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px; /* Adds space below header */
 }
 
-.back-link {
-    display: inline-block;
-    margin-bottom: 10px;
+h1 {
+    font-size: 35px; /* Large title size */
+    font-weight: 700; /* Extra bold */
+    margin-bottom: 0px; /* Space below title */
+    text-align: center; /* Centers the title */
+  color: #1a2e1c; /* Dark green text */
+}
+
+.tagline-container {
+    text-align: center;
+  color: #3d5240; /* Slightly muted dark green */
+  }
+/* ===== Introduction Section ===== */
+.intro {
+    margin-bottom: 30px; /* Adds spacing after intro section */
+}
+.intro-container{
+  display:flex;
+  gap: 50px; /* Space between them */
+  align-items: center; /* centers them vertically within the container */
+}
+.intro-left {
+    flex-shrink: 0; /* Prevents the image from shrinking */
+}
+.profile-photo {
+  width: 200px; /* Image width */
+  height: 200px; /* Image height */
+  object-fit: cover; /* Ensures image fills the box without distortion */
+  border: 5px solid #8a6f47; /* Adds brown border around image */
+  display: block; /* Removes inline spacing below image */
+}
+
+.intro-right {
+    flex: 1; /* Makes text container take remaining space */
+}
+.intro-right p {
+  font-size: 1rem; /* Regular text size */
+  text-align: justify; /* Even left and right edges */
+  color: #3d5240; /* Slightly muted dark green */
+}
+.intro-right a {
+    color: #5a4a35; /* Brownish color for links */
+    text-decoration: none; /* Removes underlines */
+}
+.intro-right a:hover {
+    border-bottom: 1px solid #5a4a35; /* Shows underline on hover */
+}
+.contact-links {
+    display: flex; /* Arranges links horizontally */
+    gap: 20px; /* Space between links */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+.contact-links a {
+    color: #5a4a35; /* Link color */
+}
+.contact-links a:hover {
+    color: #2d3e2f; /* Darker on hover */
+  
+}
+h2 {
+    font-size: 30px; /* Subheading size */
+    font-weight: 700; /* Bold */
+  margin-bottom: 10px; /* Space after heading */
+  border-bottom: 2px solid #b89968; /* Decorative bottom border */
+  color: #1a2e1c; /* Dark green text */
+}
+.section-intro {
+  font-size: 1rem; /* Regular text size */
+  text-align: justify; /* Even left and right edges */
+  color: #3d5240; /* Slightly muted dark green */
+}
+.section-intro a {
+    color: #7a4b2a; /* Warm brown accent */
     text-decoration: none;
-    color: #555;
-    font-size: 0.95em;
-    transition: color 0.3s;
+    font-weight: 400;
+}
+.section-intro a:hover {
+    color: #a35b38;
+}
+.section-list {
+    max-width: 1000px;
+    list-style: none; /* Removes bullet points */
+    padding-left: 0;
+}
+.section-list li {
+    font-size: 1.05rem;
+    color: #2f3b32;
+    background-color: #f9efe4;
+    border-left: 4px solid #c9b59a; /* Accent line for emphasis */
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+/* Remove default link styling for project links */
+.section-list li a.project-link {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+.section-list li a.project-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+/* Hover effect on each project item */
+.section-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f5e7d9;
+    cursor: pointer; /* Show it's clickable */
+}
+.news-item {
+    margin-bottom: 20px; /* Space between news items */
+    padding: 15px; /* Inner spacing */
+    background: #c9a876; /* Warm beige background */
+    border-left: 3px solid #8a6f47; /* Accent border o*/
+}
+ 
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px 0;
+    color: #4b5b4f;
+    font-size: 1rem;
+    border-top: 5px solid #c9b59a;
+    background-color: #f5e7d9;
+}
+
+footer p {
+    margin: 0;
+}
+/* ===== BACK TO TOP BUTTON ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #8a6f47;
+  color: #f2e5d7;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: #6b5838;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== FADE IN ANIMATION ===== */
+.section-list li,
+.news-item,
+.miscs-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-list li.fade-in,
+.news-item.fade-in,
+.miscs-item.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== SMOOTH SCROLL BEHAVIOR ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== ACTIVE LINK STYLE (optional navigation) ===== */
+a.active {
+  color: #8a6f47 !important;
+  font-weight: 600;
+}
+
+/* ===== MOBILE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+  .back-to-top {
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+  }
+}
+
+/* ===== PROJECT PAGE SPECIFIC STYLES ===== */
+.back-link {
+    color: #5a4a35;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
 .back-link:hover {
-    color: #000;
+    color: #2d3e2f;
 }
 
 .project-title {
-    font-size: 2.2em;
-    margin-bottom: 10px;
+    font-size: 35px;
+    font-weight: 700;
+    color: #1a2e1c;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .project-subtitle {
-    font-size: 1.15em;
-    color: #666;
-    margin-bottom: 5px;
+    text-align: center;
+    color: #3d5240;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    line-height: 1.6;
 }
 
 .project-status,
 .project-contributors {
-    font-size: 0.95em;
-    color: #555;
-    margin-bottom: 5px;
-}
-
-section {
-    margin-bottom: 50px;
-}
-
-section h2 {
-    font-size: 1.6em;
-    margin-bottom: 12px;
-    color: #333;
-    border-bottom: 1px solid #e0d4c5;
-    padding-bottom: 4px;
-}
-
-section p {
-    margin-bottom: 15px;
+    text-align: center;
+    color: #3d5240;
+    margin-top: 10px;
 }
 
 .project-image {
-    width: 100%;
-    max-width: 800px;
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border: 3px solid #c9b59a;
     display: block;
-    margin: 15px 0;
-    border: 1px solid #ccc;
-    padding: 5px;
-    background-color: #fff; /* subtle card effect */
-    border-radius: 5px;
 }
 
-/* Framework-specific styling */
-#ptsd-framework {
-    padding: 20px 0;
-}
-
+/* ===== FRAMEWORK SECTION STYLES ===== */
 .framework-part {
-    margin-bottom: 25px;
+    background: #f9efe4;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid #c9b59a;
+    border-radius: 8px;
 }
 
 .framework-part h3 {
-    font-size: 1.25em;
-    margin-bottom: 8px;
-    color: #444;
-}
-
-.framework-part p,
-.framework-part ul {
-    margin-bottom: 10px;
-    line-height: 1.5;
-}
-
-.framework-part ul {
-    margin-left: 20px;
+    color: #1a2e1c;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    border-bottom: none;
 }
 
 .framework-use {
+    color: #5a4a35;
     font-style: italic;
-    color: #666;
+    margin-top: 10px;
+}
+
+.framework-image {
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+    border: 3px solid #c9b59a;
+}
+
+.framework-list {
+    color: #3d5240;
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+.framework-list li {
+    margin-bottom: 8px;
+}
+
+/* ===== IMPLEMENTATION SECTION STYLES ===== */
+.workflow-stage {
+    background: #f9efe4;
+    padding: 20px;
+    margin: 25px 0;
+    border-left: 4px solid #8a6f47;
+    border-radius: 8px;
+}
+
+.stage-header {
+    color: #1a2e1c;
+    font-size: 22px;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
-/* Figure styling */
-.framework-image {
-    width: 100%;
-    max-width: 800px;
-    display: block;
+.tools-box {
+    background: #f5e7d9;
+    padding: 15px;
     margin: 15px 0;
-    border: 1px solid #ccc;
-    padding: 5px;
-    background-color: #fff;
-    border-radius: 5px;
+    border-radius: 6px;
+    border: 2px solid #c9b59a;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    margin-top: 60px;
-    border-top: 1px solid #e0d4c5;
-    color: #555;
-    font-size: 0.9em;
+.tools-header {
+    color: #5a4a35;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.tools-list {
+    color: #3d5240;
+    margin: 10px 0;
+    padding-left: 25px;
+}
+
+.tools-list li {
+    margin-bottom: 8px;
+}
+
+.clinical-pearl {
+    background: #c9a876;
+    padding: 12px;
+    border-left: 3px solid #8a6f47;
+    color: #2d3e2f;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+.implementation-subheading {
+    color: #1a2e1c;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: none;
+}
+
+.implementation-list {
+    color: #3d5240;
+    margin: 15px 0;
+    padding-left: 25px;
+    text-align: justify;
+}
+
+.implementation-list li {
+    margin-bottom: 12px;
+}
+
+.impact-highlight {
+    background: #e8dcc8;
+    padding: 20px;
+    border-left: 4px solid #8a6f47;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.impact-highlight p {
+    color: #2d3e2f;
+    font-style: italic;
+    text-align: justify;
+    line-height: 1.7;
+    margin: 0;
 }
