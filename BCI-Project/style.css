@@ -386,7 +386,30 @@ a.active {
     font-style: italic;
     line-height: 1.7;
 }
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 15px; /* space between images */
+  max-width: 600px; /* optional: adjust size */
+  margin: 0 auto; /* optional: center the grid */
+}
 
+.image-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* optional: rounded corners */
+  object-fit: cover;
+}
+.example-picture{
+  max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+    border: 3px solid #c9b59a;
+    display: block;           /* This was already there */
+    margin-left: auto;        /* ADD THIS - centers horizontally */
+    margin-right: auto;       /* ADD THIS - centers horizontally */
+    max-width: 700px;
+}
 /* ===== IMPLEMENTATION SECTION STYLES ===== */
 .workflow-stage {
     background: #f9efe4;
