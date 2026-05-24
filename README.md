@@ -9,7 +9,5 @@ Welcome to my portfolio repository! This repo showcases a curated collection of 
 
 Each project has a dedicated folder with its own webpage for detailed insights, images, and results.
 
-## About Me
-I am a **Neuroscience Master’s student at Columbia University** with a passion for translating cognitive and behavioral insights into practical technology solutions. My work sits at the intersection of research, design, and human-computer interaction.
 
 Feel free to explore the projects and reach out for collaborations or inquiries.
