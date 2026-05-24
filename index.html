@@ -1,160 +1,123 @@
-<!DOCTYPE html> <!--calls document type as html 5 -->
-<html lang="en"> <!--open html doc and sets language to english -->
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8"> <!-- Sets character encoding for proper text rendering -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures page scales correctly on mobile devices -->
-    <link rel="icon" href="media/Site logo.jpg" type="image/jpg"> <!-- Sets the browser tab icon (favicon) -->
-    <title>Isha Kaushik</title> <!--browser title-->
-    <link rel="stylesheet" href="style.css"> <!-- Links external CSS stylesheet -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="media/Site logo.jpg" type="image/jpg">
+    <title>Isha Kaushik</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header>
-      <h1>Isha Kaushik</h1><!--adds title on top-->
-      <div class="tagline-container"><!--combines the tagline class into one block container-->
-        <span class="tagline-item">Neuroscience</span><!--divides each element into inline elements for separate styling-->
-        <span class="tagline-divider">•</span>
-        <span class="tagline-item">Technology</span>
-        <span class="tagline-divider">•</span>
-        <span class="tagline-item">Design</span>
-        <span class="tagline-divider">•</span>
-        <span class="tagline-item">Education</span>
-    </div>
-    </header>
-    <!-- ===== INTRODUCTION SECTION ===== -->
-    <section class="intro">
-      <div class="intro-container">
-        <div class="intro-left">
-          <img src="media/DFSI BioPic.jpg" alt="Photo of me standing infront of Butler Library" class="profile-photo">
-        </div>
-        <div class="intro-right">
-          <p>Hi, I’m a second-year neuroscience graduate student at Columbia University, focused on cognitive and computational systems. I’m currently working on my thesis under the advisement of Professor <a href="https://www.tc.columbia.edu/faculty/kf2119/" target="_blank">Kay James</a>. Initially set on pursuing medicine, I took a detour into clinical, cognitive, and experimental neuroscience research, and became deeply interested in how natural and artificial systems learn, reason and act (plus everything upstream!) Consider me practically married to this idea, but in the nearer term, I spend much of my time building and testing products in high-impact areas such as education and health. Also, I do not shy away from deploying skills or views from engineering, design, economics, policy, and the arts to meaningfully lift constraints.</p>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="about-container">
+        <img src="media/DFSI BioPic.jpg" alt="Isha Kaushik" class="profile-photo">
+        <div class="about-text">
+          <h1>Isha Kaushik</h1>
+          <p class="tagline"><!-- YOUR TAGLINE --></p>
+          <p>
+            Building <a href="#" class="highlight-link">Vectorial Labs</a> — an AI-native life science commercialization engine, currently serving early pilots with frontier life science startups.
+            <!-- 1–2 sentences on background. -->
+          </p>
           <div class="contact-links">
-            <a href="ik2583@tc.columbia.edu" target="_blank">Email</a>
-            <a href="https://github.com/dashboard" target="_blank">Github</a>
-            <a href="https://www.linkedin.com/in/ishakaushik04/" target="_blank">LinkedIn</a>
-            <a href="https://x.com/home" target="_blank">X</a>
+            <a href="mailto:ik2583@tc.columbia.edu">Email</a>
+            <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/ishakaushik04/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://x.com/YOUR-HANDLE" target="_blank" rel="noopener noreferrer">X</a>
           </div>
         </div>
-        </div>
+      </div>
     </section>
-<!-- ===== NEWS SECTION ===== -->
-    <section id="news">
-        <h2>News</h2>
-        <div class="news-item">
-            <div class="news-date"> 📅October 2025</div>
-            <p>Accepted to the inaugural cohort of Neuro Founders Program, jointly supported by <a href="https://psymed.ventures/">PsyMed Ventures</a> and <a href="https://www.kdtvc.com/">KdT Ventures</a>. </p>
-        </div>
+
+    <!-- LATELY -->
+    <section id="lately">
+      <h2>Lately</h2>
+      <ul class="lately-list">
+        <li>
+          <span class="meta">Oct 2025</span>
+          <strong><a href="https://psymed.ventures/" target="_blank" rel="noopener noreferrer">Neuro Founders Program</a></strong> — PsyMed Ventures × KdT Ventures · Inaugural cohort, venture-backed fellowship for neuroscience founders
+        </li>
+        <!-- TEMPLATE:
+        <li>
+          <span class="meta">Mon YYYY</span>
+          <strong>What it is</strong> — Where · one clause on why it matters
+        </li>
+        -->
+      </ul>
     </section>
-    <!-- ===== PROJECTS SECTION ===== -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <p class="section-intro">
-        My background in neuroscience taught me that every design speaks to the brain - and every piece of technology, in turn, shapes how we think, feel, and connect. That realization made me see technology not just as a tool, but as a language with both communicative power and responsibility.
-<br>
-I believe design and development should serve as bridges between cognition and creation - speaking for those whose voices or perspectives are often overlooked. Through this lens, I aim to build technologies that understand people as deeply as people understand technology.
 
-I’m eager to keep learning, collaborating, and building projects that merge empathy, science, and design to make intelligence more human and impact more accessible. 
-            Don't hesitate to <a href="mailto:ik2583@tc.columbia.edu" target=_blank>reach out for collab :D</a>
-      </p>
-      <ul class="section-list">
-        <li><strong>Cren.Visio</strong> - Building a brain health social platform @PsyMed. Coming soon! </li>
-            <li><a href="DFSI-Project/index.html" class="project-link"><strong>Amber Waves Rebrand</strong> - Researched user perceptions and redesigned the narrative so Amber Waves is seen as a pathway for food-system talent, not just a Hamptons farm.</a></li>
-            <li><a href="BCI-Project/index.html" class="project-link"><strong>Making Brain Tech Honest</strong> - Can consumer brain tech be scientifically trusted? Built a multi-layer validation framework that helped India’s leading BCI launch with real cognitive metrics, not marketing claims.</a></li>
-            <li><a href="Exp-Food-Psyc/index.html" class="project-link"><strong>The VICE Framework</strong> - Created a conversion-focused behavioral science system for Indian food-delivery apps by translating gastrophysics into actionable design tactics; platform-ready and tailored to India’s unique ordering psychology.</a></li>
-            <li><a href="Sleep Research Project/index.html" class="project-link"><strong>REMS-PTSD Risk Matrix</strong> - What if sleep could predict PTSD before symptoms escalate? Built a framework using REM biomarkers to spot trauma risk in 8 weeks (vs the typical 4.5-year wait); designed for real-world, resource-strapped settings.</a></li>
-        </ul>
+    <!-- RESEARCH & BUILDS -->
+    <section id="builds">
+      <h2>Research & Builds</h2>
+      <ul class="builds-list">
+        <li>
+          <strong>Cren.Visio</strong> <span class="meta">· Coming soon</span> — Brain health social platform, building @PsyMed Ventures.
+        </li>
+        <li>
+          <strong><a href="BCI-Project/index.html">Making Brain Tech Honest ↗</a></strong> — Multi-layer validation framework for India's leading BCI. Translated neuroscience into commercial-grade cognitive metrics.
+        </li>
+        <li>
+          <strong><a href="Exp-Food-Psyc/index.html">The VICE Framework ↗</a></strong> — Behavioral science system for food-delivery apps. Gastrophysics research converted into platform-ready design tactics.
+        </li>
+        <li>
+          <strong><a href="Sleep Research Project/index.html">REMS-PTSD Risk Matrix ↗</a></strong> — REM biomarkers to flag PTSD risk 8 weeks post-trauma. Built for resource-constrained clinical settings.
+        </li>
+        <li>
+          <strong><a href="DFSI-Project/index.html">Amber Waves Rebrand ↗</a></strong> — User research and narrative redesign. Repositioned brand from farm to food-system talent pipeline.
+        </li>
+      </ul>
     </section>
-    <!-- ===== VOLUNTEERING SECTION ===== -->
-    <section id="volunteering">
-      <h2>Volunteering & Community</h2>
-      <p class="section-intro">
-        My volunteering work is guided by the same curiosity that drew me to neuroscience -  understanding people and what helps them grow. From mentorship and teaching to community outreach, I see each project as a way to stay connected to people and purpose beyong academics.
-        </p>
-      <h3 class="subsection-title">Non-Profit Work</h3>
-        <ul class="section-list"> <!-- same class as the list in projects section-->
-          <li><strong>Umeed - A Drop of Hope</strong> - PAN India Intern <span class="role-info">(Jan 2024 - Apr 2024)</span><br>
-            Actively worked across departments of Social Work, HR, Marketing, and Finance, to assess and improve the economic landscape of the Economically Backward Classes and Lower Income Groups.</li>
-            <li><strong>Women in Neuroscience (Repo)</strong> - Events and Outreach Volunteer <span class="role-info">(Oct 2023 - May 2024)</span><br>
-            Actively involved in event theme shaping, collaboration coordination, and gender balance advocacy through speaking 
-engagements; moderated global panel discussions with over 1000+ attendees.</li>
-        </ul>
-      <h3 class="subsection-title">Teaching  & Mentorship</h3>
-      <ul class="section-list">
-            <li><strong>Project EduAccess</strong>: Higher Education Mentor (Aug 2024 - Present)<br> Mentored students from marginalized communities of Global South on pursuing higher education; speaker for guidance sessions to 200+ attendees. 
-            </li>
-            <li><strong>Neurointegrative Physiology NURO324</strong>: Guest Lecturer (Mar 2024)<br>
-              Co-delivered a curated special lecture on “The Neuroscience of Sleep: From NREM–REM Cycles to Melatonin Regulation” to class of 40+.</li>
-            <li><strong>Notes and Resources</strong>:<br> I routinely update my <a href="https://sites.google.com/view/ishakaushik/resources?authuser=1"> google site</a> with resources and notes on research, graduate applications and neuroscience. </li>
-        </ul>
-      <h3 class="subsection-title">Leadership & Campus Involvement</h3>
-        <ul class="section-list">
-          <li><strong>NeurotechX Columbia</strong> - Vice President of Outreach (Jan 2025 - Present) <br> Leading the outreach and partnerships channel for scaling neurotech projects and co-hosted first-of-its kind mind-tech hackathon with Columbia-wide participation.</li>
-          <li><strong>Amity Youth Fest</strong> - Head of Sponsorships@AINN (Mar 2023 - Apr 2023)<br>
-          Led the Sponsorship Committee, securing vital funding of INR 15K+ and strategic partnership with a Mental Wellness 
-Enterprise to promote use of digital tool for emotional well-being of university students.
-          </li>
-        </ul>
+
+    <!-- ACADEMIC TRAINING -->
+    <section id="academic">
+      <h2>Academic Training</h2>
+      <ul class="flat-list">
+        <!-- ADD YOUR COURSEWORK AND CERTIFICATIONS BELOW -->
+        <!-- TEMPLATE: <li>Course or Certification Name — Institution / Program</li> -->
+        <li><!-- Cognitive Neuroscience — Columbia University --></li>
+        <li><!-- Computational Neuroscience — Columbia University --></li>
+        <li><!-- ADD MORE --></li>
+        <li><!-- Privacy Certification — Institution --></li>
+        <li><!-- Law & Ethics — Institution --></li>
+      </ul>
     </section>
-    <section id="media">
-        <h2>Media</h2>
-        <p class="section-intro">
-            I enjoy writing about (a) my really cool scientific phenomena, (b) my opinions on some of the most important startups and tools that are shaping mass behaviour and expectations and (c) reflections from my own journey. 
-        </p>
 
-        <h3 class="subsection-title">Writing</h3>
-        <ul class="section-list">
-            <li><strong><a href="https://gloneuro.org/?s=isha+kaushik" target="_blank">On the Mind</a></strong> - Brief reflections on topics of climate anxiety and quantum consciousness.</li>
-            <li><strong><a href="https://medium.com/@ishakaushik12a" target="_blank">Medium</a></strong> - Document pivotal personal chapters.</li>
-            <li><strong><a href="https://substack.com/@ishakaushik04?utm_source=user-menu" target="_blank">Substack</a></strong> - Perspectives on digital products with a focus on health, education, productivity and accessibitlity in tech.</li>
-        </ul>
-      <h3 class="subsection-title">Podcasts & Talks</h3>
-        <ul class="section-list">
-            <li><strong><a href="https://open.spotify.com/show/4hJgBgZ00Yc5BaGNw55o8X" target="_blank">The CoNTeXT | Columbia NeuroTechX Talks</a></strong><br>
-            Conversations with experts at the edge of neuroscience, AI, and imagination.</li>
-        </ul>
+    <!-- COMMUNITY & EXPERIENCE -->
+    <section id="community">
+      <h2>Community & Experience</h2>
+      <ul class="builds-list">
+        <li><strong>NeurotechX Columbia</strong> — VP Outreach <span class="meta">Jan 2025–Present</span> · Leading outreach and partnerships; co-hosted Columbia's first mind-tech hackathon.</li>
+        <li><strong>Project EduAccess</strong> — Higher Education Mentor <span class="meta">Aug 2024–Present</span> · Mentoring students from Global South communities on higher ed access; speaker to 200+ attendees.</li>
+        <li><strong>Women in Neuroscience Repo</strong> — Events & Outreach <span class="meta">Oct 2023–May 2024</span> · Moderated global panels with 1000+ attendees.</li>
+        <li><strong>Umeed — A Drop of Hope</strong> — PAN India Intern <span class="meta">Jan–Apr 2024</span> · Cross-functional work across Social Work, HR, Marketing and Finance.</li>
+        <li><strong>NURO324 Neurointegrative Physiology</strong> — Guest Lecturer <span class="meta">Mar 2024</span> · Co-delivered lecture on sleep neuroscience to 40+ students.</li>
+      </ul>
     </section>
-    
-    <section id="miscs">
-        <h2>Miscs</h2>
-      
-<p class="section-intro">
-    A few personal interests and new things I love outside of work.
-  </p>
 
-  <article class="miscs-item">
-    <h3>🎵 Music</h3>
-    <p>
-      I listened to 102,432 minutes of music last year! My top genres include Cinematic Indie Pop, Bollywood/Hindi Pop and Indian Classical. 
-    </p>
-  </article>
+    <!-- WRITING & MEDIA -->
+    <section id="writing">
+      <h2>Writing & Media</h2>
+      <ul class="builds-list">
+        <li><strong><a href="https://substack.com/@ishakaushik04?utm_source=user-menu" target="_blank" rel="noopener noreferrer">Substack</a></strong> — Health, education, and productivity in tech.</li>
+        <li><strong><a href="https://medium.com/@ishakaushik12a" target="_blank" rel="noopener noreferrer">Medium</a></strong> — Personal chapters.</li>
+        <li><strong><a href="https://gloneuro.org/?s=isha+kaushik" target="_blank" rel="noopener noreferrer">GLO Neuro</a></strong> — On climate anxiety and quantum consciousness.</li>
+        <li><strong><a href="https://open.spotify.com/show/4hJgBgZ00Yc5BaGNw55o8X" target="_blank" rel="noopener noreferrer">The CoNTeXT Podcast</a></strong> — Conversations at the edge of neuroscience, AI, and imagination.</li>
+      </ul>
+    </section>
 
-  <article class="miscs-item">
-    <h3>🎬 Movies & Shows</h3>
-    <p>
-      Currently watching: Black Mirror | Favorites: Jurassic Park Series, Marvel Cinematic Universe
-    </p>
-  </article>
+    <!-- MISC -->
+    <section id="misc">
+      <h2>Misc</h2>
+      <p class="misc-text">102,432 minutes of music last year — Cinematic Indie Pop, Bollywood, Indian Classical. Currently watching <em>Black Mirror</em>. Reading <em>How to Save the World in 6 (Not So Easy) Steps</em>. Exploring Buddhism@Columbia, learning Arabic, still working on chopsticks.</p>
+      <p class="misc-sign">Feel free to say hi — or send funny pop culture references my way. Cheers ✨</p>
+    </section>
 
-  <article class="miscs-item">
-    <h3>📚 Reading</h3>
-    <p>
-      Currently reading: How to save the world in 6 (not so easy) steps | Favorites: The Psychology of Money, The Startup Equation, Personal MBA
-    </p>
-  </article>
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2025 Isha Kaushik</p>
+    </footer>
 
-  <article class="miscs-item">
-    <h3>🌸 Cultural Interests</h3>
-    <p>
-      Exploring Buddhism@Columbia and learning Arabic | Favorite experiences include building my first snowman infront of Butler + trying (and failing!) to have Chinese food with chopsticks. <br><br>
-      <b><i>Thanks for stopping by my corner of internet - cheers!</b></i>
-    </p>
-  </article>
-</section>
-
-<footer>
-  <p>© 2024 Isha Kaushik. Made with ❤️ and caffeine!</p>
-</footer>
-<!--JS link added-->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
