@@ -38,8 +38,8 @@ p { margin: 0 0 0.5rem; color: #2a3e2c; }
 }
 
 .profile-photo {
-  width: 132px;
-  height: 132px;
+  width: 162px;
+  height: 162px;
   object-fit: cover;
   flex-shrink: 0;
   filter: grayscale(15%) sepia(8%);
