@@ -1,6 +1,6 @@
-Hey there - welcome to my corner!
+Hey there, I am Isha. 
 
-My name is Isha, and I am neuroscience researcher turned-founder building Vectorial Labs - an AI-native life science commercialization engine. Currently serving early pilots with frontier life science startups. 
+Neuroscience grad, currently helping frontier bioscience innovations reach market in a timely and precise manner. Saving and improving lives had tons of ways to contribute - looks like mine is in hard core commercialization. 
 
 Feel free to say hi (- or send funny pop culture references my way!)
 
