@@ -41,14 +41,11 @@ p {
 .about-container {
   display: flex;
   gap: 40px;
-  align-items: flex-start;
+  align-items: flex-start; /* Keeps the top of the photo inline with the top of the text */
 }
 
 .about-left {
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
 
 .profile-photo {
@@ -56,24 +53,31 @@ p {
   height: 172px;
   object-fit: cover;
   filter: grayscale(15%) sepia(8%);
-}
-
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.contact-links a {
-  font-size: 0.85rem;
-  color: #5a7a5c;
-}
-.contact-links a:hover { 
-  color: #1a2e1c; 
+  display: block; /* Removes any default baseline spacing beneath the image */
 }
 
 .about-text { 
   flex: 1; 
+  display: flex;
+  flex-direction: column;
+}
+
+/* Updated to make links layout horizontally below the text */
+.contact-links {
+  display: flex;
+  flex-direction: row;  /* Arranges links in a horizontal row */
+  gap: 24px;            /* Adds a clean 24px space between each link */
+  margin-top: 12px;     /* Creates a nice buffer below the brief paragraph */
+  line-height: 1;
+}
+
+.contact-links a {
+  font-size: 0.9rem;
+  color: #5a7a5c;
+  font-weight: 600;     /* Slightly heavier weight so they pop as nav items */
+}
+.contact-links a:hover { 
+  color: #1a2e1c; 
 }
 
 h1 {
@@ -82,6 +86,13 @@ h1 {
   color: #1a2e1c;
   margin: 0 0 4px 0;
   line-height: 1.15;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  color: #8a9e8c;
+  font-style: italic;
+  margin: 0 0 1rem 0;
 }
 
 .highlight-link { 
