@@ -227,7 +227,3 @@ footer p { margin: 0; }
   h1 { font-size: 2.4rem; }
   .flat-list { grid-template-columns: 1fr; }
 }
-    right: 20px;
-    font-size: 20px;
-  }
-}
