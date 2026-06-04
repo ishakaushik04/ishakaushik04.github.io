@@ -84,13 +84,6 @@ h1 {
   line-height: 1.15;
 }
 
-.tagline {
-  font-size: 0.95rem;
-  color: #8a9e8c;
-  font-style: italic;
-  margin: 0 0 1rem 0;
-}
-
 .highlight-link { 
   color: #1a2e1c; 
   font-weight: 600; 
@@ -111,7 +104,6 @@ h2 {
   text-transform: lowercase;
   letter-spacing: 0.02em;
   margin: 0 0 0.8rem 0;
-  border-bottom: 1px solid #e5e0d8; /* Added a subtle baseline divider instead of lines */
   padding-bottom: 4px;
 }
 
