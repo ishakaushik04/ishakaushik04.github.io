@@ -99,6 +99,14 @@ h2 {
   padding-bottom: 4px;
 }
 
+.current-focus {
+  font-style: italic;
+  font-weight: 600;
+  color: #5a7a5c;
+  transition: color 0.2s ease;
+}
+.current-focus:hover { color: #7a4f1a; }
+
 /* BUILDS */
 .build-entry { margin-bottom: 1rem; }
 .build-title { font-weight: 600; color: #1a2e1c; }
