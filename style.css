@@ -103,7 +103,7 @@ h2 {
   font-style: normal;
   font-weight: 600;
   color: #2a3e2c; /* same as your regular paragraph text */
-  text-shadow: 0 0 1px rgba(26, 46, 28, 0.15);
+  text-shadow: 0.3px 0.3px 1px rgba(26, 46, 28, 0.25);
 }
 
 /* BUILDS */
