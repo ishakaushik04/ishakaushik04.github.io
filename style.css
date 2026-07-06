@@ -100,12 +100,11 @@ h2 {
 }
 
 .current-focus {
-  font-style: italic;
+  font-style: normal;
   font-weight: 600;
-  color: #5a7a5c;
-  transition: color 0.2s ease;
+  color: #2a3e2c; /* same as your regular paragraph text */
+  text-shadow: 0 0 1px rgba(26, 46, 28, 0.15);
 }
-.current-focus:hover { color: #7a4f1a; }
 
 /* BUILDS */
 .build-entry { margin-bottom: 1rem; }
