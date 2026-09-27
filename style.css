@@ -95,6 +95,8 @@ section { margin-bottom: 2.6rem; }
 
 /* h2 back to your original uniform bold-serif section-title style */
 h2 {
+  position: relative;
+  display: inline-block;
   font-size: 1.25rem;
   font-weight: 700;
   color: #1a2e1c;
@@ -102,6 +104,29 @@ h2 {
   letter-spacing: 0.02em;
   margin: 0 0 0.8rem 0;
   padding-bottom: 4px;
+}
+
+/* subtle diagonal paintbrush-stroke wash sitting behind the title -
+   pure decoration, doesn't touch the text itself */
+h2::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  right: -14px;
+  top: 48%;
+  height: 0.6em;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(122, 79, 26, 0.10) 12%,
+    rgba(122, 79, 26, 0.20) 45%,
+    rgba(122, 79, 26, 0.16) 70%,
+    transparent 100%
+  );
+  border-radius: 50% / 45%;
+  transform: rotate(-3deg) skewX(-10deg);
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* the mono/accent treatment now lives here instead - on the
