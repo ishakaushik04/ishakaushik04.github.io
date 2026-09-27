@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -87,8 +87,13 @@ h1 {
 .highlight-link:hover { color: #7a4f1a; }
 
 /* SECTIONS */
-section { margin-bottom: 2rem; }
+/* (5) spacing made to do the separating work itself - bigger, slightly uneven
+   rhythm between sections instead of a uniform gap, so no rule/border needed */
+section { margin-bottom: 2.6rem; }
+#academic { margin-bottom: 3rem; }
+#community { margin-bottom: 3rem; }
 
+/* h2 back to your original uniform bold-serif section-title style */
 h2 {
   font-size: 1.25rem;
   font-weight: 700;
@@ -97,6 +102,16 @@ h2 {
   letter-spacing: 0.02em;
   margin: 0 0 0.8rem 0;
   padding-bottom: 4px;
+}
+
+/* the mono/accent treatment now lives here instead - on the
+   [Foundation] / [Specialisation] / [Additional] tags */
+.academic-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #7a4f1a;
+  letter-spacing: 0.03em;
 }
 
 .current-focus {
@@ -108,8 +123,22 @@ h2 {
 
 /* BUILDS */
 .build-entry { margin-bottom: 1rem; }
-.build-title { font-weight: 600; color: #1a2e1c; }
-.build-title:hover { color: #7a4f1a; }
+
+/* sweeter, quieter invitation to click - a soft hairline underline that
+   only fully commits to color on hover, letter-spacing loosens slightly
+   like it's taking a breath */
+.build-title {
+  font-weight: 600;
+  color: #1a2e1c;
+  border-bottom: 1px solid rgba(122, 79, 26, 0.4);
+  padding-bottom: 1px;
+  transition: color 0.3s ease, border-color 0.3s ease, letter-spacing 0.3s ease;
+}
+.build-title:hover {
+  color: #7a4f1a;
+  border-color: rgba(122, 79, 26, 0.9);
+  letter-spacing: 0.01em;
+}
 
 /* ACADEMIC */
 .flat-list { list-style: none; padding: 0; margin: 0; }
@@ -123,7 +152,7 @@ footer {
   border-top: 1px solid #e5e0d8;
   font-size: 1.05rem;
   color: #b0997e;
-  text-align: left;
+  text-align: center; /* (3) */
 }
 
 /* MOBILE */
