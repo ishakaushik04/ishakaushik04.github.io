@@ -171,14 +171,12 @@ h2::before {
 .build-body { line-height: 1.4; margin-top: -2px; }
 .build-body p { margin: 0.25rem 0 0; font-size: 0.98rem; line-height: 1.55; }
 
-/* ACADEMIC - chapters: tag in the margin, story beside it */
-.chapter {
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 8px 24px;
-  margin-bottom: 1.6rem;
-}
+/* ACADEMIC - simple stacked chapters: heading line, then the details */
+.chapter { margin-bottom: 1.6rem; }
 .chapter:last-child { margin-bottom: 0; }
+
+.chapter-head { margin: 0 0 0.25rem; line-height: 1.5; }
+.chapter p:not(.chapter-head) { margin: 0; }
 
 .academic-tag {
   font-family: 'JetBrains Mono', monospace;
@@ -186,19 +184,14 @@ h2::before {
   font-weight: 500;
   color: #7a4f1a;
   letter-spacing: 0.03em;
-  line-height: 1.9;
-  margin: 0;
+  margin-right: 0.5rem;
 }
 
-.chapter-body p { margin: 0 0 0.5rem; }
-.chapter-body p:last-child { margin-bottom: 0; }
-
 .chapter-lead {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-style: italic;
   font-weight: 600;
   color: #1a2e1c;
-  line-height: 1.5;
 }
 
 /* COMMUNITY - threads */
@@ -264,8 +257,7 @@ footer p { color: inherit; margin: 0; }
   .build-thumb { width: 96px; }
   .build-body p { font-size: 0.92rem; }
 
-  .chapter { grid-template-columns: 1fr; gap: 0; }
-  .academic-tag { line-height: 1.6; }
+  .academic-tag { display: block; margin: 0 0 0.1rem; }
 }
 
 /* MOTION */
