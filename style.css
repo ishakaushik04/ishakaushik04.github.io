@@ -51,23 +51,26 @@ p { margin: 0 0 1rem; color: #2a3e2c; }
 
 .about-text p:last-of-type { margin-bottom: 0; }
 
-/* social links: a slim column at the far right */
+/* social links: a slim column of icons at the far right */
 .contact-links {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
   gap: 2px;
-  padding-top: 0.7rem;
+  padding-top: 0.5rem;
 }
 
 .contact-links a {
+  display: flex;
+  padding: 6px;
   color: #5a7a5c;
-  line-height: 1.6;
-  align-self: flex-start;
-  border-bottom: 1px solid rgba(90, 122, 92, 0.35);
-  transition: color 0.2s ease, border-color 0.2s ease;
+  line-height: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
-.contact-links a:hover { color: #7a4f1a; border-color: rgba(122, 79, 26, 0.8); }
+.contact-links a:hover { color: #7a4f1a; transform: translateY(-1px); }
+
+.contact-links svg { width: 20px; height: 20px; fill: currentColor; }
+.contact-links svg.stroke { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
 h1 {
   font-size: 2.6rem;
