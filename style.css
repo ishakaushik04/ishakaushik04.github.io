@@ -29,7 +29,7 @@ p { margin: 0 0 1rem; color: #2a3e2c; }
 
 .about-container {
   display: flex;
-  gap: 32px;
+  gap: 24px;
   align-items: flex-start;
 }
 
