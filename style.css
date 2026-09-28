@@ -51,13 +51,11 @@ p { margin: 0 0 1rem; color: #2a3e2c; }
 
 .about-text p:last-of-type { margin-bottom: 0; }
 
-/* social links: a slim column of icons at the far right */
+/* social links: a small row of icons tucked under the photo */
 .contact-links {
   display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  gap: 2px;
-  padding-top: 0.5rem;
+  justify-content: space-between;
+  margin: 4px -6px 0; /* pulls the icons flush with the photo edges */
 }
 
 .contact-links a {
@@ -254,18 +252,9 @@ footer p { color: inherit; margin: 0; }
 /* MOBILE */
 @media (max-width: 640px) {
   body { padding: 36px 18px; }
-  /* photo and links share the top row; the bio gets the full width below */
-  .about-container {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-areas: "photo links" "text text";
-    gap: 20px 24px;
-  }
-  .about-left { grid-area: photo; }
-  .about-text { grid-area: text; }
+  .about-container { flex-direction: column; gap: 20px; }
   .profile-photo { width: 128px; height: 128px; }
   h1 { font-size: 2rem; }
-  .contact-links { grid-area: links; align-self: end; padding-top: 0; }
 
   .build-card { gap: 14px; align-items: flex-start; }
   .build-thumb { width: 96px; }
