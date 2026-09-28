@@ -251,9 +251,18 @@ footer p { color: inherit; margin: 0; }
 /* MOBILE */
 @media (max-width: 640px) {
   body { padding: 36px 18px; }
-  .about-container { flex-direction: column; gap: 20px; }
+  /* photo and links share the top row; the bio gets the full width below */
+  .about-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "photo links" "text text";
+    gap: 20px 24px;
+  }
+  .about-left { grid-area: photo; }
+  .about-text { grid-area: text; }
+  .profile-photo { width: 128px; height: 128px; }
   h1 { font-size: 2rem; }
-  .contact-links { flex-direction: row; flex-wrap: wrap; gap: 6px 18px; padding-top: 0; }
+  .contact-links { grid-area: links; align-self: end; padding-top: 0; }
 
   .build-card { gap: 14px; align-items: flex-start; }
   .build-thumb { width: 96px; }
