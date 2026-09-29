@@ -51,25 +51,6 @@ p { margin: 0 0 1rem; color: #2a3e2c; }
 
 .about-text p:last-of-type { margin-bottom: 0; }
 
-/* social links: a small row of icons tucked under the photo */
-.contact-links {
-  display: flex;
-  justify-content: space-between;
-  margin: 4px -6px 0; /* pulls the icons flush with the photo edges */
-}
-
-.contact-links a {
-  display: flex;
-  padding: 6px;
-  color: #5a7a5c;
-  line-height: 0;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-.contact-links a:hover { color: #7a4f1a; transform: translateY(-1px); }
-
-.contact-links svg { width: 20px; height: 20px; fill: currentColor; }
-.contact-links svg.stroke { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-
 h1 {
   font-size: 2.6rem;
   font-weight: 700;
@@ -239,15 +220,36 @@ h2::before {
   color: #46654a;
 }
 
-/* FOOTER */
+/* FOOTER - icons on the left, copyright on the right */
 footer {
   margin-top: 2.5rem;
   padding-top: 1rem;
   border-top: 1px solid #e5e0d8;
-  color: #b0997e;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
-footer p { color: inherit; margin: 0; }
+
+.contact-links {
+  display: flex;
+  gap: 4px;
+  margin: 0 0 0 -6px; /* flush the first icon with the left edge */
+}
+
+.contact-links a {
+  display: flex;
+  padding: 6px;
+  color: #b0997e;
+  line-height: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.contact-links a:hover { color: #7a4f1a; transform: translateY(-1px); }
+
+.contact-links svg { width: 18px; height: 18px; fill: currentColor; }
+.contact-links svg.stroke { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+footer p { color: #b0997e; margin: 0; }
 
 /* MOBILE */
 @media (max-width: 640px) {
@@ -261,6 +263,9 @@ footer p { color: inherit; margin: 0; }
   .build-body p { font-size: 0.92rem; }
 
   .academic-tag { display: block; margin: 0 0 0.1rem; }
+
+  footer { flex-direction: column-reverse; gap: 10px; }
+  .contact-links { margin-left: 0; }
 }
 
 /* MOTION */
