@@ -3,10 +3,16 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
+:root {
+  --edge: clamp(20px, 3.5vw, 56px);   /* side space: enough to breathe, not extreme */
+  --rail: 240px;                       /* photo column */
+  --gap: 48px;
+}
+
 body {
   margin: 0;
   font-family: 'Crimson Pro', serif;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   line-height: 1.75;
   color: #1a2e1c;
   background-color: #f8f3ea;
@@ -23,45 +29,46 @@ a:focus-visible { outline: 2px solid #7a4f1a; outline-offset: 3px; border-radius
 
 p { margin: 0 0 1.1rem; color: #2a3e2c; }
 
-/* PAGE: one wide frame, a left rail and a reading column */
-.page {
-  max-width: 1020px;
-  margin: 0 auto;
-  padding: 44px 40px 36px;
-}
+/* PAGE: full width, small even margins on both sides */
+.page { padding: 22px var(--edge) 28px; }
 
-.site-head { margin-bottom: 3rem; }
+/* name: top, far left */
+.site-head { margin-bottom: 1.8rem; }
 .site-name {
   margin: 0;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.2;
 }
 .site-name a { color: #1a2e1c; border-bottom: 0; }
 .site-name a:hover { color: #7a4f1a; }
 
+/* each row: photo column on the left, text running to the right edge */
 .row {
   display: grid;
-  grid-template-columns: 200px minmax(0, 1fr);
-  column-gap: 56px;
+  grid-template-columns: var(--rail) minmax(0, 1fr);
+  column-gap: var(--gap);
   margin-bottom: 1.7rem;
 }
 .row > .body > p:last-child { margin-bottom: 0; }
 
-/* round portrait, top of the left rail */
+/* round portrait, bigger, flush with the left margin */
 .profile-photo {
-  width: 200px;
-  height: 200px;
+  width: var(--rail);
+  height: var(--rail);
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
   display: block;
+  border: 3px solid #f8f3ea;
+  box-shadow: 0 0 0 1px rgba(122, 79, 26, 0.35);
   filter: grayscale(15%) sepia(8%);
 }
 
-/* the one-line breaks sit in the left margin, beside the paragraph they introduce */
+/* the one-line breaks sit in the left column, beside the paragraph they introduce */
 .note {
   margin: 0.15rem 0 0;
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   font-style: italic;
   font-weight: 600;
   line-height: 1.5;
@@ -70,30 +77,45 @@ p { margin: 0 0 1.1rem; color: #2a3e2c; }
 
 .current-focus { font-weight: 600; color: #1a2e1c; }
 
-/* contact list, Chip-style */
-.contact {
-  list-style: disc;
-  margin: 0.4rem 0 0;
-  padding-left: 1.2rem;
-}
-.contact li { margin: 0 0 0.15rem; color: #7a4f1a; }
-.contact .plat { color: #46654a; margin-right: 0.35rem; }
-
+/* FOOTER: icons bottom-left, copyright centred */
 footer {
   margin-top: 3rem;
   padding-top: 1rem;
   border-top: 1px solid #e5e0d8;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
 }
-footer p { margin: 0; font-size: 0.95rem; color: #b0997e; }
+
+.contact-links {
+  display: flex;
+  gap: 4px;
+  margin-left: -6px; /* flush the first icon with the left edge */
+}
+.contact-links a {
+  display: flex;
+  padding: 6px;
+  color: #b0997e;
+  line-height: 0;
+  border-bottom: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.contact-links a:hover { color: #7a4f1a; transform: translateY(-1px); }
+.contact-links svg { width: 20px; height: 20px; fill: currentColor; }
+.contact-links svg.stroke { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+footer p { margin: 0; font-size: 0.95rem; color: #b0997e; text-align: center; }
 
 /* MOBILE: one column, round photo on top, margin notes become lead lines */
 @media (max-width: 760px) {
-  body { font-size: 1.08rem; }
-  .page { padding: 32px 20px 28px; }
-  .site-head { margin-bottom: 1.8rem; }
+  :root { --rail: 140px; }
+  body { font-size: 1.1rem; }
   .row { grid-template-columns: 1fr; row-gap: 0.6rem; margin-bottom: 1.4rem; }
-  .profile-photo { width: 128px; height: 128px; margin-bottom: 0.6rem; }
   .note { margin-top: 0.6rem; }
+  .profile-photo { margin-bottom: 0.6rem; }
+  footer { grid-template-columns: 1fr; justify-items: center; gap: 6px; }
+  .contact-links { margin-left: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
