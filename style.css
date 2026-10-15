@@ -49,8 +49,7 @@ p { margin: 0 0 1.1rem; color: #2a3e2c; }
   height: var(--photo);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  shape-outside: circle(50%);
-  margin: 0 44px 14px 0;
+  margin: 0 40px 16px 0;
   object-fit: cover;
   display: block;
   border: 3px solid #f8f3ea;
