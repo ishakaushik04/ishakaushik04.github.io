@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -11,12 +11,13 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 1.2rem;
-  line-height: 1.75;
+  font-family: 'Spectral', Georgia, serif;
+  font-weight: 300;          /* light, but still a formal serif */
+  font-size: 1.04rem;
+  line-height: 1.68;
   color: #1a2e1c;
   background-color: #f8f3ea;
-  text-shadow: 0 0 0.5px rgba(26, 46, 28, 0.3);
+  -webkit-font-smoothing: antialiased;
 }
 ::selection { background: rgba(var(--brown), 0.22); }
 
@@ -31,28 +32,38 @@ a {
 a:hover { color: #1a2e1c; text-decoration-color: #1a2e1c; }
 a:focus-visible { outline: 2px solid #7a4f1a; outline-offset: 3px; border-radius: 2px; }
 
-p { margin: 0 0 1.1rem; color: #2a3e2c; }
+p { margin: 0 0 0.95rem; color: #1a2e1c; }
 
-.page { padding: 28px var(--edge); }
+.page { padding: 28px var(--edge); max-width: 60rem; margin: 0 auto; }
 
-/* LEFT BLOCK: name, round photo, social icons. Everything is centred on the photo.
-   It floats left, so the text starts beside it and then wraps underneath it. */
-.side {
-  float: left;
-  width: calc(var(--photo) + 24px);
-  margin: 0 40px 16px 0;
-  text-align: center;
+/* TOP BLOCK: name, round photo and social icons on the left, with the first two
+   paragraphs beside the photo. The text starts level with the top of the photo
+   (the name sits above it), and the rest of the essay continues below. */
+.intro {
+  display: grid;
+  grid-template-columns: calc(var(--photo) + 24px) minmax(0, 1fr);
+  grid-template-rows: auto auto auto;
+  column-gap: 40px;
+  align-items: start;
 }
+.side { display: contents; }
+.site-name        { grid-column: 1; grid-row: 1; justify-self: center; }
+.photo-wrap       { grid-column: 1; grid-row: 2; justify-self: center; }
+.contact-links    { grid-column: 1; grid-row: 3; }
+.intro-text       { grid-column: 2; grid-row: 2 / span 2; }
+.intro-text p:last-child { margin-bottom: 0; }
+
+main { clear: both; margin-top: 1.1rem; }
 
 .site-name {
   position: relative;
   isolation: isolate;
   display: inline-block;
   margin: 0 0 1.3rem;
-  font-size: 2.35rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 500;
   line-height: 1.1;
-  letter-spacing: 0.005em;
+  letter-spacing: 0;
 }
 .site-name a { color: #1a2e1c; text-decoration: none; }
 .site-name a:hover { color: #7a4f1a; }
@@ -119,29 +130,46 @@ p { margin: 0 0 1.1rem; color: #2a3e2c; }
 .contact-links svg { width: 21px; height: 21px; fill: currentColor; }
 .contact-links svg.stroke { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
-.current-focus { font-weight: 600; color: #1a2e1c; }
+.current-focus { font-weight: 500; color: #1a2e1c; }
+
+/* links stay a touch heavier than the light body so they read as links */
+main a, .intro-text a { font-weight: 400; }
 
 /* FOOTER: just the copyright, centred */
 footer {
   clear: both;
-  margin-top: 3rem;
+  margin-top: 2.4rem;
   padding-top: 1rem;
   border-top: 1px solid #e5e0d8;
 }
-footer p { margin: 0; font-size: 0.95rem; color: #b0997e; text-align: center; text-shadow: none; }
+footer p { margin: 0; font-size: 0.95rem; color: #8f7a5f; text-align: center; }
 
-/* MOBILE: same wrap, smaller photo, still centred on it */
+/* MOBILE: the left block floats, so the text sits beside the photo and then wraps under it.
+   The first paragraph is dropped down by the height of the name so it lines up with the photo. */
 @media (max-width: 760px) {
   :root { --photo: 120px; }
-  body { font-size: 1.1rem; }
+  body { font-size: 1.02rem; }
   .page { padding-top: 22px; }
-  .side { width: calc(var(--photo) + 30px); margin: 0 18px 10px 0; }
-  .site-name { font-size: 1.55rem; margin-bottom: 0.9rem; }
+  .intro { display: flow-root; }
+  .side {
+    display: block;
+    float: left;
+    width: calc(var(--photo) + 30px);
+    margin: 0 18px 10px 0;
+    text-align: center;
+  }
+  .site-name { font-size: 1.5rem; margin-bottom: 0.9rem; }
+  .photo-wrap { margin: 0 auto; }
   .contact-links { gap: 0; margin-top: 0.9rem; }
   .contact-links a { padding: 5px; }
   .contact-links svg { width: 19px; height: 19px; }
+  .intro-text { padding-top: calc(1.5rem * 1.1 + 0.9rem); }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
