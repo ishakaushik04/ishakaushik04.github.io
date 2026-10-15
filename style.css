@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -11,9 +11,9 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: 'Spectral', Georgia, serif;
+  font-family: 'Literata', Georgia, serif;
   font-weight: 300;          /* light, but still a formal serif */
-  font-size: 1.04rem;
+  font-size: 1rem;
   line-height: 1.68;
   color: #1a2e1c;
   background-color: #f8f3ea;
@@ -148,7 +148,7 @@ footer p { margin: 0; font-size: 0.95rem; color: #8f7a5f; text-align: center; }
    The first paragraph is dropped down by the height of the name so it lines up with the photo. */
 @media (max-width: 760px) {
   :root { --photo: 120px; }
-  body { font-size: 1.02rem; }
+  body { font-size: 0.98rem; }
   .page { padding-top: 22px; }
   .intro { display: flow-root; }
   .side {
@@ -158,18 +158,14 @@ footer p { margin: 0; font-size: 0.95rem; color: #8f7a5f; text-align: center; }
     margin: 0 18px 10px 0;
     text-align: center;
   }
-  .site-name { font-size: 1.5rem; margin-bottom: 0.9rem; }
+  .site-name { font-size: 1.28rem; margin-bottom: 0.9rem; white-space: nowrap; }
   .photo-wrap { margin: 0 auto; }
   .contact-links { gap: 0; margin-top: 0.9rem; }
   .contact-links a { padding: 5px; }
   .contact-links svg { width: 19px; height: 19px; }
-  .intro-text { padding-top: calc(1.5rem * 1.1 + 0.9rem); }
+  .intro-text { padding-top: calc(1.28rem * 1.1 + 0.9rem); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { transition: none !important; }
-}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
