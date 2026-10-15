@@ -4,9 +4,8 @@
 html { scroll-behavior: smooth; }
 
 :root {
-  --edge: clamp(20px, 3.5vw, 56px);   /* side space: enough to breathe, not extreme */
-  --rail: 240px;                       /* photo column */
-  --gap: 48px;
+  --edge: clamp(20px, 3.5vw, 56px);   /* even side space, enough to breathe */
+  --photo: 240px;
 }
 
 body {
@@ -29,11 +28,11 @@ a:focus-visible { outline: 2px solid #7a4f1a; outline-offset: 3px; border-radius
 
 p { margin: 0 0 1.1rem; color: #2a3e2c; }
 
-/* PAGE: full width, small even margins on both sides */
+/* PAGE: the whole width, small even margins */
 .page { padding: 22px var(--edge) 28px; }
 
 /* name: top, far left */
-.site-head { margin-bottom: 1.8rem; }
+.site-head { margin-bottom: 1.6rem; }
 .site-name {
   margin: 0;
   font-size: 1.5rem;
@@ -43,21 +42,15 @@ p { margin: 0 0 1.1rem; color: #2a3e2c; }
 .site-name a { color: #1a2e1c; border-bottom: 0; }
 .site-name a:hover { color: #7a4f1a; }
 
-/* each row: photo column on the left, text running to the right edge */
-.row {
-  display: grid;
-  grid-template-columns: var(--rail) minmax(0, 1fr);
-  column-gap: var(--gap);
-  margin-bottom: 1.7rem;
-}
-.row > .body > p:last-child { margin-bottom: 0; }
-
-/* round portrait, bigger, flush with the left margin */
+/* round portrait, far left; the text wraps around it, then runs full width underneath */
 .profile-photo {
-  width: var(--rail);
-  height: var(--rail);
+  float: left;
+  width: var(--photo);
+  height: var(--photo);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
+  shape-outside: circle(50%);
+  margin: 0 44px 14px 0;
   object-fit: cover;
   display: block;
   border: 3px solid #f8f3ea;
@@ -65,20 +58,11 @@ p { margin: 0 0 1.1rem; color: #2a3e2c; }
   filter: grayscale(15%) sepia(8%);
 }
 
-/* the one-line breaks sit in the left column, beside the paragraph they introduce */
-.note {
-  margin: 0.15rem 0 0;
-  font-size: 1.05rem;
-  font-style: italic;
-  font-weight: 600;
-  line-height: 1.5;
-  color: #7a4f1a;
-}
-
 .current-focus { font-weight: 600; color: #1a2e1c; }
 
 /* FOOTER: icons bottom-left, copyright centred */
 footer {
+  clear: both;
   margin-top: 3rem;
   padding-top: 1rem;
   border-top: 1px solid #e5e0d8;
@@ -107,13 +91,11 @@ footer {
 
 footer p { margin: 0; font-size: 0.95rem; color: #b0997e; text-align: center; }
 
-/* MOBILE: one column, round photo on top, margin notes become lead lines */
+/* MOBILE: smaller photo, same wrap */
 @media (max-width: 760px) {
-  :root { --rail: 140px; }
+  :root { --photo: 120px; }
   body { font-size: 1.1rem; }
-  .row { grid-template-columns: 1fr; row-gap: 0.6rem; margin-bottom: 1.4rem; }
-  .note { margin-top: 0.6rem; }
-  .profile-photo { margin-bottom: 0.6rem; }
+  .profile-photo { margin: 0 20px 8px 0; }
   footer { grid-template-columns: 1fr; justify-items: center; gap: 6px; }
   .contact-links { margin-left: 0; }
 }
