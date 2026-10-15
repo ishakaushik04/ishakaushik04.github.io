@@ -4,8 +4,9 @@
 html { scroll-behavior: smooth; }
 
 :root {
-  --edge: clamp(20px, 3.5vw, 56px);   /* even side space, enough to breathe */
+  --edge: clamp(20px, 3.5vw, 56px);   /* even side space */
   --photo: 240px;
+  --brown: 122, 79, 26;               /* the warm accent, as rgb for the paint washes */
 }
 
 body {
@@ -15,88 +16,134 @@ body {
   line-height: 1.75;
   color: #1a2e1c;
   background-color: #f8f3ea;
+  /* a whisper of ink bleed, so the text feels put down by hand */
+  text-shadow: 0 0 0.5px rgba(26, 46, 28, 0.3);
 }
 
+::selection { background: rgba(var(--brown), 0.22); }
+
+/* LINKS: a loose marker swipe underneath instead of a ruled line */
 a {
   color: #7a4f1a;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(122, 79, 26, 0.3);
-  transition: color 0.2s ease, border-color 0.2s ease;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(var(--brown), 0.4);
+  text-underline-offset: 4px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
-a:hover { color: #1a2e1c; border-color: #1a2e1c; }
+a:hover { color: #1a2e1c; text-decoration-color: #1a2e1c; }
 a:focus-visible { outline: 2px solid #7a4f1a; outline-offset: 3px; border-radius: 2px; }
 
 p { margin: 0 0 1.1rem; color: #2a3e2c; }
 
-/* PAGE: the whole width, small even margins */
-.page { padding: 22px var(--edge) 28px; }
+.page { padding: 28px var(--edge) 28px; }
 
-/* name: top, far left */
-.site-head { margin-bottom: 1.6rem; }
-.site-name {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-.site-name a { color: #1a2e1c; border-bottom: 0; }
-.site-name a:hover { color: #7a4f1a; }
-
-/* round portrait, far left; the text wraps around it, then runs full width underneath */
-.profile-photo {
+/* LEFT BLOCK: name, round photo, icons; the text wraps around it */
+.side {
   float: left;
   width: var(--photo);
-  height: var(--photo);
+  margin: 0 40px 16px 0;
+}
+
+.site-name {
+  position: relative;
+  isolation: isolate;
+  display: inline-block;
+  margin: 0 0 1.1rem;
+  font-size: 2.35rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.005em;
+}
+.site-name a {
+  color: #1a2e1c;
+  text-decoration: none;
+}
+.site-name a:hover { color: #7a4f1a; }
+/* the brush wash behind the name, your original touch */
+.site-name::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  right: -12px;
+  top: 52%;
+  height: 0.55em;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(var(--brown), 0.12) 10%,
+    rgba(var(--brown), 0.24) 45%,
+    rgba(var(--brown), 0.18) 75%,
+    transparent 100%
+  );
+  border-radius: 50% / 45%;
+  transform: rotate(-2.5deg) skewX(-10deg);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* round photo with a loose, slightly off-centre ring, like it was drawn around it */
+.photo-wrap { position: relative; width: var(--photo); height: var(--photo); }
+.photo-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 2px solid rgba(var(--brown), 0.42);
+  border-radius: 52% 48% 50% 50% / 50% 53% 47% 50%;
+  transform: rotate(-5deg);
+  pointer-events: none;
+}
+.profile-photo {
+  position: relative;
+  width: 100%;
+  height: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  margin: 0 40px 16px 0;
   object-fit: cover;
   display: block;
-  border: 3px solid #f8f3ea;
-  box-shadow: 0 0 0 1px rgba(122, 79, 26, 0.35);
   filter: grayscale(15%) sepia(8%);
 }
 
+/* social icons, right under the photo */
+.contact-links {
+  display: flex;
+  justify-content: center;   /* centred under the photo */
+  gap: 8px;
+  width: var(--photo);
+  margin: 1.2rem 0 0;
+}
+.contact-links a {
+  display: flex;
+  padding: 6px;
+  color: #8a6a3c;
+  line-height: 0;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.contact-links a:hover { color: #1a2e1c; transform: translateY(-2px); }
+.contact-links svg { width: 21px; height: 21px; fill: currentColor; }
+.contact-links svg.stroke { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
 .current-focus { font-weight: 600; color: #1a2e1c; }
 
-/* FOOTER: icons bottom-left, copyright centred */
+/* FOOTER: just the copyright, centred */
 footer {
   clear: both;
   margin-top: 3rem;
   padding-top: 1rem;
   border-top: 1px solid #e5e0d8;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 16px;
 }
+footer p { margin: 0; font-size: 0.95rem; color: #b0997e; text-align: center; text-shadow: none; }
 
-.contact-links {
-  display: flex;
-  gap: 4px;
-  margin-left: -6px; /* flush the first icon with the left edge */
-}
-.contact-links a {
-  display: flex;
-  padding: 6px;
-  color: #b0997e;
-  line-height: 0;
-  border-bottom: 0;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-.contact-links a:hover { color: #7a4f1a; transform: translateY(-1px); }
-.contact-links svg { width: 20px; height: 20px; fill: currentColor; }
-.contact-links svg.stroke { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-
-footer p { margin: 0; font-size: 0.95rem; color: #b0997e; text-align: center; }
-
-/* MOBILE: smaller photo, same wrap */
+/* MOBILE: same wrap, smaller photo */
 @media (max-width: 760px) {
   :root { --photo: 120px; }
   body { font-size: 1.1rem; }
-  .profile-photo { margin: 0 20px 8px 0; }
-  footer { grid-template-columns: 1fr; justify-items: center; gap: 6px; }
-  .contact-links { margin-left: 0; }
+  .page { padding-top: 22px; }
+  .side { width: 150px; margin-right: 20px; }
+  .site-name { font-size: 1.7rem; margin-bottom: 0.8rem; }
+  .contact-links { width: var(--photo); gap: 2px; margin-top: 0.8rem; }
+  .contact-links svg { width: 19px; height: 19px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
