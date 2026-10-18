@@ -6,7 +6,7 @@
    3. Below: photo + links float left, the story starts level with the photo, and once it
       passes them it runs the full width of the page. */
 
-:root{--dk:#0b0a09;--cream:#f8f3ea;--amber:#d6a566;--peek:88px}
+:root{--dk:#0b0a09;--cream:#f8f3ea;--amber:#d6a566;--peek:88px;--r:34px}
 html{background:var(--dk);overscroll-behavior-y:none}
 
 
@@ -68,12 +68,12 @@ html{background:var(--dk);overscroll-behavior-y:none}
   position:relative;z-index:2;
   margin-top:calc(var(--peek) * -1);
   background:var(--cream);
-  border-radius:34px 34px 0 0;
+  border-radius:var(--r);                 /* rounded top and bottom: a cream card between two dark bookends */
   box-shadow:0 -30px 80px rgba(0,0,0,.45);
 }
 /* No title bar: the page opens straight into the story. The top of the photo and the first line
    of text show in the peek at the bottom of the hero, so the hero flows into the page. */
-.home .page{max-width:64rem;padding-top:44px}
+.home .page{max-width:64rem;padding-top:44px;padding-bottom:3.5rem}
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
 
@@ -86,6 +86,46 @@ html{background:var(--dk);overscroll-behavior-y:none}
   padding-top:8px;
 }
 .profile-photo{object-position:50% 40%;filter:none}
+
+
+/* ---------- CLOSING: the dark comes back, so the cream page sits between two dark bookends ---------- */
+.after{
+  position:relative;z-index:1;
+  margin-top:calc(var(--r) * -1);          /* tucks under the sheet so its rounded bottom corners show dark */
+  padding:calc(var(--r) + clamp(4.5rem,11vh,7.5rem)) 0 0;
+  color:var(--cream);
+  background:
+    radial-gradient(50% 60% at 80% 55%,rgba(214,165,102,.14),transparent 70%),
+    radial-gradient(60% 70% at 6% 100%,rgba(214,165,102,.07),transparent 65%),
+    var(--dk);
+}
+.after-inner{max-width:64rem;margin:0 auto;padding:0 var(--edge)}   /* same left edge as the story above */
+.after .fun{margin:0;max-width:41rem;color:rgba(248,243,234,.8);font-size:1.1875rem;line-height:1.8}
+.after .fun a{color:var(--amber);text-decoration-color:rgba(214,165,102,.45)}
+.after .fun a:hover{color:var(--cream);text-decoration-color:var(--cream)}
+.after-rule{display:block;width:3.2rem;height:2px;background:var(--amber);margin:clamp(2.4rem,6vh,3.6rem) 0 clamp(1.5rem,3.5vh,2.2rem)}
+.after .finale{
+  margin:0;max-width:36rem;color:var(--cream);
+  font-family:'Fraunces',Georgia,serif;font-weight:400;
+  font-size:clamp(1.55rem,3.1vw,2.5rem);line-height:1.25;letter-spacing:-.012em;text-wrap:pretty;
+}
+.after .cta{
+  color:var(--amber);text-decoration:none;padding-bottom:.1em;
+  background:linear-gradient(currentColor,currentColor) 0 100%/100% 2px no-repeat;
+  transition:color .3s ease;
+}
+.after .cta::after{content:"\2197";display:inline-block;margin-left:.2em;font-size:.7em;transition:transform .3s ease}
+.after .cta:hover{color:var(--cream)}
+.after .cta:hover::after{transform:translate(.12em,-.12em)}
+.after a:focus-visible{outline-color:var(--amber)}
+.after footer{margin-top:clamp(4.5rem,12vh,7rem);padding:1.3rem 0 2rem;border-top:1px solid rgba(248,243,234,.14)}
+.after footer p{margin:0;color:rgba(248,243,234,.5);font-size:.9rem;letter-spacing:.02em;text-align:left}
+@media (max-width:760px){.after .fun{font-size:1.0625rem;line-height:1.75}}
+
+/* blocks ease in as they scroll into view; home.js adds .rv-on only if it can do the reveal,
+   so nothing is ever left hidden */
+html.rv-on .rv{transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+html.rv-on .rv:not(.in){opacity:0;transform:translateY(18px)}
 
 
 /* ---------- ENTRANCE (plays once, after fonts and photo are ready) ---------- */
@@ -123,8 +163,7 @@ html.js:not(.ready) .sheet{transform:translateY(calc(var(--peek) + 24px))}
 
 /* ---------- PHONES: the story stacks under a centred photo ---------- */
 @media (max-width:760px){
-  :root{--peek:80px}
-  .sheet{border-radius:26px 26px 0 0}
+  :root{--peek:80px;--r:26px}
   .layout .side{float:none;margin:0 auto 1.5rem;padding-top:0}
 }
 
