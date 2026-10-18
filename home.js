@@ -43,4 +43,14 @@
     addEventListener('resize', update);
     update();
   }
+
+  // Closing section: each block eases in as it scrolls into view.
+  const blocks = document.querySelectorAll('.after .rv');
+  if (!reduce && 'IntersectionObserver' in window && blocks.length) {
+    const seen = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); seen.unobserve(e.target); }
+    }), { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+    blocks.forEach((el, i) => { el.style.transitionDelay = (i * 90) + 'ms'; seen.observe(el); });
+    root.classList.add('rv-on');
+  }
 })();
