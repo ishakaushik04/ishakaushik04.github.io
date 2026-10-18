@@ -1,7 +1,7 @@
 /* Homepage only.
    1. A dark hero is the first screen of the page (normal scrolling, nothing hijacked).
    2. The cream page is a "sheet" whose rounded top edge peeks up at the bottom of the
-      hero, with the name pill showing. That peek is the scroll cue, with no text or arrow.
+      hero, already showing the start of the story. That peek is the scroll cue, with no text or arrow.
       Scrolling slides the sheet up over the hero while the hero softly fades.
    3. Below: photo + links float left, the story starts level with the photo, and once it
       passes them it runs the full width of the page. */
@@ -71,17 +71,10 @@ html{background:var(--dk);overscroll-behavior-y:none}
   border-radius:34px 34px 0 0;
   box-shadow:0 -30px 80px rgba(0,0,0,.45);
 }
-.home .page{max-width:64rem}
-
-/* name bar: always the dark pill, so it reads as a handle at the bottom of the hero */
-.home header{text-align:center;margin-bottom:2.2rem}
-.home .site-name{display:inline-block;margin:0}
-.home .site-name::before{display:none}
-.home .site-name a{
-  display:inline-block;padding:.1em .6em;border-radius:999px;
-  background:var(--dk);color:var(--cream);transition:color .3s ease;
-}
-.home .site-name a:hover{color:var(--amber)}
+/* No title bar: the page opens straight into the story. The top of the photo and the first line
+   of text show in the peek at the bottom of the hero, so the hero flows into the page. */
+.home .page{max-width:64rem;padding-top:44px}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
 
 /* ---------- STORY ---------- */
