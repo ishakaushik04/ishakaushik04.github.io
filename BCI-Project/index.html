@@ -1,351 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../media/Site logo.jpg" type="image/jpg">
-    <title>NeuroMetrics: Real-Time Cognitive Insights</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../media/Site logo.jpg" type="image/jpeg">
+<title>NeuroMetrics: Validating a Dry-EEG BCI | Isha Kaushik</title>
+<meta name="description" content="A convergent validation framework for a dry-EEG brain-computer interface measuring attention, emotion and memory response to ads.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../project.css">
 </head>
 <body>
+<div class="wrap">
+<a class="back" href="../index.html">← Back</a>
+<h1 class="sr-only">NeuroMetrics: real-time cognitive insights for creative content</h1>
 
-<header>
-    <a href="../index.html" class="back-link">← Back to Portfolio</a>
-    <h1 class="project-title">NeuroMetrics: Real-Time Cognitive Insights for Creative Content</h1>
-    <p class="project-subtitle">
-        Designed a rigorous, real-world validation framework for a dry-EEG BCI, measuring attention, emotion, and memory responses to commercial stimuli. The framework establishes ground truth, reliability, and sensitivity metrics, transforming exploratory neurotech into actionable insights for research and marketing.
-    </p>
-    <p class="project-status"><strong>Role:</strong> Research Specialist | R&D Validation Team</p>
-    <p class="project-contributors">
-        <strong>Duration:</strong> June - July 2023 | <strong>Organization:</strong> BehaveNeu (now pivoted to cognitive rehabilitation space)
-    </p>
-    <p class="project-status"><strong>Status:</strong> Framework Implemented | Device Commercialized</p>
-</header>
+<dl class="facts">
+  <div class="wide"><dt>Project</dt><dd>A validation framework for a dry-EEG brain-computer interface that measures attention, emotion and memory response to ads</dd></div>
+  <div><dt>Role</dt><dd>Research Specialist, R&amp;D Validation Team</dd></div>
+  <div><dt>Organization</dt><dd>BehaveNeu (now pivoted to cognitive rehabilitation)</dd></div>
+  <div><dt>Duration</dt><dd>June–July 2023</dd></div>
+  <div><dt>Status</dt><dd>Framework implemented, device commercialized</dd></div>
+  <div><dt>Output</dt><dd>Research report for my undergraduate institution (link on request)</dd></div>
+</dl>
 
-<main>
-    <!-- Introduction Section -->
-    <section>
-        <h2>The Validation Challenge</h2>
-        
-        <h3 class="subsection-heading">Market Context: The $1 Trillion Question</h3>
-        <p class="section-intro">
-            Global advertising budgets are expected to surpass $1 trillion in 2025. In this high-stakes context, brands invest heavily in creative content but lack reliable, neuroscience-based methods to measure how audiences actually think and feel in response. Without objective metrics of attention, emotion, and memory, millions of dollars of creative spend remain unanchored to cognitive truth.
-        </p>
-        <p class="section-intro">
-            Traditional market research relies on self-report - what people say they noticed, felt, or remembered. But decades of cognitive science reveal a fundamental problem: humans are poor reporters of their own mental states. We rationalize, forget, and reshape our experiences in the telling. Brain-Computer Interfaces (BCIs) promise to bypass this limitation by measuring neural activity directly - but how do you validate a device that claims to read thoughts?
-        </p>
+<section>
+  <p class="kicker">The problem</p>
+  <h2>How do you validate a device that claims to read minds?</h2>
+  <p class="lede">Global ad spend was projected to cross $1 trillion in 2025, yet brands still judge creative by what people say they noticed and felt. People rationalize, forget and reshape experiences. A BCI can skip that, but nothing exists to check the BCI against.</p>
 
-        <h3 class="subsection-heading">The Technical Bottleneck</h3>
-        <p class="section-intro">
-            This project addressed a critical challenge in BCI commercialization: establishing ground truth for cognitive insight generation. A neuromarketing startup had developed one of India's first dry-EEG wearables for measuring consumer responses to advertisements. The device was sleek, portable, and commercially viable - but without rigorous validation, its claims remained speculative.
-        </p>
-        <p class="section-intro">
-            The validation problem is deceptively complex. Attention, emotion, and memory are inherently subjective experiences. There's no "gold standard" brain scan you can compare against. Most neuromarketing validation studies focus on single constructs in isolation - measuring attention or emotion, but not both simultaneously, and rarely in real-world conditions. Our challenge was to design a convergent validation framework that could objectively measure the device's accuracy across multiple cognitive dimensions at once, using real commercial stimuli rather than artificial lab-generated content.
-        </p>
+  <div class="cols">
+    <div class="card"><h3>Self-report</h3><p>What people say. Easy to collect, unreliable by nature.</p></div>
+    <div class="card dark"><h3>Direct neural measure</h3><p>What the brain does. Promising, but attention, emotion and memory are subjective states, so there's no gold-standard scan to compare with.</p></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>5</b><span>cognitive domains validated at once</span></div>
+    <div class="stat"><b>45 min</b><span>per session, using real ads</span></div>
+    <div class="stat"><b>0</b><span>gold-standard scans to check against</span></div>
+  </div>
+</section>
 
-        <h3 class="subsection-heading">The Indian Market Context</h3>
-        <p class="section-intro">
-            India's advertising landscape presents unique challenges and opportunities. Cultural diversity, multilingual audiences, regional taste preferences, and distinct emotional triggers mean that Western neuromarketing paradigms can't simply be transplanted. We needed validation protocols suited for Indian audiences, tested on Indian advertisements, establishing baselines relevant to Indian consumer cognition. This wasn't just technical validation - it was cultural adaptation of neuroscience methodology.
-        </p>
-    </section>
+<section>
+  <p class="kicker">The idea</p>
+  <h2>Triangulate the truth.</h2>
+  <p class="lede">Existing paradigms test attention or emotion or memory, one at a time. This framework tests five domains together. If neural signals line up with independent behavioral measures across several constructs, confidence in the device compounds.</p>
+  <div class="flow" aria-label="Convergence logic">
+    <span>Neural signal</span><i>⇄</i><span>Recall</span><i>+</i><span>Self-report ratings</span><i>+</i><span>Behavior</span><i>→</i><span><b>Convergence = provisional ground truth</b></span>
+  </div>
 
-    <!-- Contribution Section -->
-    <section>
-        <h2>My Contribution: Scientific Foundation & Commercial Translation</h2>
-        
-        <div class="contribution-section">
-            <h3 class="contribution-heading">What I Led (Under Senior Guidance)</h3>
-            <div class="contribution-box">
-                <p class="section-intro">
-                    <strong>Literature Synthesis & Evidence Base:</strong> Conducted comprehensive review across cognitive neuroscience, experimental psychology, and neuromarketing research to establish evidence-based validation criteria. Synthesized findings from EEG studies, emotion theory, memory encoding research, and attention paradigms into a unified framework. This wasn't just collecting papers - it was translating academic findings into testable protocols.
-                </p>
-                <p class="section-intro">
-                    <strong>Ground Truth Methodology:</strong> Designed the conceptual architecture for establishing "ground truth" in subjective cognitive states. When validating attention detection, what counts as "true attention"? I developed convergent measurement logic - combining multiple indicators to triangulate truth where no single measure is definitive. This required deep engagement with epistemological questions at the heart of cognitive measurement.
-                </p>
-                <p class="section-intro">
-                    <strong>Scientific Rigor & Constraints:</strong> Ensured each of the five cognitive domains (attention, memorability, emotional arousal, attitude toward ad, brand perception) had robust scientific backing while remaining realistic about dry-EEG limitations. Dry electrodes are noisier than lab-grade wet EEG; I had to balance what the literature says is possible with what the technology could actually deliver.
-                </p>
-                <p class="section-intro">
-                    <strong>Experimental Protocol Design:</strong> Translated academic paradigms into commercially viable testing procedures. Lab studies use 100+ trials per condition with strict controls; we needed protocols that could run in 45 minutes with real ads in varied formats. I designed the experimental flow, stimulus presentation logic, and measurement sequencing that maintained scientific validity while fitting commercial constraints.
-                </p>
-            </div>
-        </div>
+  <h3 style="margin-top:1.6rem">Four tests it had to pass</h3>
+  <div class="cols q">
+    <div class="card"><h3>Convergent</h3><p>Do neural measures track independent behavioral ones? “High attention” with poor recall is a failure.</p></div>
+    <div class="card"><h3>Discriminant</h3><p>Can it tell ads apart? Calling every ad “moderately engaging” is useless.</p></div>
+    <div class="card"><h3>Reliable</h3><p>Consistent within a session, across sessions, and between analysts.</p></div>
+    <div class="card"><h3>Sensitive</h3><p>Detects differences big enough for brands to act on: recall, preference, purchase intent.</p></div>
+  </div>
+</section>
 
-        <div class="contribution-section">
-            <h3 class="contribution-heading">What I Co-Developed with the Team</h3>
-            <div class="contribution-box">
-                <p class="section-intro">
-                    <strong>Commercial Validation Workflow:</strong> Worked alongside senior team members to translate brain signal patterns into actionable marketing insights. The device needed to output more than "high frontal alpha" - it needed to tell brands "this ad will be remembered" or "this creative triggers approach motivation." I contributed the scientific reasoning behind these translations.
-                </p>
-                <p class="section-intro">
-                    <strong>Real-World Applicability:</strong> Collaborated on navigating tradeoffs between experimental control and ecological validity. Testing real advertisements means accepting uncontrolled variables - music, length, celebrity presence, production quality. We developed statistical and methodological approaches to extract signal from this noise.
-                </p>
-                <p class="section-intro">
-                    <strong>Cultural Adaptation:</strong> Contributed to adapting validation protocols for Indian market specificity. This included considerations of regional language processing, cultural emotion norms (display rules differ across cultures), and India-specific advertising conventions (family-oriented messaging, festival contexts, celebrity endorsement patterns).
-                </p>
-            </div>
-        </div>
+<section>
+  <p class="kicker">The five domains</p>
+  <h2>What was checked against what.</h2>
+  <div class="scroll-x"><table class="vs">
+    <tr><th>Domain</th><th>Neural signal should predict</th><th>The hard part</th></tr>
+    <tr><td>Attention</td><td>Which ads are remembered better, rated more engaging, processed more deeply</td><td>It's continuous and shifts across a 30–60 second ad, not on or off</td></tr>
+    <tr><td>Memorability</td><td>Delayed recall, recognition accuracy, memory confidence</td><td>EEG sees encoding. Consolidation happens offline</td></tr>
+    <tr><td>Emotional arousal</td><td>Self-reported intensity, physiological arousal, behavioral impact</td><td>Arousal isn't valence. Display rules differ across cultures</td></tr>
+    <tr><td>Attitude to ad</td><td>Explicit likeability ratings, from approach vs avoidance patterns</td><td>Production quality, relevance and social desirability muddy it</td></tr>
+    <tr><td>Brand perception</td><td>Preference rankings, simulated choices, pre/post attitude shift</td><td>One ad is a single data point against years of brand history</td></tr>
+  </table></div>
 
-        <div class="output-box">
-            <p class="section-intro">
-                <strong>Output:</strong> Comprehensive neuromarketing research report submitted to undergraduate institution, synthesizing scientific literature and validation methodology. <em>[Link available upon request]</em>
-            </p>
-        </div>
-    </section>
+  <div class="flow"><span>Attention</span><i>enables</i><span>Memory encoding</span></div>
+  <div class="flow" style="margin-top:-.4rem"><span>Emotional arousal</span><i>strengthens</i><span>Memory consolidation</span></div>
+  <div class="flow" style="margin-top:-.4rem"><span>Liking the ad</span><i>transfers to</i><span>Brand perception</span></div>
+  <p class="small">The domains are causally linked, and testing those links is where the validation power came from.</p>
 
-    <!-- Framework Section -->
-    <section id="validation-framework">
-        <h2>The Validation Framework: Multi-Domain Convergent Architecture</h2>
-        
-        <p class="section-intro">
-            The core innovation wasn't measuring attention, emotion, or memory individually - existing paradigms do that. Our contribution was designing a framework that validates all five cognitive domains simultaneously through convergent multi-modal measurement. If the device's neural measures align with behavioral outcomes across multiple independent constructs, confidence in its validity compounds.
-        </p>
+  <div class="gallery four">
+    <figure><img src="Slide 1.PNG" alt="Rating scale from 1 (not memorable) to 5 (very memorable)." loading="lazy"><figcaption>Memorability scale</figcaption></figure>
+    <figure><img src="Slide 2.PNG" alt="Rating scale from 1 (negative) to 5 (positive) for emotions." loading="lazy"><figcaption>Emotion scale</figcaption></figure>
+    <figure><img src="Slide 3.PNG" alt="Rating scale from 1 (boring) to 5 (interesting) for attitude towards the ad." loading="lazy"><figcaption>Attitude to ad</figcaption></figure>
+    <figure><img src="Slide 4.PNG" alt="Rating scale from 1 (unfamiliar) to 5 (familiar) for attitude towards the brand." loading="lazy"><figcaption>Attitude to brand</figcaption></figure>
+  </div>
+</section>
 
-        <div class="framework-philosophy-box">
-            <h3>Framework Philosophy: Why Convergent Validity?</h3>
-            <p class="section-intro">
-                Convergent validity operates on a simple principle: if you're truly measuring a construct, it should correlate with other established measures of that same construct. If a device claims to detect attention, and people it labels "highly attentive" also perform better on recall tests, rate the ad as more engaging, and show behavioral indicators of focus - that convergence builds confidence.
-            </p>
-            <p class="section-intro">
-                We extended this logic across five domains. Each domain had neural indicators (from the EEG) and independent validation measures (behavioral, psychological, or performance-based). The framework's strength came from treating these not as isolated tests, but as an integrated system where cross-domain consistency reveals overall device reliability.
-            </p>
-        </div>
+<section>
+  <p class="kicker">The setup</p>
+  <h2>Real ads, real conditions.</h2>
+  <p class="lede">Real ads are messy, and that's the point. If the device only works on clean lab stimuli, it isn't commercially viable. Everything ran on Indian ads with Indian participants, because emotional triggers and narrative conventions differ from the Western norms most neuromarketing is built on.</p>
+  <div class="scroll-x"><table class="vs">
+    <tr><th></th><th>Typical lab study</th><th>This validation</th></tr>
+    <tr><td>Stimuli</td><td>Simple, researcher-made</td><td>Real ads brands paid to air</td></tr>
+    <tr><td>Scale</td><td>100+ trials per condition</td><td>45-minute sessions</td></tr>
+    <tr><td>Control</td><td>Strict</td><td>Music, length, celebrities and production quality all vary</td></tr>
+    <tr><td>Audience</td><td>Mostly Western</td><td>Indian participants, Indian baselines</td></tr>
+  </table></div>
+  <figure class="fig"><img src="Screenshot 2025-12-10 220614.png" alt="Spreadsheet listing each ad video with category and coding columns." loading="lazy"><figcaption>The stimulus sheet used to organize the ads</figcaption></figure>
+</section>
 
-        <div class="framework-part">
-            <h3>Domain 1: Attention Detection</h3>
-            <p class="section-intro">
-                Attention is the gateway to all downstream cognitive processing. If an ad isn't attended to, it can't be remembered or emotionally processed. We established validation logic combining neural markers of focused attention with behavioral indicators and post-exposure performance.
-            </p>
-            <p class="framework-use">
-                <strong>Validation Logic:</strong> Neural attention signals should predict which ads participants remember better, rate as more engaging, and demonstrate processing depth on. Convergence across these measures validates attention detection accuracy.
-            </p>
-            <p class="section-intro">
-                <strong>Challenge:</strong> Attention isn't binary (focused vs. unfocused) - it's continuous, fluctuating, and has multiple types (sustained, selective, divided). Our framework had to account for attention dynamics across the 30-60 second duration of advertisements, not just static "attentive" labels.
-            </p>
-        </div>
+<section>
+  <p class="kicker">What broke, and the fix</p>
+  <h2>Four problems.</h2>
+  <details class="acc"><summary>1 · The ground truth problem</summary><div class="inner">
+    <p><b>Problem</b>No objective right answer for a mental state.</p>
+    <p><b>Fix</b>Convergent proxies. When behavior, self-report and neural patterns agree, treat it as provisional ground truth.</p></div></details>
+  <details class="acc"><summary>2 · Dry-EEG noise</summary><div class="inner">
+    <p><b>Problem</b>Dry electrodes are practical but noisier than lab-grade wet EEG. Movement, interference and contact add error.</p>
+    <p><b>Fix</b>Thresholds for acceptable signal-to-noise, artifact rejection rules, and statistics that carry the uncertainty.</p></div></details>
+  <details class="acc"><summary>3 · Real ads confound everything</summary><div class="inner">
+    <p><b>Problem</b>Was it memorable for the music, the celebrity, the humor or the product?</p>
+    <p><b>Fix</b>Many ads across categories, within-subject comparisons, and relative questions (which ad is more memorable?) over absolute scores.</p></div></details>
+  <details class="acc"><summary>4 · Rigor vs commercial speed</summary><div class="inner">
+    <p><b>Problem</b>Academic validation takes hundreds of participants and months. Commercial timelines don't.</p>
+    <p><b>Fix</b>Prioritize attention, memory and emotion. Maximize information per session. Not complete by academic standards, but enough for commercial confidence, and built to improve with more data.</p></div></details>
+</section>
 
-        <div class="framework-part">
-            <h3>Domain 2: Memorability Prediction</h3>
-            <p class="section-intro">
-                Memory is marketing's ultimate outcome - if consumers don't remember your ad, it didn't work. We designed validation around a core question: can the device predict, at the moment of viewing, which ads will be recalled days later?
-            </p>
-            <p class="framework-use">
-                <strong>Validation Logic:</strong> Neural encoding strength measured during ad exposure should correlate with delayed recall performance, recognition accuracy, and memory confidence ratings. Strong encoding signals should predict better memory outcomes.
-            </p>
-            <p class="section-intro">
-                <strong>Challenge:</strong> Memory formation involves encoding (during viewing), consolidation (after viewing), and retrieval (at recall). EEG measures encoding, but consolidation happens offline. We needed validation designs that isolated encoding quality while acknowledging downstream processes.
-            </p>
-        </div>
+<section>
+  <div class="cols">
+    <div class="card">
+      <h3>What I led, under senior guidance</h3>
+      <ul class="clean">
+        <li>Literature synthesis across neuroscience, psychology and neuromarketing</li>
+        <li>Ground-truth logic: convergent measures where no single one is definitive</li>
+        <li>Scientific backing for each of the five domains, within dry-EEG limits</li>
+        <li>The 45-minute protocol: flow, stimulus presentation, measurement order</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>What I co-developed with the team</h3>
+      <ul class="clean">
+        <li>Turning “high frontal alpha” into “this ad will be remembered”</li>
+        <li>Trading off experimental control against real-world validity</li>
+        <li>Indian adaptation: regional language processing, emotion display rules, family and festival messaging, celebrity endorsements</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-        <div class="framework-part">
-            <h3>Domain 3: Emotional Arousal Measurement</h3>
-            <p class="section-intro">
-                Emotion drives decision-making and memory consolidation. Ads that evoke strong emotional responses are remembered better and influence brand attitudes more. We validated the device's capacity to detect emotional arousal in real-time during ad viewing.
-            </p>
-            <p class="framework-use">
-                <strong>Validation Logic:</strong> Neural arousal indicators should align with self-reported emotional intensity, physiological arousal patterns, and behavioral outcomes (arousing ads are rated as more impactful and memorable).
-            </p>
-            <p class="section-intro">
-                <strong>Challenge:</strong> Emotional arousal (intensity) is distinct from valence (positive vs. negative). Our framework measured arousal; valence required additional indicators. We also had to account for cultural display rules - Indian participants might report emotions differently than Western samples, even with similar neural patterns.
-            </p>
-        </div>
+<section>
+  <p class="kicker">Outcome</p>
+  <h2>It shipped, and it travels.</h2>
+  <ul class="clean" style="max-width:44rem">
+    <li>Helped the startup take its dry-EEG device to market with scientific backing. It is positioned as one of India's leading BCIs for cognitive measurement.</li>
+    <li>The company later moved into cognitive rehabilitation. The validation work still underpins its product claims.</li>
+    <li>The method can adapt to other BCIs, other metrics and other cultures, and shows validation can work outside a perfect lab.</li>
+  </ul>
+  <p class="note">Limits: this was pre-market. The real test is whether predictions in client projects match downstream outcomes like sales, awareness and preference. Validation beyond India is also open.</p>
 
-        <div class="framework-part">
-            <h3>Domain 4: Attitude Toward Advertisement</h3>
-            <p class="section-intro">
-                Beyond physiological responses, advertising aims to shape attitudes - how favorably consumers view the creative itself. We validated implicit neural preference signals against explicit attitude measures.
-            </p>
-            <p class="framework-use">
-                <strong>Validation Logic:</strong> Neural approach/avoidance patterns should predict explicit attitude ratings. Ads triggering neural "approach" motivation should be rated more favorably on likeability scales.
-            </p>
-            <p class="section-intro">
-                <strong>Challenge:</strong> Attitudes are shaped by multiple factors - message content, production quality, personal relevance, and social desirability bias in reporting. Neural measures promise to reveal implicit attitudes, but validation required careful design to separate true attitude from confounding factors.
-            </p>
-        </div>
-
-        <div class="framework-part">
-            <h3>Domain 5: Brand Perception Impact</h3>
-            <p class="section-intro">
-                The ultimate marketing outcome: does the ad improve how consumers perceive the brand? We validated neural brand response measures against behavioral preference and choice indicators.
-            </p>
-            <p class="framework-use">
-                <strong>Validation Logic:</strong> Neural brand association strength should predict brand preference rankings, choice behavior in simulated decisions, and attitude shifts from pre- to post-exposure.
-            </p>
-            <p class="section-intro">
-                <strong>Challenge:</strong> Brand perception is built over years of exposure; a single ad is one data point. We had to design validation that isolated the marginal impact of the tested ad while acknowledging pre-existing brand attitudes and category preferences.
-            </p>
-        </div>
-        <div class="image-grid">
-    <img src="Slide 1.PNG" alt="Image 1">
-    <img src="Slide 2.PNG" alt="Image 2">
-    <img src="Slide 3.PNG" alt="Image 3">
-    <img src="Slide 4.PNG" alt="Image 4">
+  <div class="band">
+    <p class="kicker">What it changed for me</p>
+    <p class="big">From “can we measure this?” to “should we?”</p>
+    <p style="margin:1rem 0 0;font-size:.95rem">Who owns brain data? How do we stop cognitive surveillance? Those questions became my master's work in neuroethics, including a <a href="../media/Thesis%20Final%20Doc.pdf">thesis</a> on BCI thought-to-text with a governance framework.</p>
+  </div>
+</section>
 </div>
-        <p class="section-intro">
-            <strong>Framework Integration:</strong> These five domains weren't independent silos - they're causally linked. Attention enables memory encoding; emotional arousal enhances memory consolidation; positive attitudes toward ads transfer to brand perception. The framework's validation power came from testing these interconnections, not just isolated measures.
-        </p>
-    </section>
 
-    <!-- Methodology Section -->
-    <section>
-        <h2>Methodology: Real-World Validation</h2>
+<footer><p>© 2026 Isha Kaushik</p></footer>
 
-        <h3 class="subsection-heading">Why Real Advertisements?</h3>
-        <p class="section-intro">
-            Most neuromarketing validation studies use controlled, artificial stimuli - simple shapes, abstract patterns, or researcher-created content. This maximizes experimental control but sacrifices ecological validity. We made a different choice: validate on real advertisements that brands actually paid to produce and air.
-        </p>
-        <p class="section-intro">
-            Real ads are messy. They vary in length, production quality, music, celebrity presence, and message complexity. But this messiness is the reality the device needs to handle. If it only works on carefully controlled lab stimuli, it's not commercially viable. Our validation demonstrated the device could extract meaningful signals from real-world creative chaos.
-        </p>
-
-        <h3 class="subsection-heading">Cultural Relevance: Indian Market Testing</h3>
-        <p class="section-intro">
-            We tested exclusively on Indian advertisements viewed by Indian participants. This wasn't just convenient - it was methodologically essential. Neuromarketing research is dominated by Western samples, Western stimuli, and Western cultural assumptions. Emotional triggers, narrative structures, and visual conventions differ across cultures. A device validated only on Western content might fail in Indian markets.
-        </p>
-        <p class="section-intro">
-            Our validation established Indian-specific baselines and norms. What does "high attention" look like in Indian consumers? How do emotional arousal patterns differ when viewing family-oriented messaging versus aspirational individual achievement narratives? These culturally-grounded insights made the framework not just scientifically rigorous, but commercially relevant for the target market.
-        </p>
-        <img src="Screenshot 2025-12-10 220614.png" alt="Example Picture" class="example-picture">
-        <h3 class="subsection-heading">Validation Approach: Convergence, Reliability, Sensitivity</h3>
-        
-        <div class="methodology-box">
-            <p class="section-intro">
-                <strong>Convergent Validity:</strong> Do the device's neural measures correlate with independent behavioral and psychological indicators? If the EEG says "high attention" but recall is poor and engagement ratings are low, that's a validation failure. We designed the framework to quantify these convergences across all five domains.
-            </p>
-        </div>
-
-        <div class="methodology-box">
-            <p class="section-intro">
-                <strong>Discriminant Validity:</strong> Can the device distinguish meaningful differences? If it labels all ads as "moderately engaging," it's not useful. We tested whether the device could differentiate high-performing ads from low-performing ones, subtle emotional variations, and attention fluctuations within single advertisements.
-            </p>
-        </div>
-
-        <div class="methodology-box">
-            <p class="section-intro">
-                <strong>Reliability:</strong> Does the device produce consistent results? Reliability was tested through multiple measurement approaches - internal consistency within sessions, test-retest stability across sessions, and inter-rater reliability when multiple analysts interpreted the same data.
-            </p>
-        </div>
-
-        <div class="methodology-box">
-            <p class="section-intro">
-                <strong>Sensitivity:</strong> Can it detect effects that matter to brands? Statistical significance isn't enough - the device needs to detect differences large enough to inform creative decisions. We validated that the device's measurements correlated with real-world outcomes brands care about: recall, preference, and purchase intent.
-            </p>
-        </div>
-    </section>
-
-    <!-- Challenges Section -->
-    <section>
-        <h2>Challenges & Solutions</h2>
-
-        <div class="challenge-box">
-            <h3 class="challenge-heading">Challenge 1: The Ground Truth Problem</h3>
-            <p class="section-intro">
-                <strong>The Problem:</strong> How do you validate a device measuring subjective mental states when there's no objective "right answer"? There's no brain scanner that definitively says "this person is attending" or "this emotion is exactly 7.3 arousal units."
-            </p>
-            <p class="section-intro">
-                <strong>Our Solution:</strong> We didn't search for perfect ground truth - we built convergent proxies. If behavioral performance, self-reports, and neural patterns all align, we treat that convergence as provisional ground truth. The framework's strength is acknowledging this epistemological limitation while working within it rigorously.
-            </p>
-        </div>
-
-        <div class="challenge-box">
-            <h3 class="challenge-heading">Challenge 2: Dry-EEG Signal Quality</h3>
-            <p class="section-intro">
-                <strong>The Problem:</strong> Dry electrodes are commercially practical (no gel, quick setup) but produce noisier signals than lab-grade wet EEG. Movement artifacts, environmental interference, and contact variability introduce measurement error.
-            </p>
-            <p class="section-intro">
-                <strong>Our Solution:</strong> We designed validation protocols robust to this noise. Rather than requiring perfect signal quality, we established thresholds for acceptable signal-to-noise ratios and validated the device's performance within those realistic constraints. This involved signal processing protocols, artifact rejection criteria, and statistical approaches that account for measurement uncertainty.
-            </p>
-        </div>
-
-        <div class="challenge-box">
-            <h3 class="challenge-heading">Challenge 3: Real Ads = Uncontrolled Variables</h3>
-            <p class="section-intro">
-                <strong>The Problem:</strong> Real advertisements confound everything. A memorable ad might be memorable because of the music, the celebrity, the humor, the product itself, or pure production quality. How do you validate neural measures when you can't control for these factors?
-            </p>
-            <p class="section-intro">
-                <strong>Our Solution:</strong> We embraced large-sample statistical approaches and within-subject comparisons. By testing many ads across diverse categories, we let confounds average out. We also designed validation around relative predictions (which ad is more memorable?) rather than absolute scales (this ad scores 8.2 memorability), which are more robust to uncontrolled variation.
-            </p>
-        </div>
-
-        <div class="challenge-box">
-            <h3 class="challenge-heading">Challenge 4: Balancing Rigor and Commercial Viability</h3>
-            <p class="section-intro">
-                <strong>The Problem:</strong> Academic validation standards are exhaustive - hundreds of participants, months of testing, strict controls. Commercial timelines demand faster, cheaper validation that still maintains credibility.
-            </p>
-            <p class="section-intro">
-                <strong>Our Solution:</strong> We prioritized high-impact validation over comprehensive validation. We focused on the cognitive domains brands care most about (attention, memory, emotion) and designed efficient protocols that maximized information per session. The framework wasn't "complete" in academic terms, but it was sufficient for commercial confidence - and designed for iterative improvement as more data accumulated.
-            </p>
-        </div>
-    </section>
-
-    <!-- Impact Section -->
-    <section>
-        <h2>Impact & Outcomes</h2>
-
-        <h3 class="subsection-heading">Immediate Commercial Impact</h3>
-        <p class="section-intro">
-            The validation framework helped the startup bring their dry-EEG device to market with strong scientific backing. The device is now positioned as one of India’s leading brain-computer interfaces for cognitive measurement. The company later shifted its focus to cognitive rehabilitation, but the core validation work we created is still part of how they justify their product claims.
-        </p>
-
-        <h3 class="subsection-heading">Methodological Contribution</h3>
-        <p class="section-intro">
-            This framework is not only useful for this one device. It shows a practical way to validate consumer neuroscience tools in emerging markets. The convergent, multi-domain approach we used can be adapted to other BCIs, other cognitive metrics, and different cultural settings. It also proves that meaningful validation can be done outside a perfectly controlled lab environment.
-        </p>
-
-        <h3 class="subsection-heading">Market Validation</h3>
-        <p class="section-intro">
-            Before this project, most neuromarketing in India relied on imported Western methods or had little formal validation. Our work showed that it is possible to build neuromarketing tools that are both culturally relevant and scientifically rigorous. This helped open doors for research and commercial activity in a market that was still developing.
-        </p>
-
-        <h3 class="subsection-heading">Personal Impact</h3>
-        <p class="section-intro">
-            This project changed the way I think about brain technologies. Working at the intersection of neuroscience, psychology, and business made me confront questions that traditional research often avoids.
-Who owns brain data? How do we protect people from cognitive surveillance? If we can measure mental states, should we?
-        </p>
-        <p class="section-intro">
-            These questions now form the basis of my master's work in neuroethics. The project taught me how the technology functions. My current work asks when and how it should be used. Moving from "can we measure this?" to "should we measure this?" has shaped the direction of my research.
-        </p>
-    </section>
-
-    <!-- Reflection Section -->
-    <section>
-        <h2>Reflections</h2>
-
-        <h3 class="subsection-heading">What I Learned About Validation</h3>
-        <p class="section-intro">
-            Validation is not a yes-or-no process. It builds confidence step by step. Our framework did not claim the device was perfect. It created structured evidence that allowed for honest, transparent commercial communication.
-        </p>
-
-        <h3 class="subsection-heading">What I Learned About Translation</h3>
-        <p class="section-intro">
-            There is a big gap between something working in a controlled lab and working in real life. Academic research focuses on ideal conditions. Commercial products must work in unpredictable environments. Innovation happens when you can bridge these two worlds with a balanced mindset.
-            </p>
-
-        <h3 class="subsection-heading">What I Learned About Rigor Under Constraints</h3>
-        <p class="section-intro">
-            Commercial timelines and scientific rigor are often seen as opposites, but they can work together. Clear communication about what has been tested, what has not, and where uncertainty remains allows teams to move fast without compromising integrity.
-        </p>
-
-        <h3 class="subsection-heading">Limitations & Future Directions</h3>
-        <p class="section-intro">
-            Our validation was pre-market. The real test is post-deployment accuracy - do the device's predictions in client projects align with downstream brand outcomes (sales, awareness, preference shifts)? That longitudinal validation is the next frontier, and it requires partnerships between researchers and platforms with access to proprietary outcome data.
-        </p>
-        <p class="section-intro">
-            Cross-cultural validation beyond India is also needed. Does this framework translate to other emerging markets - Southeast Asia, Latin America, Africa? The convergent validation logic should generalize, but the specific measures, baselines, and cultural adaptations will differ.
-        </p>
-
-        <div class="connection-box">
-            <p class="section-intro">
-                <strong>Connection to Current Work:</strong> This project planted seeds that grew into my thesis. If brain-reading devices become commercially viable - and this project showed they can be - we need governance frameworks as rigorous as the technical validation. Who regulates neuromarketing claims? What consent standards apply to brain data? How do we prevent cognitive manipulation? These aren't hypothetical futures - they're emerging realities that need proactive ethical architecture. That's the work I'm doing now.
-            </p>
-        </div>
-    </section>
-
-</main>
-
-<footer>
-    <p>© 2025 Isha Kaushik - All Rights Reserved</p>
-</footer>
-
+<script src="../project.js"></script>
 </body>
 </html>
