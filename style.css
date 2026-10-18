@@ -1,185 +1,32 @@
-/* Fonts (Fraunces + Literata) load from <link> tags in the <head> of each page. */
-
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
-:root {
-  --edge: clamp(20px, 3.5vw, 56px);   /* even side space, left and right */
-  --photo: 240px;
-  --brown: 122, 79, 26;               /* the warm accent, as rgb for the paint washes */
-}
-
-body {
-  margin: 0;
-  font-family: 'Literata', Georgia, serif;
-  font-weight: 340;              /* a touch sturdier than 300, easier on cream */
-  font-size: 1.0625rem;          /* 17px */
-  line-height: 1.7;
-  color: #1a2e1c;
-  background-color: #f8f3ea;
-  font-optical-sizing: auto;     /* Literata adapts its drawing to each size */
-  font-kerning: normal;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-::selection { background: rgba(var(--brown), 0.22); }
-
-a {
-  color: #7a4f1a;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-decoration-color: rgba(var(--brown), 0.4);
-  text-underline-offset: 4px;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
-}
-a:hover { color: #1a2e1c; text-decoration-color: #1a2e1c; }
-a:focus-visible { outline: 2px solid #7a4f1a; outline-offset: 3px; border-radius: 2px; }
-
-p {
-  margin: 0 0 1.05rem;
-  color: #1a2e1c;
-  text-wrap: pretty;             /* avoids lonely last words */
-}
-
-/* links stay a touch heavier than the body so they read as links */
-main a, .intro-text a { font-weight: 440; }
-
-/* the <b> tags in the degrees lines: bold, but not shouty */
-b, strong { font-weight: 600; }
-
-.page { padding: 28px var(--edge); max-width: 60rem; margin: 0 auto; }
-
-/* TOP BLOCK: round photo and social icons in the left column; the name and the
-   first two paragraphs share one left-aligned reading edge in the right column. */
-.intro {
-  display: grid;
-  grid-template-columns: calc(var(--photo) + 24px) minmax(0, 1fr);
-  grid-template-rows: auto auto 1fr;   /* name, first paragraph, the rest */
-  column-gap: 40px;
-  align-items: start;
-}
-.intro-text { display: contents; }     /* name and paragraphs become grid items */
-.site-name { grid-column: 2; grid-row: 1; justify-self: start; }
-.intro-text p { grid-column: 2; }
-.intro-text p:nth-of-type(1) { grid-row: 2; }
-.intro-text p:nth-of-type(2) { grid-row: 3; }
-.intro-text p:last-child { margin-bottom: 0; }
-/* photo + icons start level with the first line of text; the extra top padding
-   lets the hand-drawn ring begin where the letters begin */
-.side {
-  grid-column: 1;
-  grid-row: 2 / span 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 12px;
-}
-
-/* the essay below spans the same width as the photo + intro block above */
-main { clear: both; margin-top: 1.1rem; }
-
-.site-name {
-  position: relative;
-  isolation: isolate;
-  display: inline-block;
-  margin: 0 0 1.1rem;
-  font-family: 'Fraunces', 'Literata', Georgia, serif;
-  font-size: 2.2rem;
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-}
-.site-name a { color: #1a2e1c; text-decoration: none; }
-.site-name a:hover { color: #7a4f1a; }
-/* the original brush wash behind the name */
-.site-name::before {
-  content: "";
-  position: absolute;
-  left: -10px;
-  right: -12px;
-  top: 52%;
-  height: 0.55em;
-  background: linear-gradient(
-    100deg,
-    transparent 0%,
-    rgba(var(--brown), 0.12) 10%,
-    rgba(var(--brown), 0.24) 45%,
-    rgba(var(--brown), 0.18) 75%,
-    transparent 100%
-  );
-  border-radius: 50% / 45%;
-  transform: rotate(-2.5deg) skewX(-10deg);
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* round photo with the loose, hand-drawn ring */
-.photo-wrap { position: relative; width: var(--photo); height: var(--photo); margin: 0 auto; }
-.photo-wrap::before {
-  content: "";
-  position: absolute;
-  inset: -7px;
-  border: 2px solid rgba(var(--brown), 0.42);
-  border-radius: 52% 48% 50% 50% / 50% 53% 47% 50%;
-  transform: rotate(-5deg);
-  pointer-events: none;
-}
-.profile-photo {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: 45% 30%;
-  display: block;
-  filter: grayscale(15%) sepia(8%);
-}
-
-/* social icons, right under the photo, centred on it (44px tap targets) */
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 2px;
-  margin: 1.1rem 0 0;
-}
-.contact-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  color: #6f5430;
-  line-height: 0;
-  text-decoration: none;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-.contact-links a:hover { color: #1a2e1c; transform: translateY(-2px); }
-.contact-links svg { width: 22px; height: 22px; fill: currentColor; }
-.contact-links svg.stroke { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-
-/* FOOTER: just the copyright, centred */
-footer {
-  clear: both;
-  margin-top: 2.4rem;
-  padding-top: 1rem;
-  border-top: 1px solid #e5e0d8;
-}
-footer p { margin: 0; font-size: 0.9rem; letter-spacing: 0.02em; color: #7a6548; text-align: center; }
-
-/* MOBILE: everything stacks and centres: name, photo, icons, then the text. */
-@media (max-width: 760px) {
-  :root { --photo: 150px; }
-  body { font-size: 1rem; }
-  .page { padding-top: 22px; }
-  .intro { display: flex; flex-direction: column; align-items: center; }
-  .intro-text { display: contents; }          /* lets the name and paragraphs be ordered individually */
-  .site-name { order: -2; font-size: 1.9rem; margin-bottom: 1.2rem; text-align: center; }
-  .side { order: -1; margin-bottom: 1.5rem; padding-top: 0; }
-  .intro-text p { align-self: stretch; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { transition: none !important; }
+/* Homepage only. Dark theme = the site's own ink green, with cream + a lightened brown. */
+:root{--dk:#0f1a11;--cream:#f8f3ea;--amber:#d6a566}
+.home .page{max-width:64rem}
+.home header{text-align:center;margin-bottom:2rem}
+.home .site-name{display:inline-block;margin:0}
+.home .site-name a{display:inline-block;padding:.1em .6em;border-radius:999px;transition:background .5s,color .5s}
+.home .site-name.lit a{background:var(--dk);color:var(--cream)}
+.home .site-name.lit a:hover{color:var(--amber)}
+.home .site-name.lit::before{opacity:0}
+.layout{display:grid;grid-template-columns:calc(var(--photo) + 24px) minmax(0,1fr);column-gap:48px;align-items:start}
+.layout .side{position:sticky;top:28px;grid-column:auto;grid-row:auto}
+.profile-photo{object-position:50% 40%;filter:none}
+.js .page{opacity:0}
+.js.ready .page{opacity:1;transition:opacity .7s ease .25s}
+#veil{position:fixed;inset:0;background:var(--cream);z-index:50;transition:opacity .5s ease}
+#hero{position:fixed;inset:0;margin:auto;z-index:51;width:min(940px,92vw);height:min(540px,86vh);display:grid;
+  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);background:var(--dk);border-radius:28px;overflow:hidden;
+  box-shadow:0 30px 80px rgba(26,46,28,.35);cursor:pointer}
+#hero[hidden],#veil[hidden]{display:none}
+#hero img{width:100%;height:100%;object-fit:cover;display:block}
+#hero .copy{align-self:center;margin:0;padding:2.4rem 2.8rem;font-family:'Fraunces',Georgia,serif;font-weight:400;
+  font-size:clamp(1.2rem,2.4vw,1.85rem);line-height:1.35;color:var(--cream);letter-spacing:-.005em;min-height:7.5em}
+#hero .copy em{font-style:normal;color:var(--amber)}
+#hero .caret{display:inline-block;width:.09em;height:1em;margin-left:.08em;vertical-align:-.12em;background:var(--amber);animation:blink .7s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+#hero .skip{position:absolute;right:1.2rem;bottom:.9rem;font:.72rem 'Literata',serif;letter-spacing:.08em;color:rgba(248,243,234,.4)}
+@media (max-width:760px){
+  .layout{display:flex;flex-direction:column;align-items:center}
+  .layout .side{position:static;margin-bottom:1.5rem}
+  #hero{grid-template-columns:1fr;grid-template-rows:minmax(0,46%) 1fr;height:min(660px,88vh)}
+  #hero .copy{padding:1.4rem 1.6rem}
 }
