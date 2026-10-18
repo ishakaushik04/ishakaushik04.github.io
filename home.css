@@ -1,5 +1,5 @@
-/* Homepage only. Dark theme = the site's own ink green, with cream + a lightened brown. */
-:root{--dk:#0f1a11;--cream:#f8f3ea;--amber:#d6a566}
+/* Homepage only: black hero panel, cream page, amber accent. */
+:root{--dk:#0a0a0a;--cream:#f8f3ea;--amber:#d6a566}
 .home .page{max-width:64rem}
 .home header{text-align:center;margin-bottom:2rem}
 .home .site-name{display:inline-block;margin:0}
@@ -11,7 +11,7 @@
 .layout .side{position:sticky;top:28px;grid-column:auto;grid-row:auto}
 .profile-photo{object-position:50% 40%;filter:none}
 #veil{position:fixed;inset:0;background:var(--cream);z-index:50;transition:opacity .5s ease}
-#hero{position:fixed;inset:0;margin:auto;z-index:51;width:min(940px,92vw);height:min(540px,86vh);display:grid;
+#hero{position:fixed;inset:0;margin:auto;z-index:51;width:min(940px,92vw);height:min(540px,78vh);display:grid;
   grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);background:var(--dk);border-radius:28px;overflow:hidden;
   box-shadow:0 30px 80px rgba(26,46,28,.35);cursor:pointer}
 #hero[hidden],#veil[hidden]{display:none}
@@ -21,10 +21,16 @@
 #hero .copy em{font-style:normal;color:var(--amber)}
 #hero .caret{display:inline-block;width:.09em;height:1em;margin-left:.08em;vertical-align:-.12em;background:var(--amber);animation:blink .7s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
-#hero .skip{position:absolute;right:1.2rem;bottom:.9rem;font:.72rem 'Literata',serif;letter-spacing:.08em;color:rgba(248,243,234,.4)}
 @media (max-width:760px){
   .layout{display:flex;flex-direction:column;align-items:center}
   .layout .side{position:static;margin-bottom:1.5rem}
-  #hero{grid-template-columns:1fr;grid-template-rows:minmax(0,46%) 1fr;height:min(660px,88vh)}
+  #hero{grid-template-columns:1fr;grid-template-rows:minmax(0,46%) 1fr;height:min(660px,80vh)}
   #hero .copy{padding:1.4rem 1.6rem}
 }
+html.locked{overflow:hidden}
+#cue{position:fixed;left:50%;bottom:max(14px,3vh);translate:-50% 0;z-index:52;display:flex;flex-direction:column;align-items:center;gap:.2rem;
+  background:none;border:0;cursor:pointer;color:rgba(10,10,10,.6);font:.8rem 'Literata',serif;letter-spacing:.1em;opacity:0;transition:opacity .6s ease}
+#cue.show{opacity:1}
+#cue[hidden]{display:none}
+#cue svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{translate:0 0}50%{translate:0 6px}}
