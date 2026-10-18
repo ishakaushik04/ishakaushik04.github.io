@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..600&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -12,12 +12,16 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: 'Literata', Georgia, serif;
-  font-weight: 300;          /* light, but still a formal serif */
-  font-size: 1rem;
-  line-height: 1.68;
+  font-weight: 340;              /* a touch sturdier than 300, easier on cream */
+  font-size: 1.0625rem;          /* 17px */
+  line-height: 1.7;
   color: #1a2e1c;
   background-color: #f8f3ea;
+  font-optical-sizing: auto;     /* Literata adapts its drawing to each size */
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 ::selection { background: rgba(var(--brown), 0.22); }
 
@@ -32,7 +36,11 @@ a {
 a:hover { color: #1a2e1c; text-decoration-color: #1a2e1c; }
 a:focus-visible { outline: 2px solid #7a4f1a; outline-offset: 3px; border-radius: 2px; }
 
-p { margin: 0 0 0.95rem; color: #1a2e1c; }
+p {
+  margin: 0 0 1.05rem;
+  color: #1a2e1c;
+  text-wrap: pretty;             /* avoids lonely last words */
+}
 
 .page { padding: 28px var(--edge); max-width: 60rem; margin: 0 auto; }
 
@@ -53,6 +61,14 @@ p { margin: 0 0 0.95rem; color: #1a2e1c; }
 .intro-text       { grid-column: 2; grid-row: 2 / span 2; }
 .intro-text p:last-child { margin-bottom: 0; }
 
+/* the opening paragraph gets a slightly larger, more confident voice */
+.intro-text p:first-child {
+  font-size: 1.18rem;
+  line-height: 1.6;
+  font-weight: 360;
+  letter-spacing: -0.003em;
+}
+
 main { clear: both; margin-top: 1.1rem; }
 
 .site-name {
@@ -60,10 +76,11 @@ main { clear: both; margin-top: 1.1rem; }
   isolation: isolate;
   display: inline-block;
   margin: 0 0 1.3rem;
+  font-family: 'Fraunces', 'Literata', Georgia, serif;
   font-size: 2.2rem;
   font-weight: 500;
   line-height: 1.1;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
 }
 .site-name a { color: #1a2e1c; text-decoration: none; }
 .site-name a:hover { color: #7a4f1a; }
@@ -132,8 +149,11 @@ main { clear: both; margin-top: 1.1rem; }
 
 .current-focus { font-weight: 500; color: #1a2e1c; }
 
-/* links stay a touch heavier than the light body so they read as links */
-main a, .intro-text a { font-weight: 400; }
+/* links stay a touch heavier than the body so they read as links */
+main a, .intro-text a { font-weight: 440; }
+
+/* the <b> tags in the degrees line: bold, but not shouty */
+b, strong { font-weight: 600; }
 
 /* FOOTER: just the copyright, centred */
 footer {
@@ -142,13 +162,13 @@ footer {
   padding-top: 1rem;
   border-top: 1px solid #e5e0d8;
 }
-footer p { margin: 0; font-size: 0.95rem; color: #8f7a5f; text-align: center; }
+footer p { margin: 0; font-size: 0.9rem; letter-spacing: 0.02em; color: #8f7a5f; text-align: center; }
 
 /* MOBILE: the left block floats, so the text sits beside the photo and then wraps under it.
    The first paragraph is dropped down by the height of the name so it lines up with the photo. */
 @media (max-width: 760px) {
   :root { --photo: 120px; }
-  body { font-size: 0.98rem; }
+  body { font-size: 1rem; }
   .page { padding-top: 22px; }
   .intro { display: flow-root; }
   .side {
@@ -164,6 +184,7 @@ footer p { margin: 0; font-size: 0.95rem; color: #8f7a5f; text-align: center; }
   .contact-links a { padding: 5px; }
   .contact-links svg { width: 19px; height: 19px; }
   .intro-text { padding-top: calc(1.28rem * 1.1 + 0.9rem); }
+  .intro-text p:first-child { font-size: 1.07rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
