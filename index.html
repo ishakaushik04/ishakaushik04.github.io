@@ -17,14 +17,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="home.css">
-  <script>document.documentElement.classList.add("js")</script>
+  <script>document.documentElement.classList.add("js");setTimeout(function(){document.documentElement.classList.add("ready")},3500)</script>
 </head>
 <body class="home">
-<div id="veil" hidden></div>
-<section id="hero" hidden aria-label="Intro"><img src="media/himage org.jpeg" alt="Isha Kaushik"><p class="copy" id="typed" data-text="Hi, I’m Isha, a researcher and builder working on the science, systems, and business of human health. Currently debating and designing hypergrowth models for health education.">Hi, I’m Isha, a researcher and builder working on the science, systems, and business of human health. Currently debating and designing hypergrowth models for health education.</p></section>
-<button id="cue" type="button" hidden aria-label="Continue to the site">Scroll<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<section id="hero" aria-label="Intro">
+  <div class="hero-inner">
+    <figure class="portrait"><img src="media/himage org.jpeg" alt="Isha Kaushik in a graduation gown, holding a silver TC balloon beside the Teachers College sign"></figure>
+    <div class="hero-text">
+      <span class="rule" aria-hidden="true"></span>
+      <p class="copy" id="typed" data-text="Hi, I’m Isha, a researcher and builder working on the science, systems, and business of human health. Currently debating and designing hypergrowth models for health education.">Hi, I’m Isha, a researcher and builder working on the science, systems, and business of human health. Currently debating and designing hypergrowth models for health education.</p>
+    </div>
+  </div>
+</section>
+<div class="sheet">
 <div class="page">
-  <header><h1 class="site-name"><a href="index.html" id="name" title="Back to intro">Isha Kaushik</a></h1></header>
+  <header><h1 class="site-name"><a href="#top" id="name" title="Back to intro">Isha Kaushik</a></h1></header>
   <div class="layout">
   <div class="side">
     <div class="photo-wrap"><img src="media/Profile Picture.jpeg" alt="Isha Kaushik" class="profile-photo"></div>
@@ -48,6 +55,7 @@
   </div>
   </div>
   <footer><p>© 2026 Isha Kaushik</p></footer>
+</div>
 </div>
 <script src="home.js"></script>
 <script src="script.js"></script>
