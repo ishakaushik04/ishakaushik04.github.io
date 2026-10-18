@@ -8,9 +8,9 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Split the intro line into words so they can fade in one after another.
-  // Words from "Currently" onward get the amber highlight.
+  // Words from the data-hl word onward get the amber highlight (leave data-hl off for no highlight).
   const words = copy.dataset.text.trim().split(/\s+/);
-  const cut = words.indexOf('Currently');
+  const cut = words.indexOf(copy.dataset.hl || 'Currently');
   copy.textContent = '';
   words.forEach((word, i) => {
     const span = document.createElement('span');
@@ -44,13 +44,4 @@
     update();
   }
 
-  // Closing section: each block eases in as it scrolls into view.
-  const blocks = document.querySelectorAll('.after .rv');
-  if (!reduce && 'IntersectionObserver' in window && blocks.length) {
-    const seen = new IntersectionObserver(entries => entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); seen.unobserve(e.target); }
-    }), { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
-    blocks.forEach((el, i) => { el.style.transitionDelay = (i * 90) + 'ms'; seen.observe(el); });
-    root.classList.add('rv-on');
-  }
 })();
