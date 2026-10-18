@@ -1,36 +1,142 @@
-/* Homepage only: black hero panel, cream page, amber accent. */
-:root{--dk:#0a0a0a;--cream:#f8f3ea;--amber:#d6a566}
-.home .page{max-width:64rem}
-.home header{text-align:center;margin-bottom:2rem}
-.home .site-name{display:inline-block;margin:0}
-.home .site-name a{display:inline-block;padding:.1em .6em;border-radius:999px;transition:background .5s,color .5s}
-.home .site-name.lit a{background:var(--dk);color:var(--cream)}
-.home .site-name.lit a:hover{color:var(--amber)}
-.home .site-name.lit::before{opacity:0}
-.layout{display:grid;grid-template-columns:calc(var(--photo) + 24px) minmax(0,1fr);column-gap:48px;align-items:start}
-.layout .side{position:sticky;top:28px;grid-column:auto;grid-row:auto}
-.profile-photo{object-position:50% 40%;filter:none}
-#veil{position:fixed;inset:0;background:var(--cream);z-index:50;transition:opacity .5s ease}
-#hero{position:fixed;inset:0;margin:auto;z-index:51;width:min(940px,92vw);height:min(540px,78vh);display:grid;
-  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);background:var(--dk);border-radius:28px;overflow:hidden;
-  box-shadow:0 30px 80px rgba(26,46,28,.35);cursor:pointer}
-#hero[hidden],#veil[hidden]{display:none}
-#hero img{width:100%;height:100%;object-fit:cover;display:block}
-#hero .copy{align-self:center;margin:0;padding:2.4rem 2.8rem;font-family:'Fraunces',Georgia,serif;font-weight:400;
-  font-size:clamp(1.2rem,2.4vw,1.85rem);line-height:1.35;color:var(--cream);letter-spacing:-.005em;min-height:7.5em}
-#hero .copy em{font-style:normal;color:var(--amber)}
-#hero .caret{display:inline-block;width:.09em;height:1em;margin-left:.08em;vertical-align:-.12em;background:var(--amber);animation:blink .7s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-@media (max-width:760px){
-  .layout{display:flex;flex-direction:column;align-items:center}
-  .layout .side{position:static;margin-bottom:1.5rem}
-  #hero{grid-template-columns:1fr;grid-template-rows:minmax(0,46%) 1fr;height:min(660px,80vh)}
-  #hero .copy{padding:1.4rem 1.6rem}
+/* Homepage only.
+   1. A dark hero is the first screen of the page (normal scrolling, nothing hijacked).
+   2. The cream page is a "sheet" whose rounded top edge peeks up at the bottom of the
+      hero, with the name pill showing. That peek is the scroll cue, with no text or arrow.
+      Scrolling slides the sheet up over the hero while the hero softly fades.
+   3. Below: photo + links float left, the story starts level with the photo, and once it
+      passes them it runs the full width of the page. */
+
+:root{--dk:#0b0a09;--cream:#f8f3ea;--amber:#d6a566;--peek:88px}
+html{background:var(--dk);overscroll-behavior-y:none}
+
+
+/* ---------- HERO ---------- */
+#hero{
+  position:sticky;top:0;z-index:0;
+  height:100vh;height:100svh;min-height:440px;overflow:hidden;
+  display:grid;place-items:center;
+  /* bottom padding = the peek, so the content centres in the part of the screen you can see */
+  padding:clamp(24px,5vh,56px) var(--edge) calc(var(--peek) + clamp(16px,4vh,40px));
+  color:var(--cream);
+  background:
+    radial-gradient(55% 60% at 27% 48%,rgba(214,165,102,.17),transparent 70%),
+    radial-gradient(70% 80% at 88% 8%,rgba(214,165,102,.07),transparent 65%),
+    var(--dk);
 }
-html.locked{overflow:hidden}
-#cue{position:fixed;left:50%;bottom:max(14px,3vh);translate:-50% 0;z-index:52;display:flex;flex-direction:column;align-items:center;gap:.2rem;
-  background:none;border:0;cursor:pointer;color:rgba(10,10,10,.6);font:.8rem 'Literata',serif;letter-spacing:.1em;opacity:0;transition:opacity .6s ease}
-#cue.show{opacity:1}
-#cue[hidden]{display:none}
-#cue svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;animation:nudge 1.6s ease-in-out infinite}
-@keyframes nudge{0%,100%{translate:0 0}50%{translate:0 6px}}
+.hero-inner{
+  display:grid;grid-template-columns:auto minmax(0,36rem);
+  align-items:center;justify-content:center;
+  column-gap:clamp(2.5rem,7vw,6.5rem);
+  transform-origin:50% 40%;will-change:transform,opacity;
+  /* --p (0 to 1) is set by home.js as you scroll; the sheet covers the hero while this fades it */
+  transform:translateY(calc(var(--p,0) * -5vh)) scale(calc(1 - var(--p,0) * .05));
+  opacity:calc(1 - var(--p,0) * 1.2);
+}
+
+/* arch-shaped portrait; the loose outer ring echoes the hand-drawn ring on the page photo */
+.portrait{
+  position:relative;margin:0;aspect-ratio:3/4;
+  width:max(170px,min(32vw,380px,calc((100vh - var(--peek) - 150px) * .75)));
+  width:max(170px,min(32vw,380px,calc((100svh - var(--peek) - 150px) * .75)));
+}
+.portrait::before{
+  content:"";position:absolute;inset:-14px;pointer-events:none;
+  border:1px solid rgba(214,165,102,.5);
+  border-radius:999px 999px 34px 34px;transform:rotate(-2.2deg);
+}
+.portrait img{
+  position:relative;display:block;width:100%;height:100%;
+  object-fit:cover;object-position:50% 66%;   /* face about 30% from the top; keeps the camera watermark out */
+  border-radius:999px 999px 24px 24px;
+  box-shadow:0 30px 70px rgba(0,0,0,.55);
+}
+
+.hero-text{display:flex;flex-direction:column;align-items:flex-start;gap:1.7rem}
+.rule{display:block;width:3.2rem;height:2px;background:var(--amber);transform-origin:left center}
+#hero .copy{
+  margin:0;color:var(--cream);
+  font-family:'Fraunces',Georgia,serif;font-weight:400;
+  font-size:clamp(1.4rem,2.5vw,2.35rem);line-height:1.28;letter-spacing:-.012em;
+  text-wrap:pretty;
+}
+#hero .copy .w{display:inline-block}          /* home.js wraps each word so it can fade in */
+#hero .copy .hl{color:var(--amber)}
+
+
+/* ---------- THE SHEET ---------- */
+.sheet{
+  position:relative;z-index:2;
+  margin-top:calc(var(--peek) * -1);
+  background:var(--cream);
+  border-radius:34px 34px 0 0;
+  box-shadow:0 -30px 80px rgba(0,0,0,.45);
+}
+.home .page{max-width:64rem}
+
+/* name bar: always the dark pill, so it reads as a handle at the bottom of the hero */
+.home header{text-align:center;margin-bottom:2.2rem}
+.home .site-name{display:inline-block;margin:0}
+.home .site-name::before{display:none}
+.home .site-name a{
+  display:inline-block;padding:.1em .6em;border-radius:999px;
+  background:var(--dk);color:var(--cream);transition:color .3s ease;
+}
+.home .site-name a:hover{color:var(--amber)}
+
+
+/* ---------- STORY ---------- */
+.layout{display:flow-root}                       /* contains the float */
+.layout .side{
+  float:left;position:static;grid-column:auto;grid-row:auto;
+  width:calc(var(--photo) + 24px);
+  margin:0 clamp(2rem,5vw,3.5rem) 1.25rem 0;
+  padding-top:8px;
+}
+.profile-photo{object-position:50% 40%;filter:none}
+
+
+/* ---------- ENTRANCE (plays once, after fonts and photo are ready) ---------- */
+html.js:not(.ready) .portrait,
+html.js:not(.ready) .rule,
+html.js:not(.ready) #hero .copy .w{opacity:0}
+html.js:not(.ready) .sheet{transform:translateY(calc(var(--peek) + 24px))}
+
+.ready .portrait{animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both}
+.ready .portrait img{animation:settle 2.2s cubic-bezier(.2,.7,.2,1) both}
+.ready .rule{animation:draw .9s cubic-bezier(.2,.7,.2,1) .35s both}
+.ready #hero .copy .w{animation:word .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(.6s + var(--i,0) * .04s)}
+/* the sheet glides up into its peek once the hero has landed: the "there's more" cue is motion, not words */
+.play .sheet{animation:lift 1.1s cubic-bezier(.2,.7,.2,1) 1.9s both}
+
+@keyframes rise{from{opacity:0;transform:translateY(28px)}}
+@keyframes settle{from{transform:scale(1.14)}}
+@keyframes draw{from{opacity:0;transform:scaleX(0)}}
+@keyframes word{from{opacity:0;transform:translateY(.45em);filter:blur(6px)}}
+@keyframes lift{from{transform:translateY(calc(var(--peek) + 24px))}}
+
+
+/* ---------- STACKED HERO: phones and any tall, narrow window (e.g. a portrait tablet) ---------- */
+@media (max-width:760px),(max-aspect-ratio:1/1){
+  #hero{padding-top:28px}
+  .hero-inner{grid-template-columns:minmax(0,1fr);justify-items:center;row-gap:2rem}
+  .portrait{
+    width:max(150px,min(60vw,340px,calc((100vh - var(--peek) - 340px) * .75)));
+    width:max(150px,min(60vw,340px,calc((100svh - var(--peek) - 340px) * .75)));
+  }
+  .hero-text{align-items:center;text-align:center;gap:1.3rem;max-width:32rem}
+  .rule{transform-origin:center}
+  #hero .copy{font-size:clamp(1.3rem,5.8vw,2.1rem)}
+}
+
+/* ---------- PHONES: the story stacks under a centred photo ---------- */
+@media (max-width:760px){
+  :root{--peek:80px}
+  .sheet{border-radius:26px 26px 0 0}
+  .layout .side{float:none;margin:0 auto 1.5rem;padding-top:0}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .portrait,.portrait img,.rule,#hero .copy .w,.sheet{animation:none!important}
+  html.js .portrait,html.js .rule,html.js #hero .copy .w{opacity:1!important}
+  html.js .sheet{transform:none!important}
+}
