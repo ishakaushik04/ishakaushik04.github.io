@@ -53,6 +53,16 @@ html{background:var(--dk);overscroll-behavior-y:none}
 
 .hero-text{display:flex;flex-direction:column;align-items:flex-start;gap:1.7rem}
 .rule{display:block;width:3.2rem;height:2px;background:var(--amber);transform-origin:left center}
+.hero-links{display:flex;flex-wrap:wrap;gap:.6rem;margin:0}
+.hero-links a{
+  display:grid;place-items:center;width:44px;height:44px;border-radius:50%;
+  color:rgba(248,243,234,.82);border:1px solid rgba(248,243,234,.28);line-height:0;text-decoration:none;
+  transition:color .25s ease,border-color .25s ease,transform .25s ease,background .25s ease;
+}
+.hero-links a:hover{color:var(--dk);background:var(--amber);border-color:var(--amber);transform:translateY(-2px)}
+.hero-links a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.hero-links svg{width:20px;height:20px;fill:currentColor}
+.hero-links svg.stroke{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 #hero .copy{
   margin:0;color:var(--cream);
   font-family:'Fraunces',Georgia,serif;font-weight:400;
@@ -78,65 +88,51 @@ html{background:var(--dk);overscroll-behavior-y:none}
 
 
 /* ---------- STORY ---------- */
-.layout{display:flow-root}                       /* contains the float */
-.layout .side{
-  float:left;position:static;grid-column:auto;grid-row:auto;
-  width:calc(var(--photo) + 24px);
-  margin:0 clamp(2rem,5vw,3.5rem) 1.25rem 0;
-  padding-top:8px;
-}
-.profile-photo{object-position:50% 40%;filter:none}
+/* Plain text, straight into the page. Links to the project pages sit inline. */
+.layout{display:flow-root}
 
 
-/* ---------- CLOSING: the dark comes back, so the cream page sits between two dark bookends ---------- */
+/* ---------- CLOSING: the dark comes back, so the cream page sits between two dark bookends.
+   Same type as the story above, just light on dark. ---------- */
 .after{
   position:relative;z-index:1;
   margin-top:calc(var(--r) * -1);          /* tucks under the sheet so its rounded bottom corners show dark */
-  padding:calc(var(--r) + clamp(4.5rem,11vh,7.5rem)) 0 0;
+  padding:calc(var(--r) + clamp(3rem,8vh,5rem)) 0 0;
   color:var(--cream);
   background:
-    radial-gradient(50% 60% at 80% 55%,rgba(214,165,102,.14),transparent 70%),
-    radial-gradient(60% 70% at 6% 100%,rgba(214,165,102,.07),transparent 65%),
+    radial-gradient(50% 60% at 80% 55%,rgba(214,165,102,.10),transparent 70%),
     var(--dk);
 }
-.after-inner{max-width:64rem;margin:0 auto;padding:0 var(--edge)}   /* same left edge as the story above */
-.after .fun{margin:0;max-width:41rem;color:rgba(248,243,234,.8);font-size:1.1875rem;line-height:1.8}
-.after .fun a{color:var(--amber);text-decoration-color:rgba(214,165,102,.45)}
-.after .fun a:hover{color:var(--cream);text-decoration-color:var(--cream)}
-.after-rule{display:block;width:3.2rem;height:2px;background:var(--amber);margin:clamp(2.4rem,6vh,3.6rem) 0 clamp(1.5rem,3.5vh,2.2rem)}
-.after .finale{
-  margin:0;max-width:36rem;color:var(--cream);
-  font-family:'Fraunces',Georgia,serif;font-weight:400;
-  font-size:clamp(1.55rem,3.1vw,2.5rem);line-height:1.25;letter-spacing:-.012em;text-wrap:pretty;
+.after-inner{position:relative;z-index:1;max-width:64rem;margin:0 auto;padding:0 var(--edge)}   /* same edges as the story above */
+/* the instrument photo: a quiet, desaturated wash on the right that fades into the dark toward the text */
+.after::before{
+  content:"";position:absolute;z-index:0;top:0;right:0;bottom:0;width:min(56%,720px);
+  background:url("media/muse.jpg") 50% 66%/cover no-repeat;
+  opacity:.2;filter:grayscale(1) sepia(.3) contrast(.95);
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 60%);mask-image:linear-gradient(to right,transparent 0,#000 60%);
+  pointer-events:none;
 }
-.after .cta{
-  color:var(--amber);text-decoration:none;padding-bottom:.1em;
-  background:linear-gradient(currentColor,currentColor) 0 100%/100% 2px no-repeat;
-  transition:color .3s ease;
-}
-.after .cta::after{content:"\2197";display:inline-block;margin-left:.2em;font-size:.7em;transition:transform .3s ease}
-.after .cta:hover{color:var(--cream)}
-.after .cta:hover::after{transform:translate(.12em,-.12em)}
+.after p{color:rgba(248,243,234,.92)}
+.after a{color:var(--amber);text-decoration-color:rgba(214,165,102,.55)}
+.after a:hover{color:var(--cream);text-decoration-color:var(--cream)}
 .after a:focus-visible{outline-color:var(--amber)}
-.after footer{margin-top:clamp(4.5rem,12vh,7rem);padding:1.3rem 0 2rem;border-top:1px solid rgba(248,243,234,.14)}
-.after footer p{margin:0;color:rgba(248,243,234,.5);font-size:.9rem;letter-spacing:.02em;text-align:left}
-@media (max-width:760px){.after .fun{font-size:1.0625rem;line-height:1.75}}
+.after footer{margin-top:clamp(3rem,8vh,4.5rem);padding:1.2rem 0 2rem;border-top:1px solid rgba(248,243,234,.18)}
+.after footer p{margin:0;color:rgba(248,243,234,.72);font-size:.9rem;letter-spacing:.02em;text-align:center}
 
-/* blocks ease in as they scroll into view; home.js adds .rv-on only if it can do the reveal,
-   so nothing is ever left hidden */
-html.rv-on .rv{transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
-html.rv-on .rv:not(.in){opacity:0;transform:translateY(18px)}
 
+@media (max-width:760px){.after::before{width:100%;opacity:.13;-webkit-mask-image:none;mask-image:none;background-position:50% 62%}}
 
 /* ---------- ENTRANCE (plays once, after fonts and photo are ready) ---------- */
 html.js:not(.ready) .portrait,
 html.js:not(.ready) .rule,
+html.js:not(.ready) .hero-links,
 html.js:not(.ready) #hero .copy .w{opacity:0}
 html.js:not(.ready) .sheet{transform:translateY(calc(var(--peek) + 24px))}
 
 .ready .portrait{animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both}
 .ready .portrait img{animation:settle 2.2s cubic-bezier(.2,.7,.2,1) both}
 .ready .rule{animation:draw .9s cubic-bezier(.2,.7,.2,1) .35s both}
+.ready .hero-links{animation:rise .9s cubic-bezier(.2,.7,.2,1) 2.1s both}
 .ready #hero .copy .w{animation:word .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(.6s + var(--i,0) * .04s)}
 /* the sheet glides up into its peek once the hero has landed: the "there's more" cue is motion, not words */
 .play .sheet{animation:lift 1.1s cubic-bezier(.2,.7,.2,1) 1.9s both}
@@ -158,6 +154,7 @@ html.js:not(.ready) .sheet{transform:translateY(calc(var(--peek) + 24px))}
   }
   .hero-text{align-items:center;text-align:center;gap:1.3rem;max-width:32rem}
   .rule{transform-origin:center}
+  .hero-links{justify-content:center}
   #hero .copy{font-size:clamp(1.3rem,5.8vw,2.1rem)}
 }
 
@@ -168,7 +165,7 @@ html.js:not(.ready) .sheet{transform:translateY(calc(var(--peek) + 24px))}
 }
 
 @media (prefers-reduced-motion:reduce){
-  .portrait,.portrait img,.rule,#hero .copy .w,.sheet{animation:none!important}
-  html.js .portrait,html.js .rule,html.js #hero .copy .w{opacity:1!important}
+  .portrait,.portrait img,.rule,.hero-links,#hero .copy .w,.sheet{animation:none!important}
+  html.js .portrait,html.js .rule,html.js .hero-links,html.js #hero .copy .w{opacity:1!important}
   html.js .sheet{transform:none!important}
 }
