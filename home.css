@@ -90,3 +90,12 @@ html{background:var(--dk)}
   .orb,.pulse path,.portrait::before{animation:none!important}
   .js .portrait,.js .rule,.js #hero .copy,.js .hero-links{opacity:1!important;transform:none!important;transition:none!important}
 }
+
+/* ---------- WIDE SCREENS: story flows in two columns, closing list matches ---------- */
+@media (min-width:900px){
+  .wrap{max-width:62rem;column-count:2;column-gap:clamp(2.5rem,5vw,4.5rem)}
+  .wrap p{orphans:3;widows:3}
+  .after-inner{max-width:62rem}
+  .off{column-count:2;column-gap:clamp(2.5rem,5vw,4.5rem)}
+  .off li{break-inside:avoid}
+}
