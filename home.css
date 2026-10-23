@@ -51,9 +51,10 @@ html.curtain #hero{transition:min-height 1.15s cubic-bezier(.76,0,.24,1)}
 /* ---------- THE PAGE: plain paragraphs, one column, top to bottom ---------- */
 body.home{background:var(--dk)}
 .sheet{position:relative;z-index:2;margin-top:calc(var(--peek) * -1);background:var(--cream);border-radius:var(--r);box-shadow:0 -30px 80px rgba(0,0,0,.45)}
-.wrap{max-width:46rem;margin:0 auto;padding:64px var(--edge) 56px}
+.wrap{max-width:50rem;margin:0 auto;padding:80px var(--edge) 72px}
 .wrap a{font-weight:440}
-.story p{margin:0 0 1.35rem;line-height:1.75}
+.story{font-size:.95rem}
+.story p{margin:0 0 1.9rem;line-height:1.9}
 .story p:last-child{margin-bottom:0}
 
 /* soft tint highlight for the key phrases */
@@ -61,17 +62,17 @@ body.home{background:var(--dk)}
 
 
 /* ---------- CLOSING: plain dark footer with the list and the copyright ---------- */
-.after{position:relative;z-index:1;margin-top:calc(var(--r) * -1);padding:calc(var(--r) + clamp(2.25rem,5vh,3.25rem)) 0 0;color:var(--cream);background:var(--dk)}
-.after-inner{max-width:46rem;margin:0 auto;padding:0 var(--edge)}
+.after{position:relative;z-index:1;margin-top:calc(var(--r) * -1);padding:calc(var(--r) + clamp(2.5rem,6vh,3.75rem)) 0 0;color:var(--cream);background:var(--dk)}
+.after-inner{max-width:50rem;margin:0 auto;padding:0 var(--edge);font-size:.9rem}
 .after p{color:rgba(248,243,234,.92)}
 .after a{color:var(--amber);text-decoration-color:rgba(214,165,102,.55)}
 .after a:hover{color:var(--cream);text-decoration-color:var(--cream)}
 .after a:focus-visible{outline-color:var(--amber)}
 .off{margin:0;padding-left:1.2rem}
-.off li{margin:0 0 .55rem;line-height:1.65;color:rgba(248,243,234,.92)}
+.off li{margin:0 0 .85rem;line-height:1.8;color:rgba(248,243,234,.92)}
 .off li::marker{color:var(--amber)}
-.after footer{margin-top:clamp(2rem,5vh,3rem);padding:1.2rem 0 calc(2rem + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(248,243,234,.18)}
-.after footer p{margin:0;color:rgba(248,243,234,.72);font-size:.9rem;letter-spacing:.02em;text-align:center}
+.after footer{margin-top:clamp(2.5rem,6vh,3.5rem);padding:1.3rem 0 calc(2.2rem + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(248,243,234,.18)}
+.after footer p{margin:0;color:rgba(248,243,234,.72);font-size:.82rem;letter-spacing:.02em;text-align:center}
 
 
 /* ---------- PHONES AND TALL, NARROW WINDOWS ---------- */
