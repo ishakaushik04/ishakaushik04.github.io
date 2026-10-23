@@ -66,25 +66,30 @@ body.home{background:var(--dk)}
 /* soft tint highlight for the key phrases */
 .hi{font-weight:500;color:#6a4313;padding:.04em .42em;border-radius:6px;background:rgba(214,165,102,.24);-webkit-box-decoration-break:clone;box-decoration-break:clone}
 
-/* "Off the clock": loose little notes instead of a list */
-.split{margin:2.8rem 0 1.1rem;font-size:1.3rem;line-height:1.2}
-.notes{display:flex;flex-wrap:wrap;gap:.8rem}
-.note{flex:0 1 auto;max-width:25rem;margin:0;padding:.7rem 1rem;font-size:.95rem;line-height:1.5;border:1px solid rgba(122,79,26,.28);border-radius:16px;background:rgba(255,255,255,.42);transform:rotate(-1deg);transition:transform .3s ease,border-color .3s ease,background .3s ease}
-.note:nth-child(even){transform:rotate(.9deg)}
-.note:nth-child(3n){transform:rotate(-.4deg)}
-.note:hover{transform:rotate(0);border-color:var(--amber);background:#fff}
-.note b{color:var(--bn)}
 
-
-/* ---------- FOOTER: just the copyright, in a small pill ---------- */
-.foot{position:relative;z-index:1;padding:1.6rem 0 calc(1.6rem + env(safe-area-inset-bottom,0px))}
-.foot p{display:table;margin:0 auto;padding:.5rem 1.1rem;border:1px solid rgba(248,243,234,.2);border-radius:999px;color:rgba(248,243,234,.72);font-size:.8rem;letter-spacing:.03em}
+/* ---------- CLOSING: the dark comes back, so the cream page sits between two dark bookends ---------- */
+.after{
+  position:relative;z-index:1;
+  margin-top:calc(var(--r) * -1);          /* tucks under the sheet so its rounded bottom corners show dark */
+  padding:calc(var(--r) + clamp(2.5rem,6vh,4rem)) 0 0;
+  color:var(--cream);
+  background:radial-gradient(50% 60% at 80% 55%,rgba(214,165,102,.10),transparent 70%),var(--dk);
+}
+.after-inner{max-width:62rem;margin:0 auto;padding:0 var(--edge)}   /* same edges as the story above */
+.after p{color:rgba(248,243,234,.92)}
+.after a{color:var(--amber);text-decoration-color:rgba(214,165,102,.55)}
+.after a:hover{color:var(--cream);text-decoration-color:var(--cream)}
+.after a:focus-visible{outline-color:var(--amber)}
+.off{list-style:none;margin:0;padding:0;column-count:2;column-gap:clamp(2.5rem,5vw,4.5rem)}
+.off li{break-inside:avoid;margin:0 0 .5rem;padding-left:1.1rem;position:relative;line-height:1.6;color:rgba(248,243,234,.92)}
+.off li::before{content:"";position:absolute;left:0;top:.7em;width:5px;height:5px;border-radius:50%;background:var(--amber)}
+.after footer{margin-top:clamp(2.5rem,6vh,3.5rem);padding:1.2rem 0 calc(2rem + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(248,243,234,.18)}
+.after footer p{margin:0;color:rgba(248,243,234,.72);font-size:.9rem;letter-spacing:.02em;text-align:center}
 
 
 /* ---------- PHONES AND TALL, NARROW WINDOWS ---------- */
 @media (max-width:860px){
-  .story{column-count:1;column-rule:0}
-  .note{max-width:none;flex:1 1 100%}
+  .story,.off{column-count:1;column-rule:0}
 }
 @media (max-width:760px),(max-aspect-ratio:1/1){
   :root{--peek:64px;--r:26px}
@@ -97,6 +102,6 @@ body.home{background:var(--dk)}
 
 @media (prefers-reduced-motion:reduce){
   .orb,.portrait::before{animation:none!important}
-  .note,html.curtain #hero{transition:none!important}
+  html.curtain #hero{transition:none!important}
   .js .portrait,.js .rule,.js #hero .copy,.js .hero-links{opacity:1!important;transform:none!important;transition:none!important}
 }
