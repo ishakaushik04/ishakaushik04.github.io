@@ -169,3 +169,17 @@ html.js:not(.ready) .sheet{transform:translateY(calc(var(--peek) + 24px))}
   html.js .portrait,html.js .rule,html.js .hero-links,html.js #hero .copy .w{opacity:1!important}
   html.js .sheet{transform:none!important}
 }
+
+/* ---------- COMPACT LAYOUT (spacing and measure only; fonts, colors and animation untouched) ---------- */
+
+/* narrower reading column, tighter top/bottom padding */
+.home .page{max-width:46rem;padding-top:36px;padding-bottom:2.5rem}
+.content p{margin-bottom:.85rem;line-height:1.62}
+
+/* closing section: same column width as the story so the edges still line up */
+.after-inner{max-width:46rem}
+.after{padding-top:calc(var(--r) + clamp(2.25rem,6vh,3.5rem))}
+.after-inner > p:first-child{margin-bottom:.6rem}
+.off-list{list-style:none;margin:0;padding:0}
+.off-list li{margin:0 0 .45rem;line-height:1.6;color:rgba(248,243,234,.92)}
+.after footer{margin-top:clamp(2rem,5vh,3rem)}
