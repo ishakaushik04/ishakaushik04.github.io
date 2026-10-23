@@ -1,6 +1,6 @@
 /* Homepage only. Base type, colors and links come from style.css.
    Load: the hero shows alone, then lifts like a curtain to reveal the page beneath.
-   Page: a cream sheet with a faint dot grid and two slow amber glows. */
+   Page: plain text in one column on a flat cream sheet, with a plain dark footer. */
 
 :root{--dk:#0b0a09;--cream:#f8f3ea;--amber:#d6a566;--bn:#7a4f1a;--peek:72px;--r:34px}
 html{background:var(--dk)}
@@ -48,49 +48,33 @@ html.curtain #hero{transition:min-height 1.15s cubic-bezier(.76,0,.24,1)}
 .js.go .hero-links{transition-delay:.7s}
 
 
-/* ---------- THE SHEET: story flows in two columns, flavour from the background ---------- */
+/* ---------- THE PAGE: plain paragraphs, one column, top to bottom ---------- */
 body.home{background:var(--dk)}
-.sheet{position:relative;z-index:2;margin-top:calc(var(--peek) * -1);background:var(--cream);border-radius:var(--r);box-shadow:0 -30px 80px rgba(0,0,0,.45);overflow:hidden}
-.sheet::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(122,79,26,.16) 1px,transparent 1.5px);background-size:22px 22px;-webkit-mask-image:linear-gradient(#000,transparent 90%);mask-image:linear-gradient(#000,transparent 90%)}
-.orb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;background:rgba(214,165,102,.32)}
-.orb.a{width:26rem;height:26rem;top:-6rem;right:-8rem;animation:drift 18s ease-in-out infinite alternate}
-.orb.b{width:20rem;height:20rem;bottom:-6rem;left:-7rem;opacity:.7;animation:drift 22s ease-in-out infinite alternate-reverse}
-@keyframes drift{to{transform:translate(-40px,30px) scale(1.12)}}
-
-.wrap{position:relative;z-index:1;max-width:62rem;margin:0 auto;padding:60px var(--edge) 44px}
+.sheet{position:relative;z-index:2;margin-top:calc(var(--peek) * -1);background:var(--cream);border-radius:var(--r);box-shadow:0 -30px 80px rgba(0,0,0,.45)}
+.wrap{max-width:46rem;margin:0 auto;padding:64px var(--edge) 56px}
 .wrap a{font-weight:440}
-.story{column-count:2;column-gap:clamp(2.5rem,5vw,4.5rem);column-rule:1px dotted rgba(122,79,26,.32)}
-.story p{margin:0 0 1.1rem;orphans:3;widows:3}
-.story p:first-child::first-letter{float:left;font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:3.7rem;line-height:.82;padding:.28rem .6rem 0 0;color:var(--amber)}
+.story p{margin:0 0 1.35rem;line-height:1.75}
+.story p:last-child{margin-bottom:0}
 
 /* soft tint highlight for the key phrases */
 .hi{font-weight:500;color:#6a4313;padding:.04em .42em;border-radius:6px;background:rgba(214,165,102,.24);-webkit-box-decoration-break:clone;box-decoration-break:clone}
 
 
-/* ---------- CLOSING: the dark comes back, so the cream page sits between two dark bookends ---------- */
-.after{
-  position:relative;z-index:1;
-  margin-top:calc(var(--r) * -1);          /* tucks under the sheet so its rounded bottom corners show dark */
-  padding:calc(var(--r) + clamp(2.5rem,6vh,4rem)) 0 0;
-  color:var(--cream);
-  background:radial-gradient(50% 60% at 80% 55%,rgba(214,165,102,.10),transparent 70%),var(--dk);
-}
-.after-inner{max-width:62rem;margin:0 auto;padding:0 var(--edge)}   /* same edges as the story above */
+/* ---------- CLOSING: plain dark footer with the list and the copyright ---------- */
+.after{position:relative;z-index:1;margin-top:calc(var(--r) * -1);padding:calc(var(--r) + clamp(2.25rem,5vh,3.25rem)) 0 0;color:var(--cream);background:var(--dk)}
+.after-inner{max-width:46rem;margin:0 auto;padding:0 var(--edge)}
 .after p{color:rgba(248,243,234,.92)}
 .after a{color:var(--amber);text-decoration-color:rgba(214,165,102,.55)}
 .after a:hover{color:var(--cream);text-decoration-color:var(--cream)}
 .after a:focus-visible{outline-color:var(--amber)}
-.off{list-style:none;margin:0;padding:0;column-count:2;column-gap:clamp(2.5rem,5vw,4.5rem)}
-.off li{break-inside:avoid;margin:0 0 .5rem;padding-left:1.1rem;position:relative;line-height:1.6;color:rgba(248,243,234,.92)}
-.off li::before{content:"";position:absolute;left:0;top:.7em;width:5px;height:5px;border-radius:50%;background:var(--amber)}
-.after footer{margin-top:clamp(2.5rem,6vh,3.5rem);padding:1.2rem 0 calc(2rem + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(248,243,234,.18)}
+.off{margin:0;padding-left:1.2rem}
+.off li{margin:0 0 .55rem;line-height:1.65;color:rgba(248,243,234,.92)}
+.off li::marker{color:var(--amber)}
+.after footer{margin-top:clamp(2rem,5vh,3rem);padding:1.2rem 0 calc(2rem + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(248,243,234,.18)}
 .after footer p{margin:0;color:rgba(248,243,234,.72);font-size:.9rem;letter-spacing:.02em;text-align:center}
 
 
 /* ---------- PHONES AND TALL, NARROW WINDOWS ---------- */
-@media (max-width:860px){
-  .story,.off{column-count:1;column-rule:0}
-}
 @media (max-width:760px),(max-aspect-ratio:1/1){
   :root{--peek:64px;--r:26px}
   .hero-inner{grid-template-columns:minmax(0,1fr);justify-items:center;row-gap:1.8rem}
@@ -99,15 +83,12 @@ body.home{background:var(--dk)}
   .hero-links{justify-content:center}
   #hero .copy{font-size:clamp(1.25rem,5.6vw,2rem)}
 }
+@media (max-width:760px){
+  .wrap{padding-top:48px;padding-bottom:44px}
+}
 
 @media (prefers-reduced-motion:reduce){
-  .orb,.portrait::before{animation:none!important}
+  .portrait::before{animation:none!important}
   html.curtain #hero{transition:none!important}
   .js .portrait,.js .rule,.js #hero .copy,.js .hero-links{opacity:1!important;transform:none!important;transition:none!important}
 }
-
-/* sharper, less "literary" */
-.story p:first-child::first-letter{all:unset}           /* removes the drop cap */
-.story{column-rule:0}                                    /* removes the dotted divider */
-.sheet{background:#f6f5f1}                               /* cooler, more neutral paper */
-.sheet::before{background-image:radial-gradient(rgba(26,46,28,.12) 1px,transparent 1.5px)}  /* grey-green dots, more lab notebook than parchment */
