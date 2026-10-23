@@ -3,45 +3,17 @@
 (() => {
   const root = document.documentElement;
   const hero = document.getElementById('hero');
-  const copy = document.getElementById('typed');
-  const img = hero.querySelector('img');
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!hero) return;
 
-  // Split the intro line into words so they can fade in one after another.
-  // Words from the data-hl word onward get the amber highlight (leave data-hl off for no highlight).
-  const words = copy.dataset.text.trim().split(/\s+/);
-  const cut = words.indexOf(copy.dataset.hl || 'Currently');
-  copy.textContent = '';
-  words.forEach((word, i) => {
-    const span = document.createElement('span');
-    span.className = 'w' + (cut > -1 && i >= cut ? ' hl' : '');
-    span.style.setProperty('--i', i);
-    span.textContent = word;
-    copy.append(span, ' ');
-  });
-
-  // Start the entrance once the fonts and the photo are ready (or after 1.4s regardless),
-  // so nothing reflows or pops in mid-animation.
-  const start = () => {
-    if (root.classList.contains('ready')) return;
-    if (!reduce && scrollY < 40) root.classList.add('play');   // the sheet glide only makes sense from the top
-    root.classList.add('ready');
-  };
+  // Entrance: start once fonts are ready (or after 1.2s regardless) so nothing reflows mid-animation.
+  const go = () => root.classList.add('go');
   const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
-  const photo = img.decode ? img.decode().catch(() => {}) : Promise.resolve();
-  Promise.race([Promise.all([fonts, photo]), new Promise(r => setTimeout(r, 1400))]).then(start);
+  Promise.race([fonts, new Promise(r => setTimeout(r, 1200))]).then(() => requestAnimationFrame(go));
 
-  // As the cream sheet slides up over the hero, let the hero drift and fade a little.
-  if (!reduce) {
-    let frame = 0;
-    const update = () => {
-      frame = 0;
-      const p = Math.min(1, Math.max(0, scrollY / (innerHeight * 0.85)));
-      hero.style.setProperty('--p', p.toFixed(3));
-    };
-    addEventListener('scroll', () => { frame = frame || requestAnimationFrame(update); }, { passive: true });
-    addEventListener('resize', update);
-    update();
-  }
-
+  // Soft amber glow that follows the cursor inside the hero.
+  hero.addEventListener('pointermove', e => {
+    const r = hero.getBoundingClientRect();
+    hero.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    hero.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
 })();
