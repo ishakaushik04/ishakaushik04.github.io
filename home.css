@@ -85,7 +85,8 @@ body.home{background:var(--dk)}
   #hero .copy{font-size:clamp(1.25rem,5.6vw,2rem)}
 }
 @media (max-width:760px){
-  .wrap{padding-top:48px;padding-bottom:44px}
+  .wrap{padding-top:56px;padding-bottom:52px}
+  .story p{margin-bottom:1.6rem}
 }
 
 @media (prefers-reduced-motion:reduce){
