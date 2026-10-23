@@ -54,7 +54,7 @@ body.home{background:var(--dk)}
 .wrap{max-width:50rem;margin:0 auto;padding:80px var(--edge) 72px}
 .wrap a{font-weight:440}
 .story{font-size:.95rem}
-.story p{margin:0 0 2.5rem;line-height:1.9}
+.story p{margin:0 0 3.0rem;line-height:1.9}
 .story p:last-child{margin-bottom:0}
 
 /* soft tint highlight for the key phrases */
