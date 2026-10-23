@@ -105,3 +105,9 @@ body.home{background:var(--dk)}
   html.curtain #hero{transition:none!important}
   .js .portrait,.js .rule,.js #hero .copy,.js .hero-links{opacity:1!important;transform:none!important;transition:none!important}
 }
+
+/* sharper, less "literary" */
+.story p:first-child::first-letter{all:unset}           /* removes the drop cap */
+.story{column-rule:0}                                    /* removes the dotted divider */
+.sheet{background:#f6f5f1}                               /* cooler, more neutral paper */
+.sheet::before{background-image:radial-gradient(rgba(26,46,28,.12) 1px,transparent 1.5px)}  /* grey-green dots, more lab notebook than parchment */
