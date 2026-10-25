@@ -3,159 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
 <link rel="icon" href="../media/Site logo.jpg" type="image/jpeg">
-<title>NeuroMetrics: Validating a Dry-EEG BCI | Isha Kaushik</title>
-<meta name="description" content="A convergent validation framework for a dry-EEG brain-computer interface measuring attention, emotion and memory response to ads.">
+<title>Convergent Validation of a Dry-EEG Brain–Computer Interface | Isha Kaushik</title>
+<meta name="description" content="A framework that validates a dry-EEG BCI across five cognitive domains by convergence with recall, self-report and behavior, using real advertisements.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../project.css">
 </head>
 <body>
-<div class="wrap">
-<a class="back" href="../index.html">← Back</a>
-<h1 class="sr-only">NeuroMetrics: real-time cognitive insights for creative content</h1>
+<div class="page">
 
-<dl class="facts">
-  <div class="wide"><dt>Project</dt><dd>A validation framework for a dry-EEG brain-computer interface that measures attention, emotion and memory response to ads</dd></div>
-  <div><dt>Role</dt><dd>Research Specialist, R&amp;D Validation Team</dd></div>
-  <div><dt>Organization</dt><dd>BehaveNeu (now pivoted to cognitive rehabilitation)</dd></div>
-  <div><dt>Duration</dt><dd>June–July 2023</dd></div>
-  <div><dt>Status</dt><dd>Framework implemented, device commercialized</dd></div>
-  <div><dt>Output</dt><dd>Research report for my undergraduate institution (link on request)</dd></div>
-</dl>
+<div class="mast"><a href="../index.html">← Index</a><span>Research artifact · Neuromarketing · 2023</span></div>
 
-<section>
-  <p class="kicker">The problem</p>
-  <h2>How do you validate a device that claims to read minds?</h2>
-  <p class="lede">Global ad spend was projected to cross $1 trillion in 2025, yet brands still judge creative by what people say they noticed and felt. People rationalize, forget and reshape experiences. A BCI can skip that, but nothing exists to check the BCI against.</p>
+<h1>Convergent Validation of a Dry‑EEG Brain–Computer Interface</h1>
+<p class="authors">Isha Kaushik</p>
+<p class="affil">Research Specialist, R&amp;D Validation Team, BehaveNeu · June–July 2023</p>
+<p class="affil">Output: research report for the author’s undergraduate institution (on request)</p>
 
-  <div class="cols">
-    <div class="card"><h3>Self-report</h3><p>What people say. Easy to collect, unreliable by nature.</p></div>
-    <div class="card dark"><h3>Direct neural measure</h3><p>What the brain does. Promising, but attention, emotion and memory are subjective states, so there's no gold-standard scan to compare with.</p></div>
-  </div>
-  <div class="stats">
-    <div class="stat"><b>5</b><span>cognitive domains validated at once</span></div>
-    <div class="stat"><b>45 min</b><span>per session, using real ads</span></div>
-    <div class="stat"><b>0</b><span>gold-standard scans to check against</span></div>
-  </div>
-</section>
-
-<section>
-  <p class="kicker">The idea</p>
-  <h2>Triangulate the truth.</h2>
-  <p class="lede">Existing paradigms test attention or emotion or memory, one at a time. This framework tests five domains together. If neural signals line up with independent behavioral measures across several constructs, confidence in the device compounds.</p>
-  <div class="flow" aria-label="Convergence logic">
-    <span>Neural signal</span><i>⇄</i><span>Recall</span><i>+</i><span>Self-report ratings</span><i>+</i><span>Behavior</span><i>→</i><span><b>Convergence = provisional ground truth</b></span>
-  </div>
-
-  <h3 style="margin-top:1.6rem">Four tests it had to pass</h3>
-  <div class="cols q">
-    <div class="card"><h3>Convergent</h3><p>Do neural measures track independent behavioral ones? “High attention” with poor recall is a failure.</p></div>
-    <div class="card"><h3>Discriminant</h3><p>Can it tell ads apart? Calling every ad “moderately engaging” is useless.</p></div>
-    <div class="card"><h3>Reliable</h3><p>Consistent within a session, across sessions, and between analysts.</p></div>
-    <div class="card"><h3>Sensitive</h3><p>Detects differences big enough for brands to act on: recall, preference, purchase intent.</p></div>
-  </div>
-</section>
-
-<section>
-  <p class="kicker">The five domains</p>
-  <h2>What was checked against what.</h2>
-  <div class="scroll-x"><table class="vs">
-    <tr><th>Domain</th><th>Neural signal should predict</th><th>The hard part</th></tr>
-    <tr><td>Attention</td><td>Which ads are remembered better, rated more engaging, processed more deeply</td><td>It's continuous and shifts across a 30–60 second ad, not on or off</td></tr>
-    <tr><td>Memorability</td><td>Delayed recall, recognition accuracy, memory confidence</td><td>EEG sees encoding. Consolidation happens offline</td></tr>
-    <tr><td>Emotional arousal</td><td>Self-reported intensity, physiological arousal, behavioral impact</td><td>Arousal isn't valence. Display rules differ across cultures</td></tr>
-    <tr><td>Attitude to ad</td><td>Explicit likeability ratings, from approach vs avoidance patterns</td><td>Production quality, relevance and social desirability muddy it</td></tr>
-    <tr><td>Brand perception</td><td>Preference rankings, simulated choices, pre/post attitude shift</td><td>One ad is a single data point against years of brand history</td></tr>
-  </table></div>
-
-  <div class="flow"><span>Attention</span><i>enables</i><span>Memory encoding</span></div>
-  <div class="flow" style="margin-top:-.4rem"><span>Emotional arousal</span><i>strengthens</i><span>Memory consolidation</span></div>
-  <div class="flow" style="margin-top:-.4rem"><span>Liking the ad</span><i>transfers to</i><span>Brand perception</span></div>
-  <p class="small">The domains are causally linked, and testing those links is where the validation power came from.</p>
-
-  <div class="gallery four">
-    <figure><img src="Slide 1.PNG" alt="Rating scale from 1 (not memorable) to 5 (very memorable)." loading="lazy"><figcaption>Memorability scale</figcaption></figure>
-    <figure><img src="Slide 2.PNG" alt="Rating scale from 1 (negative) to 5 (positive) for emotions." loading="lazy"><figcaption>Emotion scale</figcaption></figure>
-    <figure><img src="Slide 3.PNG" alt="Rating scale from 1 (boring) to 5 (interesting) for attitude towards the ad." loading="lazy"><figcaption>Attitude to ad</figcaption></figure>
-    <figure><img src="Slide 4.PNG" alt="Rating scale from 1 (unfamiliar) to 5 (familiar) for attitude towards the brand." loading="lazy"><figcaption>Attitude to brand</figcaption></figure>
-  </div>
-</section>
-
-<section>
-  <p class="kicker">The setup</p>
-  <h2>Real ads, real conditions.</h2>
-  <p class="lede">Real ads are messy, and that's the point. If the device only works on clean lab stimuli, it isn't commercially viable. Everything ran on Indian ads with Indian participants, because emotional triggers and narrative conventions differ from the Western norms most neuromarketing is built on.</p>
-  <div class="scroll-x"><table class="vs">
-    <tr><th></th><th>Typical lab study</th><th>This validation</th></tr>
-    <tr><td>Stimuli</td><td>Simple, researcher-made</td><td>Real ads brands paid to air</td></tr>
-    <tr><td>Scale</td><td>100+ trials per condition</td><td>45-minute sessions</td></tr>
-    <tr><td>Control</td><td>Strict</td><td>Music, length, celebrities and production quality all vary</td></tr>
-    <tr><td>Audience</td><td>Mostly Western</td><td>Indian participants, Indian baselines</td></tr>
-  </table></div>
-  <figure class="fig"><img src="Screenshot 2025-12-10 220614.png" alt="Spreadsheet listing each ad video with category and coding columns." loading="lazy"><figcaption>The stimulus sheet used to organize the ads</figcaption></figure>
-</section>
-
-<section>
-  <p class="kicker">What broke, and the fix</p>
-  <h2>Four problems.</h2>
-  <details class="acc"><summary>1 · The ground truth problem</summary><div class="inner">
-    <p><b>Problem</b>No objective right answer for a mental state.</p>
-    <p><b>Fix</b>Convergent proxies. When behavior, self-report and neural patterns agree, treat it as provisional ground truth.</p></div></details>
-  <details class="acc"><summary>2 · Dry-EEG noise</summary><div class="inner">
-    <p><b>Problem</b>Dry electrodes are practical but noisier than lab-grade wet EEG. Movement, interference and contact add error.</p>
-    <p><b>Fix</b>Thresholds for acceptable signal-to-noise, artifact rejection rules, and statistics that carry the uncertainty.</p></div></details>
-  <details class="acc"><summary>3 · Real ads confound everything</summary><div class="inner">
-    <p><b>Problem</b>Was it memorable for the music, the celebrity, the humor or the product?</p>
-    <p><b>Fix</b>Many ads across categories, within-subject comparisons, and relative questions (which ad is more memorable?) over absolute scores.</p></div></details>
-  <details class="acc"><summary>4 · Rigor vs commercial speed</summary><div class="inner">
-    <p><b>Problem</b>Academic validation takes hundreds of participants and months. Commercial timelines don't.</p>
-    <p><b>Fix</b>Prioritize attention, memory and emotion. Maximize information per session. Not complete by academic standards, but enough for commercial confidence, and built to improve with more data.</p></div></details>
-</section>
-
-<section>
-  <div class="cols">
-    <div class="card">
-      <h3>What I led, under senior guidance</h3>
-      <ul class="clean">
-        <li>Literature synthesis across neuroscience, psychology and neuromarketing</li>
-        <li>Ground-truth logic: convergent measures where no single one is definitive</li>
-        <li>Scientific backing for each of the five domains, within dry-EEG limits</li>
-        <li>The 45-minute protocol: flow, stimulus presentation, measurement order</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>What I co-developed with the team</h3>
-      <ul class="clean">
-        <li>Turning “high frontal alpha” into “this ad will be remembered”</li>
-        <li>Trading off experimental control against real-world validity</li>
-        <li>Indian adaptation: regional language processing, emotion display rules, family and festival messaging, celebrity endorsements</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section>
-  <p class="kicker">Outcome</p>
-  <h2>It shipped, and it travels.</h2>
-  <ul class="clean" style="max-width:44rem">
-    <li>Helped the startup take its dry-EEG device to market with scientific backing. It is positioned as one of India's leading BCIs for cognitive measurement.</li>
-    <li>The company later moved into cognitive rehabilitation. The validation work still underpins its product claims.</li>
-    <li>The method can adapt to other BCIs, other metrics and other cultures, and shows validation can work outside a perfect lab.</li>
-  </ul>
-  <p class="note">Limits: this was pre-market. The real test is whether predictions in client projects match downstream outcomes like sales, awareness and preference. Validation beyond India is also open.</p>
-
-  <div class="band">
-    <p class="kicker">What it changed for me</p>
-    <p class="big">From “can we measure this?” to “should we?”</p>
-    <p style="margin:1rem 0 0;font-size:.95rem">Who owns brain data? How do we stop cognitive surveillance? Those questions became my master's work in neuroethics, including a <a href="../media/Thesis%20Final%20Doc.pdf">thesis</a> on BCI thought-to-text with a governance framework.</p>
-  </div>
-</section>
+<div class="abstract">
+  <p><span class="lab">Abstract</span>Attention, emotion and memory are subjective states, so a neural device that measures them has no gold standard to be checked against. This framework tests a dry-EEG BCI on five cognitive domains at once and treats agreement between neural signals, recall, self-report and behavior as provisional ground truth. Sessions last 45 min and use real advertisements shown to Indian participants. The framework was implemented and the device commercialized. Predictive validity against downstream outcomes (sales, awareness, preference) is untested.</p>
 </div>
+<p class="kw"><span class="lab">Keywords</span>dry EEG · BCI · validation · convergent validity · neuromarketing</p>
 
-<footer><p>© 2026 Isha Kaushik</p></footer>
+<h2>Background</h2>
+<p>Advertising effectiveness is usually judged by self-report, which is distorted by rationalization and forgetting. Direct neural measurement avoids this, but nothing independent exists to validate it against. Existing paradigms test attention, emotion or memory one at a time.</p>
 
-<script src="../project.js"></script>
+<h2>Design</h2>
+<p>If neural signals agree with independent behavioral measures across several constructs, confidence in the device compounds (Fig. 1). The framework had to satisfy four criteria (Table 1).</p>
+
+<figure class="fig">
+<svg viewBox="0 0 680 190" role="img" aria-label="Neural signal is compared with recall, self-report ratings and behavior; agreement across all three gives provisional ground truth.">
+  <defs><marker id="c1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fl"/></marker></defs>
+  <rect class="bx" x="8" y="68" width="136" height="54" rx="3"/>
+  <text x="76" y="92" text-anchor="middle" class="b">Neural signal</text>
+  <text x="76" y="109" text-anchor="middle" class="m s">dry EEG</text>
+
+  <rect class="bx" x="270" y="12" width="140" height="36" rx="3"/><text x="340" y="35" text-anchor="middle">Recall</text>
+  <rect class="bx" x="270" y="77" width="140" height="36" rx="3"/><text x="340" y="100" text-anchor="middle">Self-report ratings</text>
+  <rect class="bx" x="270" y="142" width="140" height="36" rx="3"/><text x="340" y="165" text-anchor="middle">Behavior</text>
+
+  <path class="ln" d="M144 95 L270 30" marker-start="url(#c1)" marker-end="url(#c1)"/>
+  <path class="ln" d="M144 95 L270 95" marker-start="url(#c1)" marker-end="url(#c1)"/>
+  <path class="ln" d="M144 95 L270 160" marker-start="url(#c1)" marker-end="url(#c1)"/>
+  <text x="76" y="142" text-anchor="middle" class="m s">agreement?</text>
+
+  <path class="ln" d="M410 30 L538 90" marker-end="url(#c1)"/>
+  <path class="ln" d="M410 95 L538 95" marker-end="url(#c1)"/>
+  <path class="ln" d="M410 160 L538 100" marker-end="url(#c1)"/>
+  <rect class="bxa" x="540" y="62" width="132" height="66" rx="3"/>
+  <text x="606" y="89" text-anchor="middle" class="b">Convergence</text>
+  <text x="606" y="106" text-anchor="middle" class="m s">provisional</text>
+  <text x="606" y="119" text-anchor="middle" class="m s">ground truth</text>
+</svg>
+<figcaption class="cap"><b>Fig. 1 |</b> Convergence logic. The neural signal is compared with three independent measures. Agreement across constructs is taken as provisional ground truth.</figcaption>
+</figure>
+
+<figure class="tbl">
+<figcaption class="cap"><b>Table 1 |</b> Validation criteria.</figcaption>
+<div class="sx"><table>
+<thead><tr><th>Criterion</th><th>Requirement</th></tr></thead>
+<tbody>
+<tr><td>Convergent</td><td>Neural measures track independent behavioral measures. “High attention” with poor recall is a failure.</td></tr>
+<tr><td>Discriminant</td><td>The device separates ads. Rating every ad “moderately engaging” is a failure.</td></tr>
+<tr><td>Reliability</td><td>Consistent within a session, across sessions and between analysts.</td></tr>
+<tr><td>Sensitivity</td><td>Detects differences large enough to act on: recall, preference, purchase intent.</td></tr>
+</tbody></table></div>
+</figure>
+
+<h2>Domains</h2>
+<p>Five domains were validated together (Table 2). They are causally linked (Fig. 2), and testing the links supplied much of the validation power.</p>
+
+<figure class="tbl">
+<figcaption class="cap"><b>Table 2 |</b> Cognitive domains, predicted correlates and constraints.</figcaption>
+<div class="sx"><table>
+<thead><tr><th>Domain</th><th>Neural signal should predict</th><th>Constraint</th></tr></thead>
+<tbody>
+<tr><td>Attention</td><td>Recall, engagement ratings, depth of processing</td><td>Continuous; shifts across a 30–60 s ad</td></tr>
+<tr><td>Memorability</td><td>Delayed recall, recognition accuracy, memory confidence</td><td>EEG indexes encoding; consolidation occurs offline</td></tr>
+<tr><td>Emotional arousal</td><td>Self-reported intensity, physiological arousal, behavioral impact</td><td>Arousal is not valence; display rules differ across cultures</td></tr>
+<tr><td>Attitude to ad</td><td>Explicit likeability; approach vs. avoidance patterns</td><td>Confounded by production quality, relevance, social desirability</td></tr>
+<tr><td>Brand perception</td><td>Preference rankings, simulated choice, pre/post attitude shift</td><td>One ad against years of brand history</td></tr>
+</tbody></table></div>
+</figure>
+
+<figure class="fig">
+<svg viewBox="0 0 680 150" role="img" aria-label="Attention enables memory encoding; emotional arousal strengthens memory consolidation; liking the ad transfers to brand perception.">
+  <defs><marker id="c2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fl"/></marker></defs>
+  <rect class="bx" x="20" y="10" width="190" height="34" rx="3"/><text x="115" y="32" text-anchor="middle">Attention</text>
+  <path class="ln" d="M210 27 L460 27" marker-end="url(#c2)"/><text x="335" y="21" text-anchor="middle" class="m s">enables</text>
+  <rect class="bx" x="462" y="10" width="198" height="34" rx="3"/><text x="561" y="32" text-anchor="middle">Memory encoding</text>
+
+  <rect class="bx" x="20" y="58" width="190" height="34" rx="3"/><text x="115" y="80" text-anchor="middle">Emotional arousal</text>
+  <path class="ln" d="M210 75 L460 75" marker-end="url(#c2)"/><text x="335" y="69" text-anchor="middle" class="m s">strengthens</text>
+  <rect class="bx" x="462" y="58" width="198" height="34" rx="3"/><text x="561" y="80" text-anchor="middle">Memory consolidation</text>
+
+  <rect class="bx" x="20" y="106" width="190" height="34" rx="3"/><text x="115" y="128" text-anchor="middle">Attitude to ad</text>
+  <path class="ln" d="M210 123 L460 123" marker-end="url(#c2)"/><text x="335" y="117" text-anchor="middle" class="m s">transfers to</text>
+  <rect class="bx" x="462" y="106" width="198" height="34" rx="3"/><text x="561" y="128" text-anchor="middle">Brand perception</text>
+</svg>
+<figcaption class="cap"><b>Fig. 2 |</b> Causal links between domains used as secondary validation targets.</figcaption>
+</figure>
+
+<h2>Protocol</h2>
+<p>Stimuli were real ads that brands paid to air, shown to Indian participants and scored against Indian baselines. Emotional triggers and narrative conventions differ from the Western norms underlying most neuromarketing. A device that works only on clean laboratory stimuli is not commercially viable (Table 3). Ads were organized in a stimulus sheet (Fig. 3) and rated on five-point scales (Table 4).</p>
+
+<figure class="tbl">
+<figcaption class="cap"><b>Table 3 |</b> Typical laboratory design versus this validation.</figcaption>
+<div class="sx"><table>
+<thead><tr><th>Parameter</th><th>Typical lab study</th><th>This validation</th></tr></thead>
+<tbody>
+<tr><td>Stimuli</td><td>Simple, researcher-made</td><td>Real, commercially aired ads</td></tr>
+<tr><td>Scale</td><td>100+ trials per condition</td><td>45-min sessions</td></tr>
+<tr><td>Control</td><td>Strict</td><td>Music, length, celebrities and production quality vary</td></tr>
+<tr><td>Population</td><td>Mostly Western</td><td>Indian participants, Indian baselines</td></tr>
+</tbody></table></div>
+</figure>
+
+<figure class="tbl">
+<figcaption class="cap"><b>Table 4 |</b> Self-report instruments (five-point scales).</figcaption>
+<div class="sx"><table>
+<thead><tr><th>Item</th><th>1</th><th>5</th></tr></thead>
+<tbody>
+<tr><td>Memorability</td><td>Not memorable</td><td>Very memorable</td></tr>
+<tr><td>Emotion</td><td>Negative</td><td>Positive</td></tr>
+<tr><td>Attitude to ad</td><td>Boring</td><td>Interesting</td></tr>
+<tr><td>Attitude to brand</td><td>Unfamiliar</td><td>Familiar</td></tr>
+</tbody></table></div>
+</figure>
+
+<figure class="fig">
+<a href="Screenshot%202025-12-10%20220614.png"><img src="Screenshot 2025-12-10 220614.png" alt="Spreadsheet listing each ad video with category and coding columns." loading="lazy"></a>
+<figcaption class="cap"><b>Fig. 3 |</b> Stimulus sheet used to organize the advertisements.</figcaption>
+</figure>
+
+<h2>Constraints</h2>
+<figure class="tbl">
+<figcaption class="cap"><b>Table 5 |</b> Methodological constraints and mitigations.</figcaption>
+<div class="sx"><table>
+<thead><tr><th>Constraint</th><th>Mitigation</th></tr></thead>
+<tbody>
+<tr><td>No ground truth for mental states</td><td>Convergent proxies. Agreement of behavior, self-report and neural pattern is treated as provisional ground truth.</td></tr>
+<tr><td>Dry-EEG noise (movement, interference, electrode contact)</td><td>Signal-to-noise thresholds, artifact-rejection rules, statistics that carry the uncertainty.</td></tr>
+<tr><td>Real ads confound music, celebrity, humor and product</td><td>Many ads across categories; within-subject comparison; relative questions (“which ad is more memorable?”) over absolute scores.</td></tr>
+<tr><td>Academic rigor against commercial timelines</td><td>Prioritize attention, memory and emotion; maximize information per session. Incomplete by academic standards, built to improve with more data.</td></tr>
+</tbody></table></div>
+</figure>
+
+<h2>Contributions</h2>
+<p class="kv"><span class="lab">Led</span>Literature synthesis across neuroscience, psychology and neuromarketing; the ground-truth logic; scientific backing for each domain within dry-EEG limits; the 45-min protocol (flow, stimulus presentation, measurement order). Work was done under senior guidance.</p>
+<p class="kv"><span class="lab">Shared</span>Translating neural markers such as frontal alpha into predictions of memorability; trading experimental control against real-world validity; adapting the design to India (regional-language processing, emotion display rules, family and festival messaging, celebrity endorsements).</p>
+
+<h2>Outcome</h2>
+<p>The framework supported market entry of the device. The company has since moved into cognitive rehabilitation, and the validation work still underpins its product claims. The method is portable to other BCIs, metrics and cultures.</p>
+
+<h2>Limitations</h2>
+<p>The study was pre-market. Predictions have not been compared with downstream outcomes such as sales, awareness and preference, and validity outside India is untested.</p>
+
+<h2 class="un">Related work</h2>
+<p>Questions of brain-data ownership and cognitive surveillance led to a master’s <a href="../media/Thesis%20Final%20Doc.pdf">thesis</a> on BCI thought-to-text with a governance framework.</p>
+
+<div class="corr"><p>Correspondence: <a href="mailto:ishakaushik12a@gmail.com">ishakaushik12a@gmail.com</a></p><p>© 2026 Isha Kaushik</p></div>
+</div>
 </body>
 </html>
