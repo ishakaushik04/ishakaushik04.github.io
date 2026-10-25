@@ -3,324 +3,164 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
 <link rel="icon" href="../media/Site logo.jpg" type="image/jpeg">
-<title>REMS &amp; PTSD: Assessment Framework | Isha Kaushik</title>
-<meta name="description" content="An experimental, research-stage framework linking REM sleep disruption to PTSD risk, designed for low-resource settings. Not a clinical tool.">
+<title>REM Sleep Disruption and Noradrenergic Hyperactivity as a Risk Framework for PTSD | Isha Kaushik</title>
+<meta name="description" content="A literature-derived, research-stage framework linking REM sleep disruption to PTSD risk, with a workflow for low-resource settings. Not a clinical tool.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="rems-ptsd.css">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../project.css">
 </head>
 <body>
-<div class="hud-bg" aria-hidden="true"></div>
+<div class="page">
 
-<header class="topbar">
-  <div class="topbar-in">
-    <span class="status mono"><i class="pulse"></i>Research prototype · Not a clinical tool</span>
-    <nav aria-label="Sections">
-      <a href="#problem">01 Problem</a>
-      <a href="#mechanism">02 Mechanism</a>
-      <a href="#work">03 Work</a>
-      <a href="#framework">04 Framework</a>
-      <a href="#workflow">05 Workflow</a>
-    </nav>
-  </div>
-  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
-</header>
+<div class="mast"><a href="../index.html">← Index</a><span>Research artifact · Clinical neuroscience</span></div>
 
-<div class="wrap">
-<a class="back" href="../index.html">← Back</a>
-<h1 class="sr-only">Mapping REM sleep to trauma: a framework for PTSD assessment</h1>
+<h1>REM Sleep Disruption and Noradrenergic Hyperactivity as a Risk Framework for PTSD</h1>
+<p class="authors">Isha Kaushik, Harshpreet Kaur</p>
+<p class="affil">May–August 2022 · April–August 2023</p>
+<p class="affil">Guides: Prof. Birendra Nath Mallick, Dr. Rachna Mehta, Dr. Vijay Kumar · <a href="sleep%20paper.pdf">Preprint (PDF)</a></p>
 
-<dl class="facts">
-  <div class="wide"><dt>Project</dt><dd>A PTSD risk-assessment framework built on REM-sleep markers, designed for low-resource clinical settings</dd></div>
-  <div><dt>Domain</dt><dd>Clinical neuroscience</dd></div>
-  <div><dt>When</dt><dd>May–Aug 2022 &middot; Apr–Aug 2023</dd></div>
-  <div><dt>Co-authors</dt><dd>Isha Kaushik, Harshpreet Kaur</dd></div>
-  <div><dt>Guides</dt><dd>Prof. Birendra Nath Mallick, Dr. Rachna Mehta, Dr. Vijay Kumar</dd></div>
-  <div><dt>Output</dt><dd><a href="sleep paper.pdf">Preprint (PDF)</a></dd></div>
-</dl>
+<div class="abstract">
+  <p><span class="lab">Abstract</span>Most people exposed to trauma do not develop PTSD, but those who do wait years for treatment. Insomnia and nightmares are central to the disorder. REM sleep and noradrenaline (NA) form a reciprocal loop: NA must fall for REM to occur, and REM loss raises brain NA, driving hyperarousal. From a review of 500+ studies (1970s–2022) we derived a three-module framework that organizes sleep and neurochemical markers into a testable risk model, and a four-stage workflow for low-resource settings. The framework is literature-derived and has not been validated in patients or clinics.</p>
+</div>
+<p class="kw"><span class="lab">Keywords</span>PTSD · REM sleep · noradrenaline · risk assessment · low-resource settings</p>
 
-<aside class="notice" role="note" aria-label="Research disclaimer">
-  <div class="notice-tag mono">▲ Research use only</div>
-  <div class="notice-body">
-    <p><b>This is an experimental, research-stage framework.</b> It comes from a literature review and has not been validated in patients or clinics. It does not diagnose, predict or treat PTSD, and nothing on this page is medical advice.</p>
-    <div class="isnt">
-      <div><h3>What it is</h3><p>A way of organising sleep and neurochemical markers into a testable model, offered for researchers and clinicians to critique and build on.</p></div>
-      <div><h3>What it isn't</h3><p>A screening test, a diagnosis, a treatment recommendation, or a replacement for professional care.</p></div>
-    </div>
-    <p class="small">If you are struggling after a traumatic experience, please talk to a qualified health professional or your local emergency services.</p>
-  </div>
-</aside>
-
-<!-- ============ 01 PROBLEM ============ -->
-<section id="problem" class="reveal">
-  <p class="kicker mono">01 · The problem</p>
-  <h2>PTSD care arrives years late.</h2>
-  <p class="lede">Most people exposed to trauma never develop PTSD. The ones who do wait a long time for help, so we need an early, cheap signal for who is at risk.</p>
-
-  <div class="hud sim" id="cohort">
-    <div class="hud-head"><span class="mono">Cohort view · 1,000 people</span><span class="chip-int mono">Interactive</span></div>
-    <div class="dotgrid" id="dotgrid" aria-hidden="true"></div>
-    <div class="legend mono" aria-hidden="true">
-      <span><i class="k exp"></i>Exposed</span><span><i class="k ptsd"></i>Develop PTSD</span><span><i class="k rec"></i>Recover within a year</span><span><i class="k trt"></i>Treated in year one</span>
-    </div>
-    <div class="steps-ctl" id="cohortSteps" role="group" aria-label="Follow the cohort">
-      <button type="button" data-s="0" aria-pressed="true">1 · Everyone</button>
-      <button type="button" data-s="1" aria-pressed="false">2 · Trauma</button>
-      <button type="button" data-s="2" aria-pressed="false">3 · PTSD</button>
-      <button type="button" data-s="3" aria-pressed="false">4 · Recovery</button>
-      <button type="button" data-s="4" aria-pressed="false">5 · Treatment</button>
-      <button type="button" class="play" id="cohortPlay">▶ Play</button>
-    </div>
-    <p class="readout" id="cohortText" aria-live="polite">Start with 1,000 people. Step through to follow what the figures mean.</p>
-    <p class="small">Reported rates scaled to 1,000 people for illustration. This is not a measured cohort.</p>
-  </div>
-
-  <h3 class="sub">Time to treatment</h3>
-  <div class="gauges">
-    <div class="gauge"><span class="lab">Median wait, some settings</span><div class="track-bar"><i class="dk" style="--w:100%"></i><em>12 years</em></div></div>
-    <div class="gauge"><span class="lab">Average wait</span><div class="track-bar"><i style="--w:37.5%"></i><em>4.5 years</em></div></div>
-    <div class="gauge"><span class="lab">What this framework aims for</span><div class="track-bar"><i class="am" style="--w:1.5%"></i><em class="out" style="--w:1.5%">weeks</em></div></div>
-  </div>
-  <p class="small">Bars drawn to scale. The last one is the goal, not a measured result.</p>
-</section>
-
-<!-- ============ 02 MECHANISM ============ -->
-<section id="mechanism" class="reveal">
-  <p class="kicker mono">02 · The mechanism</p>
-  <h2>Sleep is the signal.</h2>
-  <p class="lede">Insomnia and nightmares sit at the centre of PTSD. REM sleep and noradrenaline (NA) feed each other: NA has to drop for REM to form, and when REM is lost, brain NA climbs and drives many of the symptoms.</p>
-
-  <div class="hud loop-lab" id="loopLab">
-    <div class="hud-head"><span class="mono">Feedback loop · conceptual model</span><span class="chip-int mono">Interactive</span></div>
-    <div class="loop-grid">
-      <div class="loop-map" id="loopMap">
-        <svg viewBox="0 0 400 400" id="loopSvg" aria-hidden="true"></svg>
-        <button type="button" class="lnode" data-i="0" style="left:50%;top:18.75%" aria-label="Stage 1, Trauma"><span>1</span><span class="lbl">Trauma</span></button>
-        <button type="button" class="lnode" data-i="1" style="left:79.7%;top:40.35%" aria-label="Stage 2, Sleep breaks"><span>2</span><span class="lbl">Sleep breaks</span></button>
-        <button type="button" class="lnode" data-i="2" style="left:68.4%;top:75.3%" aria-label="Stage 3, REM lost"><span>3</span><span class="lbl">REM lost</span></button>
-        <button type="button" class="lnode" data-i="3" style="left:31.6%;top:75.3%" aria-label="Stage 4, NA rises"><span>4</span><span class="lbl">NA rises</span></button>
-        <button type="button" class="lnode" data-i="4" style="left:20.3%;top:40.35%" aria-label="Stage 5, Hyperarousal"><span>5</span><span class="lbl">Hyperarousal</span></button>
-      </div>
-
-      <div class="loop-side">
-        <div class="info" id="nodeInfo" aria-live="polite">
-          <h3>Pick a stage, or press Step</h3>
-          <p>Each circle is one stage. Step sends a signal around the loop and shows what happens to REM sleep and NA.</p>
-        </div>
-
-        <div class="meters">
-          <div class="meter"><div class="meter-top"><span>REM sleep</span><b class="mono" id="remVal">82</b></div><div class="mbar"><i id="remFill" class="cy" style="width:82%"></i></div></div>
-          <div class="meter"><div class="meter-top"><span>Noradrenaline (NA)</span><b class="mono" id="naVal">20</b></div><div class="mbar"><i id="naFill" class="am" style="width:20%"></i></div></div>
-          <p class="mono lapline">Loop laps: <b id="laps">0</b></p>
-        </div>
-
-        <div class="ctl">
-          <button type="button" class="btn" id="stepBtn">Step ▸</button>
-          <button type="button" class="btn ghost" id="runBtn">Auto-run</button>
-          <button type="button" class="btn ghost" id="resetBtn">Reset</button>
-        </div>
-
-        <fieldset class="amps">
-          <legend class="mono">What amplifies NA</legend>
-          <label><input type="checkbox" id="amp1"> Lower Neuropeptide Y</label>
-          <label><input type="checkbox" id="amp2"> Reduced alpha-2 autoreceptor sensitivity</label>
-        </fieldset>
-        <p class="insight" id="insight">Press Step to begin.</p>
-      </div>
-    </div>
-    <p class="small">Toy model for intuition only. Numbers are relative and illustrative, not measurements, and the loop is simplified from the literature.</p>
-  </div>
-</section>
-
-<!-- ============ 03 WORK ============ -->
-<section id="work" class="reveal">
-  <p class="kicker mono">03 · The work</p>
-  <h2>Two phases, 500+ papers.</h2>
-  <div class="phases">
-    <article class="hud phase">
-      <p class="when mono">May–Aug 2022 &middot; with Dr. Vijay Kumar, AINN</p>
-      <p class="num"><b data-count="40" data-suffix="+">40+</b><span>articles read</span></p>
-      <h3>Preliminary study</h3>
-      <p>Read 40+ articles on sleep disturbance and PTSD. Wrote a 10-page report on categorical sleep measures, subjective and objective. <a href="mailto:ishakaushik12a@gmail.com?subject=Request%3A%20sleep%20measures%20report">Request the report</a>.</p>
-    </article>
-    <article class="hud phase">
-      <p class="when mono">Apr–Aug 2023 &middot; with Harshpreet Kaur, guided by <a href="https://en.wikipedia.org/wiki/Birendra_Nath_Mallick">Prof. Birendra Nath Mallick</a></p>
-      <p class="num"><b data-count="500" data-suffix="+">500+</b><span>studies reviewed</span></p>
-      <h3>The review</h3>
-      <p>Reviewed 500+ empirical studies (1970s–2022) on how disturbed sleep and PTSD influence each other, with a focus on noradrenaline. It also assesses NA-targeting treatments that aim to restore REM sleep.</p>
-    </article>
-    <article class="hud phase out">
-      <p class="when mono">Output</p>
-      <p class="num"><b data-count="1">1</b><span>preprint</span></p>
-      <h3>The paper</h3>
-      <p><a href="sleep paper.pdf">Read the preprint (PDF)</a></p>
-    </article>
-  </div>
-</section>
-
-<!-- ============ 04 FRAMEWORK ============ -->
-<section id="framework" class="reveal">
-  <p class="kicker mono">04 · The framework</p>
-  <h2>REMS–PTSD risk matrix.</h2>
-  <p class="lede">A structured model for judging PTSD risk from sleep and neurochemical markers. Three parts, each with one job in assessment. Select a module.</p>
-
-  <div data-tabs class="hud modules">
-    <div class="tabs three tab-list" role="tablist" aria-label="Framework modules">
-      <button type="button" role="tab"><span class="mono">Module 1</span>Trauma &amp; sleep</button>
-      <button type="button" role="tab"><span class="mono">Module 2</span>NA mechanism</button>
-      <button type="button" role="tab"><span class="mono">Module 3</span>Susceptibility</button>
-    </div>
-
-    <div class="tab-panel">
-      <h3>Trauma exposure and sleep dysregulation</h3>
-      <p>Trauma triggers a stress response, often insomnia and recurrent nightmares. Chronic sleep problems weaken emotional regulation and raise the odds of PTSD.</p>
-      <p class="use"><b class="mono">Use it to</b> flag persistent sleep disruption early.</p>
-      <figure class="fig"><button type="button" class="zoom" aria-label="Enlarge diagram"><img src="image.png" alt="Flow diagram: traumatic event leads to acute stress response and sleep disruption, which loops with loss of emotional regulation and noradrenaline hyperactivity toward PTSD, untreated REM sleep disturbances and persistent insomnia." loading="lazy"></button><figcaption>Diagram: Harshpreet Kaur &amp; Isha Kaushik · tap to enlarge</figcaption></figure>
-    </div>
-
-    <div class="tab-panel">
-      <h3>The noradrenaline mechanism</h3>
-      <p>PTSD overactivates the sympathetic system, including the locus coeruleus–NA pathway. Low Neuropeptide Y and less sensitive alpha-2 autoreceptors amplify NA, causing hyperarousal, wakefulness and REM disruption.</p>
-      <p class="use"><b class="mono">Use it to</b> track REM sleep quality and stress biomarkers to gauge neurobiological vulnerability.</p>
-      <figure class="fig"><button type="button" class="zoom" aria-label="Enlarge diagram"><img src="image (1).png" alt="Diagram: PTSD drives sympathetic overactivation, with lower NPY and reduced alpha-2 receptor affinity, making the LC-NA system hyperactive, increasing NA release, causing hyperarousal, REM sleep loss and surged wakefulness." loading="lazy"></button><figcaption>Diagram: Harshpreet Kaur &amp; Isha Kaushik · tap to enlarge</figcaption></figure>
-    </div>
-
-    <div class="tab-panel">
-      <h3>Individual susceptibility</h3>
-      <ul class="clean">
-        <li><b>Age:</b> older adults may cope less well</li>
-        <li><b>Sex:</b> women show higher susceptibility</li>
-        <li><b>Epigenetics:</b> can predispose to stronger stress responses</li>
-      </ul>
-      <p class="use"><b class="mono">Use it to</b> put risk in context and personalise the evaluation.</p>
-      <figure class="fig"><button type="button" class="zoom" aria-label="Enlarge diagram"><img src="WhatsApp Image 2025-11-01 at 20.02.27_f4bdb564.jpg" alt="Diagram of factors affecting PTSD development, including ageing, sex-specific variation and gene-environment interaction, feeding a loop between noradrenaline level and REM sleep loss." loading="lazy"></button><figcaption>Diagram: Harshpreet Kaur &amp; Isha Kaushik · tap to enlarge</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 05 WORKFLOW ============ -->
-<section id="workflow" class="reveal">
-  <p class="kicker mono">05 · In practice</p>
-  <h2>A workflow for low-resource settings.</h2>
-  <p class="lede">No neuroimaging, no lab. Four proposed stages that a trauma center, community clinic or research team could adapt to what it has. This workflow is a concept and has not been tested.</p>
-
-  <div data-tabs class="hud stages">
-    <div class="tabs four tab-list" role="tablist" aria-label="Workflow stages">
-      <button type="button" role="tab"><span class="mono">Wk 0–1</span>Screen</button>
-      <button type="button" role="tab"><span class="mono">Wk 2–4</span>Stratify</button>
-      <button type="button" role="tab"><span class="mono">Wk 4–8</span>REM proxies</button>
-      <button type="button" role="tab"><span class="mono">Wk 8+</span>Intervene</button>
-    </div>
-    <div class="track" aria-hidden="true"><i></i></div>
-
-    <div class="tab-panel">
-      <h3>Screen sleep disruption</h3>
-      <p>A brief check right after trauma. This is the window that matters, since under 10% get treatment in the first year.</p>
-      <ul class="chips"><li>Pittsburgh Sleep Quality Index (free, 5–10 min)</li><li>0–10 sleep quality rating</li><li>Nightmare frequency log</li><li>3–7 day sleep diary</li></ul>
-      <p class="note"><b>Watch for two signals:</b> trouble falling or staying asleep, and recurrent distressing dreams.</p>
-    </div>
-
-    <div class="tab-panel">
-      <h3>Stratify risk</h3>
-      <p>For people with persistent sleep problems, add the susceptibility factors. It takes clinical history, not expensive tests. Tick the boxes to see how the proposed scoring works.</p>
-      <div class="calc" id="calc">
-        <div class="calc-list">
-          <label><input type="checkbox"> Persistent sleep disruption</label>
-          <label><input type="checkbox"> Female</label>
-          <label><input type="checkbox"> Older adult</label>
-          <label><input type="checkbox"> Previous trauma or PTSD episode</label>
-          <label><input type="checkbox"> Family history of anxiety or mood disorders <span class="small">(epigenetic proxy)</span></label>
-          <label><input type="checkbox"> Pre-existing sleep disorder</label>
-        </div>
-        <div class="calc-out">
-          <div class="ring-wrap">
-            <svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="trk" cx="50" cy="50" r="44"/><circle class="val" id="ringVal" cx="50" cy="50" r="44" transform="rotate(-90 50 50)"/></svg>
-            <div class="ring-txt"><b id="score">0</b><span>/ 6</span></div>
-          </div>
-          <p class="verdict" id="verdict" aria-live="polite">1 point per box. In the framework's proposed logic, 3 or more flags closer monitoring.</p>
-        </div>
-      </div>
-      <p class="warn"><b class="mono">Illustration only.</b> This demonstrates the framework's proposed logic. It is unvalidated, is not a screening test, and should not be used to assess yourself or anyone else.</p>
-      <p class="note">Social support is assessed too, as a protective factor, and isn't scored here.</p>
-    </div>
-
-    <div class="tab-panel">
-      <h3>Use proxies for REM disruption</h3>
-      <p>Polysomnography isn't always available. These stand in for REM disruption and noradrenergic hyperactivity.</p>
-      <div class="filter" role="group" aria-label="Filter proxies">
-        <button type="button" class="btn ghost on" data-f="all" aria-pressed="true">All</button>
-        <button type="button" class="btn ghost" data-f="sleep" aria-pressed="false">Sleep pattern</button>
-        <button type="button" class="btn ghost" data-f="arousal" aria-pressed="false">Arousal</button>
-      </div>
-      <ul class="chips proxies" id="proxies">
-        <li data-g="sleep">Dream recall frequency</li>
-        <li data-g="sleep">Nightmare timing (early morning, REM-dense)</li>
-        <li data-g="sleep">Sleep fragmentation</li>
-        <li data-g="arousal">Resting heart rate</li>
-        <li data-g="arousal">Hypervigilance rating</li>
-        <li data-g="arousal">Startle severity</li>
-        <li data-g="arousal">Wearable HRV, if available</li>
-      </ul>
-      <p class="small">Grouping added on this page for readability.</p>
-      <p class="note">Consumer sleep trackers (about $50–200) give objective fragmentation data that tracks with REM disruption.</p>
-    </div>
-
-    <div class="tab-panel">
-      <h3>Map the intervention</h3>
-      <p>Target the noradrenergic hyperactivity that keeps breaking REM sleep and feeding PTSD symptoms.</p>
-      <div class="scroll-x"><table class="vs">
-        <tr><th>Type</th><th>Option</th><th>Why it scales</th></tr>
-        <tr><td>Drug</td><td>Prazosin (alpha-1 antagonist) for nightmares</td><td>Low cost, widely available, hits NA hyperactivity</td></tr>
-        <tr><td>Behavioral</td><td>Image Rehearsal Therapy</td><td>Trained counselors, no equipment</td></tr>
-        <tr><td>Routine</td><td>Sleep hygiene protocols</td><td>Environment, timing, pre-sleep habits</td></tr>
-        <tr><td>If feasible</td><td>CBT for insomnia (CBT-I)</td><td>Can run over telehealth</td></tr>
-      </table></div>
-      <p class="warn"><b class="mono">Not treatment advice.</b> These are options discussed in the framework's literature review. Medication and therapy decisions belong with a qualified clinician.</p>
-    </div>
-  </div>
-
-  <h3 class="sub">Scale it by what you have</h3>
-  <div class="hud tiers" id="tiers">
-    <div class="hud-head"><span class="mono">Capability ladder</span><span class="chip-int mono">Interactive</span></div>
-    <div class="seg" role="radiogroup" aria-label="Resource tier">
-      <label><input type="radio" name="tier" value="1" checked><span>Tier 1 · Minimal</span></label>
-      <label><input type="radio" name="tier" value="2"><span>Tier 2 · Moderate</span></label>
-      <label><input type="radio" name="tier" value="3"><span>Tier 3 · Research</span></label>
-    </div>
-    <ul class="caps">
-      <li data-t="1"><span class="mono">T1</span>Stages 1–2 on paper</li>
-      <li data-t="1"><span class="mono">T1</span>Basic risk scoring</li>
-      <li data-t="1"><span class="mono">T1</span>Referral protocol for high-risk cases</li>
-      <li data-t="2"><span class="mono">T2</span>Consumer wearables</li>
-      <li data-t="2"><span class="mono">T2</span>Structured interventions</li>
-      <li data-t="2"><span class="mono">T2</span>Follow-up schedule</li>
-      <li data-t="3"><span class="mono">T3</span>Full polysomnography</li>
-      <li data-t="3"><span class="mono">T3</span>Biomarkers, e.g. salivary cortisol</li>
-      <li data-t="3"><span class="mono">T3</span>Controlled trials</li>
-    </ul>
-  </div>
-  <p class="note">Track four things, even in a spreadsheet: initial risk score, sleep metrics over time, interventions given, and outcomes at 3, 6 and 12 months.</p>
-</section>
-
-<!-- ============ WHY IT MATTERS ============ -->
-<section class="reveal">
-  <div class="band">
-    <p class="kicker mono">Why it matters</p>
-    <p class="big">Sleep problems are observable, measurable and treatable, which makes them a promising place to look for early signals of PTSD risk.</p>
-    <p class="fine">The aim is actionable assessment, not perfect assessment. This remains a research concept awaiting validation. For feedback and new versions, contact the co-authors.</p>
-  </div>
-</section>
+<div class="note" role="note">
+  <p><b>Research use only.</b> This framework does not diagnose, predict or treat PTSD, and nothing here is medical advice. If you are struggling after a traumatic experience, contact a qualified health professional or local emergency services.</p>
 </div>
 
-<dialog id="lightbox" aria-label="Enlarged diagram">
-  <form method="dialog"><button class="btn" aria-label="Close enlarged diagram">✕ Close</button></form>
-  <img alt="">
-</dialog>
+<h2>Background</h2>
+<p>Reported rates, scaled to 1,000 people (Fig. 1a): 70% experience a potentially traumatic event; 5.6% of those develop PTSD (about 39; the global figure is 3.9%); at most 40% recover within a year; fewer than 1 in 10 receive treatment in the first year. Average time to treatment is 4.5 years, and the median reaches 12 years in some settings (Fig. 1b). An early, low-cost signal of risk could shorten this interval.</p>
 
-<footer><p>© 2026 Isha Kaushik</p></footer>
+<figure class="fig">
+<div class="panels">
+<div>
+<p class="pl">a</p>
+<svg viewBox="0 0 330 176" role="img" aria-label="Bars per 1,000 people: cohort 1,000; exposed 700; develop PTSD about 39; recover within a year at most 16; treated in year one under 4.">
+  <g class="gr"><line x1="124" y1="6" x2="124" y2="148"/></g>
+  <text x="116" y="24" text-anchor="end">Cohort</text><rect class="fg" x="124" y="12" width="190" height="16"/><text x="130" y="24" class="b">1,000</text>
+  <text x="116" y="52" text-anchor="end">Exposed</text><rect class="fg" x="124" y="40" width="133" height="16"/><text x="263" y="52" class="b">700</text>
+  <text x="116" y="80" text-anchor="end">Develop PTSD</text><rect class="fa" x="124" y="68" width="7.4" height="16"/><text x="137" y="80" class="b">≈39</text>
+  <text x="116" y="108" text-anchor="end">Recover ≤1 yr</text><rect class="fa" x="124" y="96" width="3" height="16"/><text x="133" y="108" class="b">≤16</text>
+  <text x="116" y="136" text-anchor="end">Treated, yr 1</text><rect class="fa" x="124" y="124" width="1" height="16"/><text x="131" y="136" class="b">&lt;4</text>
+  <text x="124" y="166" class="m s">People per 1,000 · linear scale</text>
+</svg>
+</div>
+<div>
+<p class="pl">b</p>
+<svg viewBox="0 0 330 176" role="img" aria-label="Time to treatment: median 12 years in some settings; average 4.5 years; framework target weeks.">
+  <g class="gr"><line x1="124" y1="6" x2="124" y2="148"/></g>
+  <text x="116" y="34" text-anchor="end">Median, some</text><text x="116" y="47" text-anchor="end">settings</text>
+  <rect class="fg" x="124" y="26" width="150" height="18"/><text x="280" y="40" class="b">12 yr</text>
+  <text x="116" y="88" text-anchor="end">Average</text>
+  <rect class="fg" x="124" y="76" width="56" height="18"/><text x="186" y="90" class="b">4.5 yr</text>
+  <text x="116" y="132" text-anchor="end">Framework target</text>
+  <rect x="124" y="120" width="5" height="18" class="lna dash"/><text x="136" y="134" class="b">weeks</text>
+  <text x="124" y="166" class="m s">Years · linear scale</text>
+</svg>
+</div>
+</div>
+<figcaption class="cap"><b>Fig. 1 |</b> Treatment gap. <b>a,</b> Reported rates scaled to a cohort of 1,000 for illustration; not a measured cohort. <b>b,</b> Time to treatment. The dashed bar is the framework’s target, not a result.</figcaption>
+</figure>
 
-<script src="rems-ptsd.js"></script>
+<h2>Mechanism</h2>
+<p>NA must decline for REM sleep to form, so any rise in NA makes REM harder to obtain. Loss of REM weakens emotional regulation and raises brain NA through an overactive locus coeruleus–NA pathway. Lower neuropeptide Y (NPY) and less sensitive alpha-2 autoreceptors amplify this step. The resulting hyperarousal and wakefulness cause further REM loss, so the loop sustains itself (Fig. 2).</p>
+
+<figure class="fig">
+<svg viewBox="0 0 680 176" role="img" aria-label="Loop: trauma, sleep disruption, REM loss, NA rises, hyperarousal; hyperarousal feeds back to REM loss. NPY decrease and alpha-2 autoreceptor desensitization amplify the NA step.">
+  <defs>
+    <marker id="s1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fl"/></marker>
+    <marker id="s2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fa"/></marker>
+  </defs>
+  <g text-anchor="middle">
+    <rect class="bx" x="8" y="58" width="108" height="46" rx="3"/><text x="62" y="79" class="m s">1</text><text x="62" y="94">Trauma</text>
+    <rect class="bx" x="144" y="58" width="108" height="46" rx="3"/><text x="198" y="76" class="m s">2</text><text x="198" y="92">Sleep disruption</text>
+    <rect class="bxa" x="280" y="58" width="108" height="46" rx="3"/><text x="334" y="76" class="m s">3</text><text x="334" y="92">REM loss</text>
+    <rect class="bxa" x="416" y="58" width="108" height="46" rx="3"/><text x="470" y="76" class="m s">4</text><text x="470" y="92">NA rises</text>
+    <rect class="bx" x="552" y="58" width="120" height="46" rx="3"/><text x="612" y="76" class="m s">5</text><text x="612" y="92">Hyperarousal</text>
+  </g>
+  <path class="ln" d="M116 81 L142 81" marker-end="url(#s1)"/>
+  <path class="ln" d="M252 81 L278 81" marker-end="url(#s1)"/>
+  <path class="ln" d="M388 81 L414 81" marker-end="url(#s1)"/>
+  <path class="ln" d="M524 81 L550 81" marker-end="url(#s1)"/>
+  <path class="lna" d="M612 104 L612 146 L334 146 L334 106" marker-end="url(#s2)"/>
+  <text x="473" y="164" text-anchor="middle" class="m s">feedback</text>
+  <path class="lna" d="M470 34 L470 56" marker-end="url(#s2)"/>
+  <text x="470" y="26" text-anchor="middle" class="s">↓ NPY · ↓ α2-autoreceptor sensitivity</text>
+</svg>
+<figcaption class="cap"><b>Fig. 2 |</b> REM–NA feedback loop. Conceptual model, simplified from the literature. Shaded stages are the coupled REM–NA pair; the arrow above stage 4 marks the amplifiers.</figcaption>
+</figure>
+
+<h2>Review</h2>
+<figure class="tbl">
+<figcaption class="cap"><b>Table 1 |</b> Literature review phases.</figcaption>
+<div class="sx"><table>
+<thead><tr><th>Phase</th><th>Period</th><th>Scope</th><th>Output</th></tr></thead>
+<tbody>
+<tr><td>I</td><td class="nw">May–Aug 2022<br><span class="sm">with Dr. Vijay Kumar, AINN</span></td><td>40+ articles on sleep disturbance and PTSD</td><td>10-page report on categorical sleep measures, subjective and objective (<a href="mailto:ishakaushik12a@gmail.com?subject=Request%3A%20sleep%20measures%20report">on request</a>)</td></tr>
+<tr><td>II</td><td class="nw">Apr–Aug 2023<br><span class="sm">with Harshpreet Kaur; guide: <a href="https://en.wikipedia.org/wiki/Birendra_Nath_Mallick">B. N. Mallick</a></span></td><td>500+ empirical studies (1970s–2022) on the mutual influence of disturbed sleep and PTSD, focused on NA; NA-targeting treatments aimed at restoring REM</td><td><a href="sleep%20paper.pdf">Preprint (PDF)</a></td></tr>
+</tbody></table></div>
+</figure>
+
+<h2>Framework</h2>
+<p>The REMS–PTSD risk matrix has three modules (Table 2; Fig. 3).</p>
+
+<figure class="tbl">
+<figcaption class="cap"><b>Table 2 |</b> Framework modules.</figcaption>
+<div class="sx"><table>
+<thead><tr><th>Module</th><th>Content</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td>1 · Trauma and sleep</td><td>Trauma triggers a stress response, often insomnia and recurrent nightmares. Chronic sleep problems weaken emotional regulation and raise the odds of PTSD.</td><td>Flag persistent sleep disruption early</td></tr>
+<tr><td>2 · NA mechanism</td><td>PTSD overactivates the sympathetic system, including the locus coeruleus–NA pathway. Low NPY and less sensitive alpha-2 autoreceptors amplify NA, causing hyperarousal, wakefulness and REM disruption.</td><td>Track REM quality and stress biomarkers to gauge neurobiological vulnerability</td></tr>
+<tr><td>3 · Susceptibility</td><td>Age (older adults may cope less well); sex (women show higher susceptibility); epigenetics (may predispose to stronger stress responses).</td><td>Place risk in context; personalize the evaluation</td></tr>
+</tbody></table></div>
+</figure>
+
+<figure class="fig">
+<div class="imgs">
+<a href="image.png"><img src="image.png" alt="Flow diagram: traumatic event leads to acute stress response and sleep disruption, which loops with loss of emotional regulation and noradrenaline hyperactivity toward PTSD, untreated REM sleep disturbances and persistent insomnia." loading="lazy"></a>
+<a href="image%20(1).png"><img src="image (1).png" alt="Diagram: PTSD drives sympathetic overactivation, with lower NPY and reduced alpha-2 receptor affinity, making the LC-NA system hyperactive, increasing NA release, causing hyperarousal, REM sleep loss and surged wakefulness." loading="lazy"></a>
+<a href="WhatsApp%20Image%202025-11-01%20at%2020.02.27_f4bdb564.jpg"><img src="WhatsApp Image 2025-11-01 at 20.02.27_f4bdb564.jpg" alt="Diagram of factors affecting PTSD development, including ageing, sex-specific variation and gene-environment interaction, feeding a loop between noradrenaline level and REM sleep loss." loading="lazy"></a>
+</div>
+<figcaption class="cap"><b>Fig. 3 |</b> Module diagrams. <b>a,</b> Trauma exposure and sleep dysregulation. <b>b,</b> NA mechanism. <b>c,</b> Individual susceptibility. Diagrams: H. Kaur and I. Kaushik.</figcaption>
+</figure>
+
+<h2>Workflow</h2>
+<p>Four proposed stages for settings without neuroimaging or a laboratory (Table 3), scaled to available resources (Table 4). The workflow is a concept and has not been tested.</p>
+
+<figure class="tbl">
+<figcaption class="cap"><b>Table 3 |</b> Proposed workflow. Unvalidated. Intervention options are those discussed in the review’s literature; medication and therapy decisions belong with a qualified clinician.</figcaption>
+<div class="sx"><table>
+<thead><tr><th>Stage</th><th>Method</th></tr></thead>
+<tbody>
+<tr><td class="nw">Screen<br><span class="sm">wk 0–1</span></td><td>Brief check after trauma, when treatment is rare. Pittsburgh Sleep Quality Index (free, 5–10 min); 0–10 sleep-quality rating; nightmare-frequency log; 3–7-day sleep diary. Signals: trouble falling or staying asleep; recurrent distressing dreams.</td></tr>
+<tr><td class="nw">Stratify<br><span class="sm">wk 2–4</span></td><td>For persistent sleep problems, score six factors, 1 point each: persistent sleep disruption; female; older adult; previous trauma or PTSD episode; family history of anxiety or mood disorders (epigenetic proxy); pre-existing sleep disorder. The proposed threshold of 3 or more flags closer monitoring. Social support is assessed as a protective factor and not scored.</td></tr>
+<tr><td class="nw">REM proxies<br><span class="sm">wk 4–8</span></td><td>Sleep pattern: dream-recall frequency; nightmare timing (early morning, REM-dense); sleep fragmentation. Arousal: resting heart rate; hypervigilance rating; startle severity; wearable HRV where available. Consumer sleep trackers (about $50–200) give objective fragmentation data.</td></tr>
+<tr><td class="nw">Intervene<br><span class="sm">wk 8+</span></td><td>Targets NA hyperactivity that keeps breaking REM. Options: prazosin (alpha-1 antagonist) for nightmares; Image Rehearsal Therapy; sleep-hygiene protocols; CBT for insomnia (telehealth where feasible).</td></tr>
+</tbody></table></div>
+</figure>
+
+<figure class="tbl">
+<figcaption class="cap"><b>Table 4 |</b> Capability tiers.</figcaption>
+<div class="sx"><table>
+<thead><tr><th>Tier</th><th>Capability</th></tr></thead>
+<tbody>
+<tr><td>1 · Minimal</td><td>Stages 1–2 on paper; basic risk scoring; referral protocol for high-risk cases</td></tr>
+<tr><td>2 · Moderate</td><td>Consumer wearables; structured interventions; follow-up schedule</td></tr>
+<tr><td>3 · Research</td><td>Full polysomnography; biomarkers such as salivary cortisol; controlled trials</td></tr>
+</tbody></table></div>
+</figure>
+<p>Minimum record at any tier: initial risk score, sleep metrics over time, interventions given, and outcomes at 3, 6 and 12 months.</p>
+
+<h2>Discussion</h2>
+<p>Sleep problems are observable, measurable and treatable, which makes them a candidate source of early PTSD risk signals. The aim is actionable assessment, not perfect assessment.</p>
+
+<h2>Limitations</h2>
+<p>The framework is derived from the literature and has not been validated in patients or clinics. The workflow and the scoring threshold are untested, and Fig. 1a and Fig. 2 are illustrative. For feedback and new versions, contact the co-authors.</p>
+
+<div class="corr"><p>Correspondence: <a href="mailto:ishakaushik12a@gmail.com">ishakaushik12a@gmail.com</a></p><p>© 2026 Isha Kaushik</p></div>
+</div>
 </body>
 </html>
