@@ -3,413 +3,139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
 <link rel="icon" href="../media/Site logo.jpg" type="image/jpeg">
-<title>The VICE Framework: Behavioral Science for Indian Food Delivery | Isha Kaushik</title>
-<meta name="description" content="VICE: a weighted behavioral-science framework for conversion on Indian food delivery platforms.">
+<title>VICE: A Weighted Framework for Conversion in Indian Food Delivery | Isha Kaushik</title>
+<meta name="description" content="VICE: four weighted behavioral pillars (visual, informational, cultural, experiential) translating gastrophysics into testable interface tactics for Indian food-delivery platforms.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="vice.css">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../project.css">
 </head>
 <body>
+<div class="page">
 
-<header class="topbar">
-  <div class="topbar-in">
-    <a class="brand" href="#top" aria-label="VICE, back to top"><i class="pv"></i><i class="pi"></i><i class="pc"></i><i class="pe"></i><span>VICE</span></a>
-    <nav aria-label="Sections">
-      <a href="#gap">Gap</a>
-      <a href="#method">Method</a>
-      <a href="#framework">Framework</a>
-      <a href="#compound">Compounding</a>
-      <a href="#rollout">Rollout</a>
-    </nav>
-  </div>
-  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
-</header>
+<div class="mast"><a href="../index.html">← Index</a><span>Research artifact · Behavioral science</span></div>
 
-<div class="wrap" id="top">
-<a class="back" href="../index.html">← Back</a>
-<h1 class="sr-only">The VICE Framework: translating gastrophysics for Indian food delivery</h1>
+<h1>VICE: A Weighted Framework for Behavioral Drivers of Conversion in Indian Food Delivery</h1>
+<p class="authors">Isha Kaushik</p>
+<p class="affil">Research Assistant, Cross-Modal Perception Lab, University of Oxford</p>
+<p class="affil">Guided by Prof. Charles Spence and Tianyi Zhang · Evidence base: 40+ peer-reviewed studies</p>
 
-<dl class="facts">
-  <div class="wide"><dt>Project</dt><dd>VICE: a weighted behavioral-science framework for conversion on Indian food delivery platforms</dd></div>
-  <div><dt>Role</dt><dd>Research Assistant, Cross-Modal Perception Lab, Oxford University</dd></div>
-  <div><dt>Guided by</dt><dd>Prof. Charles Spence (gastrophysicist), Tianyi Zhang</dd></div>
-  <div><dt>Evidence base</dt><dd>40+ peer-reviewed studies</dd></div>
-  <div><dt>Status</dt><dd>Framework complete, ready for platform implementation. Also landed a stint with Swiggy's behavioural science team.</dd></div>
-</dl>
-
-<!-- ============ 01 GAP ============ -->
-<section id="gap" class="reveal">
-  <p class="kicker"><b>01</b>The gap</p>
-  <h2>Food delivery apps run on generic e-commerce rules.</h2>
-  <p class="lede">Oxford's lab has decades of research on how sensory cues change what we choose and enjoy. No one had translated it for Indian digital ordering. I proposed building that bridge. The lab pointed me to the literature, and I built the implementation model.</p>
-
-  <div class="stats">
-    <div class="stat"><b data-count="28" data-prefix="$" data-suffix="B">$28B</b><span>India's food delivery market by 2030 (projected)</span></div>
-    <div class="stat"><b data-count="40" data-suffix="+">40+</b><span>studies analysed</span></div>
-    <div class="stat"><b>~0</b><span>empirical studies on Indian food delivery behavior</span></div>
-  </div>
-
-  <div class="lens" id="lens" data-lens="west">
-    <div class="lens-head">
-      <span class="lens-lab on">Western research assumes</span>
-      <button type="button" class="switch" role="switch" aria-checked="false" aria-label="Switch from Western research assumptions to Indian ordering"><i></i></button>
-      <span class="lens-lab">Indian ordering looks like</span>
-      <span class="chip-int">Flip it</span>
-    </div>
-    <div class="lens-rows">
-      <div class="lens-row"><span class="k">Dining</span><span class="w">Individual</span><span class="i">Family-style</span></div>
-      <div class="lens-row"><span class="k">Motivation</span><span class="w">Convenience first</span><span class="i">Authenticity and regional taste matter</span></div>
-      <div class="lens-row"><span class="k">Price</span><span class="w">Low sensitivity</span><span class="i">Aspirational spending alongside value-seeking</span></div>
-    </div>
-    <p class="lens-flag" id="lensFlag" aria-live="polite">Most of the research VICE draws on looks through this lens.</p>
-  </div>
-  <p class="note">Festival and seasonal food traditions add another layer. With no Indian data to validate against, every recalibration is an explicit assumption.</p>
-</section>
-
-<!-- ============ 02 METHOD ============ -->
-<section id="method" class="reveal">
-  <p class="kicker"><b>02</b>How I built it</p>
-  <h2>Four steps, from papers to tactics.</h2>
-
-  <div data-tabs class="box">
-    <div class="tabs four tab-list" role="tablist" aria-label="Method steps">
-      <button type="button" role="tab"><span class="n">1</span>Mine the literature</button>
-      <button type="button" role="tab"><span class="n">2</span>Find what converges</button>
-      <button type="button" role="tab"><span class="n">3</span>Weight and adapt</button>
-      <button type="button" role="tab"><span class="n">4</span>Turn it into tactics</button>
-    </div>
-    <div class="track" aria-hidden="true"><i></i></div>
-
-    <div class="tab-panel">
-      <h3>Mine the literature</h3>
-      <p>Not a systematic review. A targeted read for what could work in a digital interface.</p>
-      <ul class="chips"><li>Gastrophysics &amp; cross-modal perception</li><li>Digital food commerce</li><li>Cultural food psychology</li><li>Hedonic vs utilitarian motivation</li><li>Indian market studies (sparse, which became a finding)</li></ul>
-      <figure class="fig"><button type="button" class="zoom" aria-label="Enlarge image"><img src="Screenshot 2025-12-11 002618.png" alt="Spreadsheet extracting study details, methods and key findings from the literature." loading="lazy"></button><figcaption>Part of the study extraction table · tap to enlarge</figcaption></figure>
-    </div>
-
-    <div class="tab-panel">
-      <h3>Find what converges</h3>
-      <p>Four behavioral dimensions kept showing up as conversion drivers. They behave multiplicatively: each pillar amplifies the others.</p>
-      <div class="mult" aria-hidden="true"><span class="pv">V</span><i>×</i><span class="pi">I</span><i>×</i><span class="pc">C</span><i>×</i><span class="pe">E</span></div>
-    </div>
-
-    <div class="tab-panel">
-      <h3>Weight and adapt</h3>
-      <p>Weights come from effect sizes across studies, then adjusted for Indian market traits.</p>
-      <div class="flow" aria-hidden="true"><span>Effect sizes across studies</span><i>→</i><span>Weights</span><i>→</i><span>Adjusted for India</span></div>
-    </div>
-
-    <div class="tab-panel">
-      <h3>Turn it into tactics</h3>
-      <p>The test: a platform product manager reads VICE and launches A/B tests the next week.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 03 FRAMEWORK ============ -->
-<section id="framework" class="reveal">
-  <p class="kicker"><b>03</b>The framework</p>
-  <h2>VICE: four weighted pillars.</h2>
-  <p class="lede">Select a pillar. The width of each block is its weight, and every pillar has something to try.</p>
-
-  <div data-tabs class="box pillars">
-    <div class="weightbar tab-list" role="tablist" aria-label="VICE pillars, sized by weight">
-      <button type="button" role="tab" class="pv" style="flex:35"><b>V</b><span>Visual</span><em>35%</em></button>
-      <button type="button" role="tab" class="pi" style="flex:25"><b>I</b><span>Informational</span><em>25%</em></button>
-      <button type="button" role="tab" class="pc" style="flex:20"><b>C</b><span>Cultural</span><em>20%</em></button>
-      <button type="button" role="tab" class="pe" style="flex:20"><b>E</b><span>Experiential</span><em>20%</em></button>
-    </div>
-
-    <!-- V -->
-    <div class="tab-panel pv">
-      <h3>Visual design · 35%</h3>
-      <p class="tag">The plate you see determines the taste you expect</p>
-      <p>Online, the dish photo is the only sensory input before purchase. It has to stand in for aroma, sound and social cues.</p>
-
-      <div class="demo mood" id="mood">
-        <p class="demo-h">Color by cuisine <span class="chip-int">Try it</span></p>
-        <div class="mood-grid">
-          <div class="plate" id="plate" data-m="spice" aria-hidden="true"></div>
-          <div>
-            <div class="seg" role="group" aria-label="Cuisine color">
-              <button type="button" data-m="spice" aria-pressed="true">Spice</button>
-              <button type="button" data-m="fresh" aria-pressed="false">Fresh</button>
-              <button type="button" data-m="rich" aria-pressed="false">Richness</button>
-            </div>
-            <p class="readout" id="moodText" aria-live="polite">Warm reds for spice.</p>
-          </div>
-        </div>
-      </div>
-
-      <ul class="chips"><li>Styled, high-res photography</li><li>Menu layout for F-pattern mobile scanning</li><li>Close-ups, portion size, action shots</li></ul>
-      <p class="fine">Professional food styling raised perceived taste quality by 23% (Int. J. Hospitality Management, 2022).</p>
-      <p class="note"><b>For platforms:</b> <span class="tier b">Bronze</span> <span class="tier s">Silver</span> <span class="tier g">Gold</span> photo tiers for restaurants, tied to conversion tracking.</p>
-    </div>
-
-    <!-- I -->
-    <div class="tab-panel pi">
-      <h3>Informational architecture · 25%</h3>
-      <p class="tag">Uncertainty kills conversion; transparency builds trust</p>
-      <p>Indian users research before they order (high uncertainty avoidance). Well-structured detail speeds the decision up.</p>
-
-      <div class="two">
-        <div class="demo">
-          <p class="demo-h">Layered detail <span class="chip-int">Try it</span></p>
-          <div class="seg" role="group" aria-label="Detail layer">
-            <button type="button" data-l="1" aria-pressed="true">Layer 1</button>
-            <button type="button" data-l="2" aria-pressed="false">Layer 2</button>
-            <button type="button" data-l="3" aria-pressed="false">Layer 3</button>
-          </div>
-          <div class="layer-card" id="layerCard" data-level="1">
-            <div class="l1"><span>Chicken biryani</span><span>₹349</span></div>
-            <div class="l2">Slow-cooked basmati layered with marinated chicken.</div>
-            <div class="l3">Nutrition and allergens, for the person who needs to check.</div>
-          </div>
-          <p class="small" id="layerHint" aria-live="polite">Name and price first. Nothing else competes for attention.</p>
-          <p class="small">Illustrative dish and price.</p>
-        </div>
-
-        <div class="demo">
-          <p class="demo-h">Trust Score <span class="chip-int">Try it</span></p>
-          <div class="trust" id="trust">
-            <label><span>Photo quality</span><input type="range" min="0" max="100" value="40"><output>40</output></label>
-            <label><span>Review recency</span><input type="range" min="0" max="100" value="40"><output>40</output></label>
-            <label><span>Menu completeness</span><input type="range" min="0" max="100" value="40"><output>40</output></label>
-            <label><span>Response rate</span><input type="range" min="0" max="100" value="40"><output>40</output></label>
-          </div>
-          <div class="score-row">
-            <div class="score"><b id="trustScore">40</b><span>/ 100</span></div>
-            <div class="place" aria-hidden="true"><div class="place-bar"><i id="trustMark"></i></div><div class="place-lab"><span>Lower placement</span><span>Better placement</span></div></div>
-          </div>
-          <p class="small" id="trustText" aria-live="polite">Higher score earns better placement.</p>
-          <p class="small">The four inputs are VICE's. Equal weighting here is only for illustration.</p>
-        </div>
-      </div>
-
-      <ul class="chips"><li>Ratings with counts, “Most Ordered”, dated and photo reviews</li><li>Prep time, live restaurant status, sourcing</li><li>“Home-style” vs “restaurant-style” tags</li><li>“Pairs well with…”</li></ul>
-      <p class="note"><b>For platforms:</b> a Trust Score from photo quality, review recency, menu completeness and response rate. Higher score earns better placement.</p>
-    </div>
-
-    <!-- C -->
-    <div class="tab-panel pc">
-      <h3>Cultural contextualization · 20%</h3>
-      <p class="tag">One India doesn't exist in food psychology</p>
-      <p>India has 28+ food cultures. Platforms that contextualize instead of standardizing win more share.</p>
-
-      <div class="two">
-        <div class="demo">
-          <p class="demo-h">Regional palates <span class="chip-int">Try it</span></p>
-          <div class="compass" role="group" aria-label="Region">
-            <button type="button" class="n" data-r="north" aria-pressed="true">North</button>
-            <button type="button" class="w" data-r="west" aria-pressed="false">West</button>
-            <div class="mid" aria-hidden="true"><b>28+</b><span>food cultures</span></div>
-            <button type="button" class="e" data-r="east" aria-pressed="false">East</button>
-            <button type="button" class="s" data-r="south" aria-pressed="false">South</button>
-          </div>
-          <p class="readout" id="regionOut" aria-live="polite"><b>North</b> Richness, spice, breads</p>
-        </div>
-
-        <div class="demo">
-          <p class="demo-h">Same search, different ranking <span class="chip-int">Try it</span></p>
-          <p class="small">A user in Kolkata searches “fish curry”.</p>
-          <div class="seg" role="group" aria-label="Ranking mode">
-            <button type="button" data-o="generic" aria-pressed="true">Generic ranking</button>
-            <button type="button" data-o="region" aria-pressed="false">Region-aware</button>
-          </div>
-          <ol class="rank" id="rank">
-            <li data-id="goa">Goan-style fish curry</li>
-            <li data-id="ker">Kerala-style fish curry</li>
-            <li data-id="ben">Bengali-style fish curry</li>
-          </ol>
-          <p class="small">Illustrative listing.</p>
-        </div>
-      </div>
-
-      <ul class="chips"><li>Festival triggers: Diwali feasts, Ramadan iftar timing, monsoon chai</li><li>Family orders (“serves 4”) vs individual orders (speed, portion)</li><li>Price framing for value seekers vs aspirational buyers</li><li>Localization beyond translation: “ghar jaisa”</li></ul>
-      <p class="note"><b>For platforms:</b> regional flavor profiles from order history and location. A Kolkata user searching fish curry sees Bengali-style options first.</p>
-    </div>
-
-    <!-- E -->
-    <div class="tab-panel pe">
-      <h3>Experiential cues · 20%</h3>
-      <p class="tag">Language shapes taste before the first bite</p>
-      <p>How a dish is described changes how it's experienced. Pleasure framing moves people from satisfying hunger to treating themselves, which raises willingness to pay.</p>
-
-      <div class="demo desc">
-        <p class="demo-h"><label for="descRange">Description richness</label> <span class="chip-int">Slide it</span></p>
-        <input type="range" id="descRange" min="0" max="3" step="1" value="0">
-        <div class="desc-labels" aria-hidden="true"><span>Poor</span><span>Better</span><span>Optimized</span><span>Too much</span></div>
-        <blockquote class="dish" id="dishText" aria-live="polite">“Chicken curry with rice”</blockquote>
-        <div class="meters">
-          <div class="meter"><div class="meter-top"><span>Appeal</span><b id="appealVal">25</b></div><div class="mbar"><i id="appealFill" class="ap" style="width:25%"></i></div></div>
-          <div class="meter"><div class="meter-top"><span>Believability</span><b id="believeVal">85</b></div><div class="mbar"><i id="believeFill" class="bl" style="width:85%"></i></div></div>
-        </div>
-        <p class="fine" id="descNote">Poor: says what the dish is, nothing about how it will feel.</p>
-        <p class="small">Meters are illustrative, not measured.</p>
-      </div>
-
-      <ul class="chips"><li>Indulgent framing on weekends, practical on weekday lunch</li><li>Words that match the photo: crispy, sizzling, velvety</li><li>Time-of-day framing, morning to midnight</li><li>Nostalgia: “Mom's recipe style”</li></ul>
-      <p class="fine">Over-describing backfires. It starts to sound too good to be true.</p>
-      <p class="note"><b>For platforms:</b> a sensory-language library in English, Hindi and regional languages, A/B tested into a proprietary database.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 04 COMPOUNDING ============ -->
-<section id="compound" class="reveal">
-  <p class="kicker"><b>04</b>How they interact</p>
-  <h2>Multiplicative, not additive.</h2>
-  <p class="lede">The weights don't add up to a conversion rate. Each pillar makes the others work harder. Switch the pillars on one at a time in this illustrative listing and watch what compounds.</p>
-
-  <div class="hud-wrap">
-    <div class="mock-wrap">
-      <div class="mock" aria-label="Illustrative biryani listing">
-        <div class="ph layer" data-k="v" tabindex="0" role="button" aria-pressed="false"><span class="o-off">Photo: low-res, flat lighting</span><span class="o-on">Photo: layered rice, visible meat, saffron garnish</span></div>
-        <div class="body">
-          <div class="row layer" data-k="i" tabindex="0" role="button" aria-pressed="false"><small>Informational</small><span class="o-off">No ratings, prep time or sourcing shown</span><span class="o-on">4.6★ from 2,347 orders · Most Ordered This Week · Ready in 25 min</span></div>
-          <div class="row layer" data-k="c" tabindex="0" role="button" aria-pressed="false"><small>Cultural</small><span class="o-off">No regional context</span><span class="o-on">Authentic Hyderabadi Dum style</span></div>
-          <div class="row layer" data-k="e" tabindex="0" role="button" aria-pressed="false"><small>Experiential</small><span class="o-off">Chicken biryani</span><span class="o-on">Fragrant, slow-cooked biryani with tender meat, aromatic spices, and perfectly steamed basmati rice</span></div>
-        </div>
-      </div>
-
-      <div class="side">
-        <ul class="hl-list" id="hl">
-          <li><button type="button" class="pick pv" data-k="v" aria-pressed="false"><b>Visual · 35%</b>Triggers the appetite response</button></li>
-          <li><button type="button" class="pick pi" data-k="i" aria-pressed="false"><b>Informational · 25%</b>Builds confidence</button></li>
-          <li><button type="button" class="pick pc" data-k="c" aria-pressed="false"><b>Cultural · 20%</b>Detected in Hyderabad, so it validates authenticity</button></li>
-          <li><button type="button" class="pick pe" data-k="e" aria-pressed="false"><b>Experiential · 20%</b>Primes sensory expectations</button></li>
-        </ul>
-        <div class="ctl">
-          <button type="button" class="btn" id="allOn">Switch all on</button>
-          <button type="button" class="btn ghost" id="allOff">Reset</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="lift" id="lift">
-      <p class="demo-h">Illustrative lift index <span class="chip-int">Live</span></p>
-      <div class="lift-row"><span>If effects simply added</span><div class="lbar"><i id="addFill" class="ad" style="width:0"></i></div><b id="addVal">0.00</b></div>
-      <div class="lift-row"><span>If they compound (VICE's premise)</span><div class="lbar"><i id="mulFill" class="mu" style="width:0"></i></div><b id="mulVal">0.00</b></div>
-      <p class="readout" id="liftText" aria-live="polite">Switch a pillar on to start.</p>
-      <p class="small">A toy picture of compounding built from the 35/25/20/20 weights. It is not VICE's formula and not a conversion prediction.</p>
-    </div>
-    <p class="together" id="together">Together: anticipated pleasure, social proof, authenticity and lower risk in one listing.</p>
-  </div>
-</section>
-
-<!-- ============ 05 ROLLOUT ============ -->
-<section id="rollout" class="reveal">
-  <p class="kicker"><b>05</b>Rollout</p>
-  <h2>How a platform would use it.</h2>
-
-  <div data-tabs class="box">
-    <div class="tabs four tab-list" role="tablist" aria-label="Rollout stages">
-      <button type="button" role="tab"><span class="n">1</span>Audit</button>
-      <button type="button" role="tab"><span class="n">2</span>Pilot</button>
-      <button type="button" role="tab"><span class="n">3</span>Enable partners</button>
-      <button type="button" role="tab"><span class="n">4</span>Build into ranking</button>
-    </div>
-    <div class="track" aria-hidden="true"><i></i></div>
-
-    <div class="tab-panel">
-      <h3>Audit</h3>
-      <p>Score the top 100 restaurants on VICE. Check whether scores track actual order rates.</p>
-      <div class="audit" id="audit" aria-hidden="true"></div>
-      <p class="small">One dot per restaurant.</p>
-    </div>
-
-    <div class="tab-panel">
-      <h3>Pilot</h3>
-      <p>Pick 20 restaurants. A/B test VICE-optimized listings against control. Measure conversion lift, basket size, repeat orders.</p>
-      <div class="pilot" id="pilot" aria-hidden="true"></div>
-      <div class="pilot-ctl">
-        <button type="button" class="btn ghost" id="shuffle">Reassign at random</button>
-        <span class="small" id="pilotText">10 VICE-optimized · 10 control</span>
-      </div>
-      <ul class="chips"><li>Conversion lift</li><li>Basket size</li><li>Repeat orders</li></ul>
-      <p class="small">An even split is shown for illustration.</p>
-    </div>
-
-    <div class="tab-panel">
-      <h3>Enable partners</h3>
-      <p>Toolkit of photo guidelines, description templates and cultural checklists. Better placement and lower commission for high scorers.</p>
-      <ul class="chips"><li>Photo guidelines</li><li>Description templates</li><li>Cultural checklists</li></ul>
-      <ul class="chips solid"><li>Better placement</li><li>Lower commission</li></ul>
-    </div>
-
-    <div class="tab-panel">
-      <h3>Build into ranking</h3>
-      <p>Feed VICE scores into the algorithm. Personalize weights per user, since some are visual-driven and others information-driven.</p>
-      <div class="demo">
-        <p class="demo-h"><label for="persRange">Who is ordering?</label> <span class="chip-int">Slide it</span></p>
-        <input type="range" id="persRange" min="-10" max="10" step="1" value="0">
-        <div class="desc-labels" aria-hidden="true"><span>Visual-driven</span><span>Information-driven</span></div>
-        <div class="stackbar" id="persBar" role="img" aria-label="Pillar weights for this user">
-          <span class="pv" style="width:35%">V 35%</span><span class="pi" style="width:25%">I 25%</span><span class="pc" style="width:20%">C 20%</span><span class="pe" style="width:20%">E 20%</span>
-        </div>
-        <p class="readout" id="persText" aria-live="polite">Average user: the default 35 / 25 / 20 / 20.</p>
-        <p class="small">The shift is illustrative. The framework says to personalize, not by how much.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 06 WHY IT MATTERS ============ -->
-<section id="why" class="reveal">
-  <p class="kicker"><b>06</b>Why it matters</p>
-  <h2>Three audiences.</h2>
-
-  <div data-tabs class="box">
-    <div class="tabs three tab-list" role="tablist" aria-label="Audiences">
-      <button type="button" role="tab"><span class="n">A</span>Platforms</button>
-      <button type="button" role="tab"><span class="n">B</span>Researchers</button>
-      <button type="button" role="tab"><span class="n">C</span>Restaurants</button>
-    </div>
-    <div class="tab-panel"><p class="big-p">Most optimization targets delivery speed and discounts. Interface-level behavioral science is barely used.</p></div>
-    <div class="tab-panel"><p class="big-p">It narrows the lab-to-market gap for gastrophysics, with cultural grounding.</p></div>
-    <div class="tab-panel"><p class="big-p">As platforms consolidate power, knowing how to score well on VICE becomes a survival skill.</p></div>
-  </div>
-
-  <div class="cols">
-    <div class="card">
-      <h3>What I led</h3>
-      <ul class="clean">
-        <li>Spotted the gap and scoped it as applied synthesis, not a literature review</li>
-        <li>Mined 40+ studies for conversion-relevant insights</li>
-        <li>Designed the four pillars and the 35/25/20/20 weights</li>
-        <li>Adapted Western findings to India, with assumptions stated</li>
-        <li>Wrote tactics platforms can execute</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>What the lab gave</h3>
-      <ul class="clean">
-        <li>Direction to the right research: visual-taste interactions, hedonic motivation, interface psychology</li>
-        <li>The gastrophysics foundation</li>
-        <li>Critical feedback on the logic, the weights, and which findings could carry applied claims</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="reveal">
-  <div class="band">
-    <p class="kicker">Limits and next</p>
-    <p class="big">Built on Western research, adapted without Indian validation data. Real conversion numbers will refine the weights.</p>
-    <p class="fine">Next: pilot with one or two Indian platforms, then extend to cloud kitchens, grocery delivery and reservations. The best frameworks aren't comprehensive. They're useful.</p>
-  </div>
-</section>
+<div class="abstract">
+  <p><span class="lab">Abstract</span>Gastrophysics has decades of evidence on how sensory cues shape food choice, but little of it has been translated to Indian digital ordering, where empirical studies are close to absent. Forty-plus peer-reviewed studies were synthesized into VICE, four pillars (Visual 35%, Informational 25%, Cultural 20%, Experiential 20%) weighted from effect sizes across studies and adjusted for Indian market traits. The pillars are assumed to interact multiplicatively. The framework is complete and untested. It was written so that a platform product manager can launch A/B tests the following week.</p>
 </div>
+<p class="kw"><span class="lab">Keywords</span>gastrophysics · food delivery · conversion · cross-modal perception · cultural adaptation</p>
 
-<dialog id="lightbox" aria-label="Enlarged image">
-  <form method="dialog"><button class="btn" aria-label="Close enlarged image">✕ Close</button></form>
-  <img alt="">
-</dialog>
+<h2>Background</h2>
+<p>India’s food-delivery market is projected to reach $28B by 2030. Platforms optimize delivery speed and discounts, and interface-level behavioral science is little used. The relevant literature is Western, and empirical studies of Indian food-delivery behavior are close to nil. Each recalibration in Table 1 is therefore an explicit assumption. Festival and seasonal food traditions add a further layer.</p>
 
-<footer><p>© 2026 Isha Kaushik</p></footer>
+<figure class="tbl">
+<figcaption class="cap"><b>Table 1 |</b> Assumptions in Western research and their Indian recalibration.</figcaption>
+<div class="sx"><table>
+<thead><tr><th>Dimension</th><th>Western research assumes</th><th>Indian ordering</th></tr></thead>
+<tbody>
+<tr><td>Dining</td><td>Individual</td><td>Family-style</td></tr>
+<tr><td>Motivation</td><td>Convenience first</td><td>Authenticity and regional taste matter</td></tr>
+<tr><td>Price</td><td>Low sensitivity</td><td>Aspirational spending alongside value-seeking</td></tr>
+</tbody></table></div>
+</figure>
 
-<script src="vice.js"></script>
+<h2>Method</h2>
+<ol class="t">
+  <li><b>Literature.</b> A targeted read, not a systematic review, for what could work in a digital interface: gastrophysics and cross-modal perception, digital food commerce, cultural food psychology, hedonic versus utilitarian motivation, and Indian market studies (sparse) (Fig. 1).</li>
+  <li><b>Convergence.</b> Four behavioral dimensions recurred as conversion drivers.</li>
+  <li><b>Weighting.</b> Weights derived from effect sizes across studies, then adjusted for Indian market traits.</li>
+  <li><b>Operationalization.</b> Each pillar converted into tactics that a platform can A/B test.</li>
+</ol>
+
+<figure class="fig">
+<a href="Screenshot%202025-12-11%20002618.png"><img src="Screenshot 2025-12-11 002618.png" alt="Spreadsheet extracting study details, methods and key findings from the literature." loading="lazy"></a>
+<figcaption class="cap"><b>Fig. 1 |</b> Part of the study-extraction table.</figcaption>
+</figure>
+
+<h2>Framework</h2>
+<p>VICE has four pillars, weighted as in Fig. 2.</p>
+
+<figure class="fig">
+<svg viewBox="0 0 680 84" role="img" aria-label="Stacked bar: Visual 35 percent, Informational 25 percent, Cultural 20 percent, Experiential 20 percent.">
+  <rect x="20" y="10" width="224" height="42" fill="#1d1c1a"/>
+  <rect x="244" y="10" width="160" height="42" fill="#5b574f"/>
+  <rect x="404" y="10" width="128" height="42" fill="#7a4f1a"/>
+  <rect x="532" y="10" width="128" height="42" fill="#c9bfa8"/>
+  <g text-anchor="middle">
+    <text x="132" y="36" style="fill:#fff" class="b">V · 35%</text>
+    <text x="324" y="36" style="fill:#fff" class="b">I · 25%</text>
+    <text x="468" y="36" style="fill:#fff" class="b">C · 20%</text>
+    <text x="596" y="36" class="b">E · 20%</text>
+    <text x="132" y="70" class="m s">Visual</text>
+    <text x="324" y="70" class="m s">Informational</text>
+    <text x="468" y="70" class="m s">Cultural</text>
+    <text x="596" y="70" class="m s">Experiential</text>
+  </g>
+</svg>
+<figcaption class="cap"><b>Fig. 2 |</b> VICE pillar weights. Segment width is proportional to weight.</figcaption>
+</figure>
+
+<h3>Visual</h3>
+<p>Online, the dish photograph is the only sensory input before purchase and must stand in for aroma, sound and social cues. Professional food styling raised perceived taste quality by 23% (<i>Int. J. Hospitality Management</i>, 2022).</p>
+<p class="kv"><span class="lab">Tactics</span>Styled high-resolution photography; menu layout for F-pattern mobile scanning; close-ups, portion size and action shots; color matched to cuisine.</p>
+<p class="kv"><span class="lab">Platform</span>Bronze, Silver and Gold photo tiers for restaurants, tied to conversion tracking.</p>
+
+<h3>Informational</h3>
+<p>Indian users research before ordering (high uncertainty avoidance). Structured detail shortens the decision.</p>
+<p class="kv"><span class="lab">Tactics</span>Ratings with counts, “Most Ordered”, dated and photo reviews; prep time, live restaurant status, sourcing; “home-style” versus “restaurant-style” tags; “pairs well with…”; layered detail (name and price first, then description, then nutrition and allergens).</p>
+<p class="kv"><span class="lab">Platform</span>A Trust Score from photo quality, review recency, menu completeness and response rate. Higher scores earn better placement.</p>
+
+<h3>Cultural</h3>
+<p>India has 28+ food cultures. Platforms that contextualize rather than standardize should gain share.</p>
+<p class="kv"><span class="lab">Tactics</span>Festival triggers (Diwali feasts, Ramadan iftar timing, monsoon chai); family orders (“serves 4”) versus individual orders (speed, portion); price framing for value seekers versus aspirational buyers; localization beyond translation (“ghar jaisa”).</p>
+<p class="kv"><span class="lab">Platform</span>Regional flavor profiles from order history and location. A Kolkata user searching “fish curry” sees Bengali-style options first.</p>
+
+<h3>Experiential</h3>
+<p>Description language shapes expectation before the first bite. Pleasure framing moves an order from satisfying hunger to treating oneself, which raises willingness to pay. Over-description backfires by sounding too good to be true.</p>
+<p class="kv"><span class="lab">Tactics</span>Indulgent framing on weekends and practical framing at weekday lunch; words that match the photo (crispy, sizzling, velvety); time-of-day framing; nostalgia (“Mom’s recipe style”).</p>
+<p class="kv"><span class="lab">Platform</span>A sensory-language library in English, Hindi and regional languages, A/B tested into a proprietary database.</p>
+
+<h2>Interaction</h2>
+<p>The weights do not sum to a conversion rate. Each pillar is assumed to amplify the others, so effects compound rather than add. This premise is untested. Table 2 contrasts an illustrative listing with no pillars applied and with all four.</p>
+
+<figure class="tbl">
+<figcaption class="cap"><b>Table 2 |</b> Illustrative biryani listing, baseline and VICE-applied. Not measured data.</figcaption>
+<div class="sx"><table>
+<thead><tr><th>Pillar</th><th>Baseline</th><th>VICE-applied</th></tr></thead>
+<tbody>
+<tr><td>Visual</td><td>Low-resolution photo, flat lighting</td><td>Layered rice, visible meat, saffron garnish</td></tr>
+<tr><td>Informational</td><td>No ratings, prep time or sourcing</td><td>4.6★ from 2,347 orders · Most Ordered This Week · Ready in 25 min</td></tr>
+<tr><td>Cultural</td><td>No regional context</td><td>Authentic Hyderabadi Dum style</td></tr>
+<tr><td>Experiential</td><td>“Chicken biryani”</td><td>“Fragrant, slow-cooked biryani with tender meat, aromatic spices, and perfectly steamed basmati rice”</td></tr>
+</tbody></table></div>
+</figure>
+
+<h2>Rollout</h2>
+<figure class="tbl">
+<figcaption class="cap"><b>Table 3 |</b> Proposed platform implementation.</figcaption>
+<div class="sx"><table>
+<thead><tr><th>Stage</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td>Audit</td><td>Score the top 100 restaurants on VICE. Test whether scores track actual order rates.</td></tr>
+<tr><td>Pilot</td><td>Select 20 restaurants. A/B test VICE-optimized listings against control. Measure conversion lift, basket size and repeat orders.</td></tr>
+<tr><td>Enable</td><td>Partner toolkit: photo guidelines, description templates, cultural checklists. Better placement and lower commission for high scorers.</td></tr>
+<tr><td>Integrate</td><td>Feed VICE scores into ranking. Personalize pillar weights per user, since some users are visually driven and others information-driven.</td></tr>
+</tbody></table></div>
+</figure>
+
+<h2>Contributions</h2>
+<p class="kv"><span class="lab">Led</span>Identified the gap and scoped it as applied synthesis rather than literature review; mined 40+ studies for conversion-relevant findings; designed the four pillars and the 35/25/20/20 weights; adapted Western findings to India with assumptions stated; wrote platform-executable tactics.</p>
+<p class="kv"><span class="lab">Lab</span>Direction to the relevant literature (visual–taste interactions, hedonic motivation, interface psychology); the gastrophysics foundation; critical feedback on the logic, the weights, and which findings can support applied claims.</p>
+
+<h2>Discussion</h2>
+<p>Platforms rarely apply interface-level behavioral science. For researchers, VICE narrows the gap between gastrophysics in the lab and its use in market, with cultural grounding. For restaurants, as platforms consolidate power, scoring well on VICE-type criteria becomes a condition of visibility.</p>
+
+<h2>Limitations</h2>
+<p>VICE rests on Western research adapted without Indian validation data. The weights are provisional and the interaction premise is untested. Next steps: a pilot with one or two Indian platforms, then extension to cloud kitchens, grocery delivery and reservations. Real conversion data will refine the weights.</p>
+
+<div class="corr"><p>Correspondence: <a href="mailto:ishakaushik12a@gmail.com">ishakaushik12a@gmail.com</a></p><p>© 2026 Isha Kaushik</p></div>
+</div>
 </body>
 </html>
