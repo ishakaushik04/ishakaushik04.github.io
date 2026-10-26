@@ -9,29 +9,37 @@
 <meta name="description" content="A literature-derived, research-stage framework linking REM sleep disruption to PTSD risk, with a workflow for low-resource settings. Not a clinical tool.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&amp;family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..600&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../project.css">
 </head>
-<body>
+<body id="top">
+<header class="topnav"><div class="topnav-in">
+<a class="back" href="../index.html">← Home</a>
+<nav class="projects" aria-label="Projects"><a href="../Sleep%20Research%20Project/index.html" aria-current="page">Sleep</a><a href="../Exp-Food-Psyc/index.html">VICE</a><a href="../BCI-Project/index.html">BCI</a><a href="../DFSI-Project/index.html">Farming</a></nav>
+</div></header>
+<script>(function(){var p=document.querySelector(".projects"),a=p&&p.querySelector("[aria-current]");if(a)p.scrollLeft=a.offsetLeft-(p.clientWidth-a.offsetWidth)/2})()</script>
 <div class="page">
 
-<div class="mast"><a href="../index.html">← Index</a><span>Research artifact · Clinical neuroscience</span></div>
+<p class="kicker">Research artifact · Clinical neuroscience</p>
 
 <h1>REM Sleep Disruption and Noradrenergic Hyperactivity as a Risk Framework for PTSD</h1>
 <p class="authors">Isha Kaushik, Harshpreet Kaur</p>
-<p class="affil">May–August 2022 · April–August 2023</p>
+<p class="affil">May to August 2022 · April to August 2023</p>
 <p class="affil">Guides: Prof. Birendra Nath Mallick, Dr. Rachna Mehta, Dr. Vijay Kumar · <a href="sleep%20paper.pdf">Preprint (PDF)</a></p>
 
+<div class="tldr"><span class="lab">In short</span><p>A proposed way to spot early PTSD risk through sleep problems, built from 500+ studies and designed for places without labs or brain scans. It is research-stage and has not been tested in patients.</p></div>
+
 <div class="abstract">
-  <p><span class="lab">Abstract</span>Most people exposed to trauma do not develop PTSD, but those who do wait years for treatment. Insomnia and nightmares are central to the disorder. REM sleep and noradrenaline (NA) form a reciprocal loop: NA must fall for REM to occur, and REM loss raises brain NA, driving hyperarousal. From a review of 500+ studies (1970s–2022) we derived a three-module framework that organizes sleep and neurochemical markers into a testable risk model, and a four-stage workflow for low-resource settings. The framework is literature-derived and has not been validated in patients or clinics.</p>
+  <p><span class="lab">Abstract</span>Most people exposed to trauma do not develop PTSD, but those who do wait years for treatment. Insomnia and nightmares are central to the disorder. REM sleep and noradrenaline (NA) form a reciprocal loop: NA must fall for REM to occur, and REM loss raises brain NA, driving hyperarousal. From a review of 500+ studies (1970s to 2022) we derived a three-module framework that organizes sleep and neurochemical markers into a testable risk model, and a four-stage workflow for low-resource settings. The framework is literature-derived and has not been validated in patients or clinics.</p>
 </div>
 <p class="kw"><span class="lab">Keywords</span>PTSD · REM sleep · noradrenaline · risk assessment · low-resource settings</p>
+<nav class="jump" aria-label="On this page"><span class="lab">Sections</span><a href="#background">Background</a><a href="#mechanism">Mechanism</a><a href="#review">Review</a><a href="#framework">Framework</a><a href="#workflow">Workflow</a><a href="#discussion">Discussion</a><a href="#limitations">Limitations</a></nav>
 
 <div class="note" role="note">
   <p><b>Research use only.</b> This framework does not diagnose, predict or treat PTSD, and nothing here is medical advice. If you are struggling after a traumatic experience, contact a qualified health professional or local emergency services.</p>
 </div>
 
-<h2>Background</h2>
+<h2 id="background">Background</h2>
 <p>Reported rates, scaled to 1,000 people (Fig. 1a): 70% experience a potentially traumatic event; 5.6% of those develop PTSD (about 39; the global figure is 3.9%); at most 40% recover within a year; fewer than 1 in 10 receive treatment in the first year. Average time to treatment is 4.5 years, and the median reaches 12 years in some settings (Fig. 1b). An early, low-cost signal of risk could shorten this interval.</p>
 
 <figure class="fig">
@@ -65,11 +73,11 @@
 <figcaption class="cap"><b>Fig. 1 |</b> Treatment gap. <b>a,</b> Reported rates scaled to a cohort of 1,000 for illustration; not a measured cohort. <b>b,</b> Time to treatment. The dashed bar is the framework’s target, not a result.</figcaption>
 </figure>
 
-<h2>Mechanism</h2>
-<p>NA must decline for REM sleep to form, so any rise in NA makes REM harder to obtain. Loss of REM weakens emotional regulation and raises brain NA through an overactive locus coeruleus–NA pathway. Lower neuropeptide Y (NPY) and less sensitive alpha-2 autoreceptors amplify this step. The resulting hyperarousal and wakefulness cause further REM loss, so the loop sustains itself (Fig. 2).</p>
+<h2 id="mechanism">Mechanism</h2>
+<p>NA must decline for REM sleep to form, so any rise in NA makes REM harder to obtain. Loss of REM weakens emotional regulation and raises brain NA through an overactive locus coeruleus-NA pathway. Lower neuropeptide Y (NPY) and less sensitive alpha-2 autoreceptors amplify this step. The resulting hyperarousal and wakefulness cause further REM loss, so the loop sustains itself (Fig. 2).</p>
 
 <figure class="fig">
-<svg viewBox="0 0 680 176" role="img" aria-label="Loop: trauma, sleep disruption, REM loss, NA rises, hyperarousal; hyperarousal feeds back to REM loss. NPY decrease and alpha-2 autoreceptor desensitization amplify the NA step.">
+<div class="sx"><svg viewBox="0 0 680 176" role="img" aria-label="Loop: trauma, sleep disruption, REM loss, NA rises, hyperarousal; hyperarousal feeds back to REM loss. NPY decrease and alpha-2 autoreceptor desensitization amplify the NA step.">
   <defs>
     <marker id="s1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fl"/></marker>
     <marker id="s2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fa"/></marker>
@@ -89,23 +97,23 @@
   <text x="473" y="164" text-anchor="middle" class="m s">feedback</text>
   <path class="lna" d="M470 34 L470 56" marker-end="url(#s2)"/>
   <text x="470" y="26" text-anchor="middle" class="s">↓ NPY · ↓ α2-autoreceptor sensitivity</text>
-</svg>
-<figcaption class="cap"><b>Fig. 2 |</b> REM–NA feedback loop. Conceptual model, simplified from the literature. Shaded stages are the coupled REM–NA pair; the arrow above stage 4 marks the amplifiers.</figcaption>
+</svg></div>
+<figcaption class="cap"><b>Fig. 2 |</b> REM-NA feedback loop. Conceptual model, simplified from the literature. Shaded stages are the coupled REM-NA pair; the arrow above stage 4 marks the amplifiers.</figcaption>
 </figure>
 
-<h2>Review</h2>
+<h2 id="review">Review</h2>
 <figure class="tbl">
 <figcaption class="cap"><b>Table 1 |</b> Literature review phases.</figcaption>
 <div class="sx"><table>
 <thead><tr><th>Phase</th><th>Period</th><th>Scope</th><th>Output</th></tr></thead>
 <tbody>
-<tr><td>I</td><td class="nw">May–Aug 2022<br><span class="sm">with Dr. Vijay Kumar, AINN</span></td><td>40+ articles on sleep disturbance and PTSD</td><td>10-page report on categorical sleep measures, subjective and objective (<a href="mailto:ishakaushik12a@gmail.com?subject=Request%3A%20sleep%20measures%20report">on request</a>)</td></tr>
-<tr><td>II</td><td class="nw">Apr–Aug 2023<br><span class="sm">with Harshpreet Kaur; guide: <a href="https://en.wikipedia.org/wiki/Birendra_Nath_Mallick">B. N. Mallick</a></span></td><td>500+ empirical studies (1970s–2022) on the mutual influence of disturbed sleep and PTSD, focused on NA; NA-targeting treatments aimed at restoring REM</td><td><a href="sleep%20paper.pdf">Preprint (PDF)</a></td></tr>
+<tr><td>I</td><td class="nw">May to Aug 2022<br><span class="sm">with Dr. Vijay Kumar, AINN</span></td><td>40+ articles on sleep disturbance and PTSD</td><td>10-page report on categorical sleep measures, subjective and objective (<a href="mailto:ishakaushik12a@gmail.com?subject=Request%3A%20sleep%20measures%20report">on request</a>)</td></tr>
+<tr><td>II</td><td class="nw">Apr to Aug 2023<br><span class="sm">with Harshpreet Kaur; guide: <a href="https://en.wikipedia.org/wiki/Birendra_Nath_Mallick">B. N. Mallick</a></span></td><td>500+ empirical studies (1970s to 2022) on the mutual influence of disturbed sleep and PTSD, focused on NA; NA-targeting treatments aimed at restoring REM</td><td><a href="sleep%20paper.pdf">Preprint (PDF)</a></td></tr>
 </tbody></table></div>
 </figure>
 
-<h2>Framework</h2>
-<p>The REMS–PTSD risk matrix has three modules (Table 2; Fig. 3).</p>
+<h2 id="framework">Framework</h2>
+<p>The REMS-PTSD risk matrix has three modules (Table 2; Fig. 3).</p>
 
 <figure class="tbl">
 <figcaption class="cap"><b>Table 2 |</b> Framework modules.</figcaption>
@@ -113,21 +121,21 @@
 <thead><tr><th>Module</th><th>Content</th><th>Use</th></tr></thead>
 <tbody>
 <tr><td>1 · Trauma and sleep</td><td>Trauma triggers a stress response, often insomnia and recurrent nightmares. Chronic sleep problems weaken emotional regulation and raise the odds of PTSD.</td><td>Flag persistent sleep disruption early</td></tr>
-<tr><td>2 · NA mechanism</td><td>PTSD overactivates the sympathetic system, including the locus coeruleus–NA pathway. Low NPY and less sensitive alpha-2 autoreceptors amplify NA, causing hyperarousal, wakefulness and REM disruption.</td><td>Track REM quality and stress biomarkers to gauge neurobiological vulnerability</td></tr>
+<tr><td>2 · NA mechanism</td><td>PTSD overactivates the sympathetic system, including the locus coeruleus-NA pathway. Low NPY and less sensitive alpha-2 autoreceptors amplify NA, causing hyperarousal, wakefulness and REM disruption.</td><td>Track REM quality and stress biomarkers to gauge neurobiological vulnerability</td></tr>
 <tr><td>3 · Susceptibility</td><td>Age (older adults may cope less well); sex (women show higher susceptibility); epigenetics (may predispose to stronger stress responses).</td><td>Place risk in context; personalize the evaluation</td></tr>
 </tbody></table></div>
 </figure>
 
 <figure class="fig">
-<div class="imgs">
-<a href="image.png"><img src="image.png" alt="Flow diagram: traumatic event leads to acute stress response and sleep disruption, which loops with loss of emotional regulation and noradrenaline hyperactivity toward PTSD, untreated REM sleep disturbances and persistent insomnia." loading="lazy"></a>
-<a href="image%20(1).png"><img src="image (1).png" alt="Diagram: PTSD drives sympathetic overactivation, with lower NPY and reduced alpha-2 receptor affinity, making the LC-NA system hyperactive, increasing NA release, causing hyperarousal, REM sleep loss and surged wakefulness." loading="lazy"></a>
-<a href="WhatsApp%20Image%202025-11-01%20at%2020.02.27_f4bdb564.jpg"><img src="WhatsApp Image 2025-11-01 at 20.02.27_f4bdb564.jpg" alt="Diagram of factors affecting PTSD development, including ageing, sex-specific variation and gene-environment interaction, feeding a loop between noradrenaline level and REM sleep loss." loading="lazy"></a>
+<div class="dgs">
+<div><p class="pl">a</p><svg class="dg" viewBox="0 0 460 536" role="img" aria-label="Flow diagram. Traumatic event leads to acute stress response, then into a loop of sleep disruption, loss of emotional regulation, PTSD and noradrenaline hyperactivity, which feeds back into sleep disruption. PTSD branches to untreated REM sleep disturbances and worsened PTSD symptoms, and to persistent insomnia after treatment and diverse mental disorders."><defs><marker id="da1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fl"/></marker><marker id="da2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fa"/></marker></defs><rect class="bx" x="155" y="6" width="150" height="34" rx="3"/><text x="230.0" y="27.5" text-anchor="middle">Traumatic event</text><path class="ln" d="M230 40 L230 60" marker-end="url(#da1)"/><rect class="bx" x="155" y="60" width="150" height="34" rx="3"/><text x="230.0" y="81.5" text-anchor="middle">Acute stress response</text><path class="ln" d="M230 94 L230 122" marker-end="url(#da1)"/><rect class="bxd" x="14" y="122" width="432" height="256" rx="8"/><text x="28" y="141" class="m s">self-sustaining loop</text><rect class="bx" x="155" y="150" width="150" height="48" rx="3"/><text x="230.0" y="170.5" text-anchor="middle">Sleep disruption</text><text x="230.0" y="186.5" text-anchor="middle" class="m s">nightmares, insomnia</text><rect class="bx" x="30" y="236" width="132" height="48" rx="3"/><text x="96.0" y="256.5" text-anchor="middle">Loss of emotional</text><text x="96.0" y="272.5" text-anchor="middle">regulation</text><rect class="bxa" x="298" y="236" width="132" height="48" rx="3"/><text x="364.0" y="256.5" text-anchor="middle">Noradrenaline</text><text x="364.0" y="272.5" text-anchor="middle">hyperactivity</text><rect class="bx" x="170" y="312" width="120" height="44" rx="3"/><text x="230.0" y="338.5" text-anchor="middle" class="b">PTSD</text><path class="lna" d="M155 174 L96 174 L96 234" marker-end="url(#da2)"/><path class="lna" d="M96 284 L96 334 L168 334" marker-end="url(#da2)"/><path class="lna" d="M290 334 L364 334 L364 286" marker-end="url(#da2)"/><path class="lna" d="M364 236 L364 174 L307 174" marker-end="url(#da2)"/><path class="ln" d="M230 356 L230 400"/><path class="ln" d="M115 400 L345 400"/><path class="ln" d="M115 400 L115 418" marker-end="url(#da1)"/><path class="ln" d="M345 400 L345 418" marker-end="url(#da1)"/><rect class="bx" x="20" y="418" width="190" height="46" rx="3"/><text x="115.0" y="437.5" text-anchor="middle">Untreated REM sleep</text><text x="115.0" y="453.5" text-anchor="middle">disturbances</text><rect class="bx" x="250" y="418" width="190" height="46" rx="3"/><text x="345.0" y="437.5" text-anchor="middle">Insomnia persistence</text><text x="345.0" y="453.5" text-anchor="middle">after treatment</text><path class="ln" d="M115 464 L115 488" marker-end="url(#da1)"/><path class="ln" d="M345 464 L345 488" marker-end="url(#da1)"/><rect class="bx" x="20" y="488" width="190" height="40" rx="3"/><text x="115.0" y="512.5" text-anchor="middle">Worsened PTSD symptoms</text><rect class="bx" x="250" y="488" width="190" height="40" rx="3"/><text x="345.0" y="512.5" text-anchor="middle">Diverse mental disorders</text></svg></div>
+<div><p class="pl">b</p><svg class="dg" viewBox="0 0 460 424" role="img" aria-label="Flow diagram. PTSD drives sympathetic system overactivation. Lower NPY levels and lower affinity of alpha-2 receptors make the locus coeruleus noradrenaline system hyperactive, which increases noradrenaline release and causes hyperarousal, leading to REM sleep loss and surged wakefulness."><defs><marker id="db1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fl"/></marker><marker id="db2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fa"/></marker></defs><rect class="bx" x="160" y="6" width="140" height="34" rx="3"/><text x="230.0" y="27.5" text-anchor="middle" class="b">PTSD</text><path class="ln" d="M230 40 L230 62" marker-end="url(#db1)"/><rect class="bx" x="130" y="62" width="200" height="46" rx="3"/><text x="230.0" y="81.5" text-anchor="middle">Sympathetic system</text><text x="230.0" y="97.5" text-anchor="middle">overactivation</text><path class="ln" d="M230 108 L230 138" marker-end="url(#db1)"/><rect class="bxa" x="160" y="138" width="140" height="46" rx="3"/><text x="230.0" y="157.5" text-anchor="middle">LC-NA system</text><text x="230.0" y="173.5" text-anchor="middle">hyperactive</text><rect class="bx" x="4" y="142" width="122" height="38" rx="3"/><text x="65.0" y="157.5" text-anchor="middle">Lower NPY</text><text x="65.0" y="173.5" text-anchor="middle">levels</text><rect class="bx" x="334" y="142" width="122" height="38" rx="3"/><text x="395.0" y="157.5" text-anchor="middle">Lower affinity of</text><text x="395.0" y="173.5" text-anchor="middle">α2 receptors</text><path class="ln" d="M126 161 L158 161" marker-end="url(#db1)"/><path class="ln" d="M334 161 L302 161" marker-end="url(#db1)"/><path class="lna" d="M230 184 L230 214" marker-end="url(#db2)"/><rect class="bxa" x="150" y="214" width="160" height="40" rx="3"/><text x="230.0" y="238.5" text-anchor="middle">Increased NA release</text><path class="ln" d="M230 254 L230 282" marker-end="url(#db1)"/><rect class="bx" x="160" y="282" width="140" height="36" rx="3"/><text x="230.0" y="304.5" text-anchor="middle" class="b">Hyperarousal</text><path class="ln" d="M230 318 L230 342"/><path class="ln" d="M110 342 L350 342"/><path class="lna" d="M110 342 L110 366" marker-end="url(#db2)"/><path class="ln" d="M350 342 L350 366" marker-end="url(#db1)"/><rect class="bxa" x="30" y="366" width="160" height="40" rx="3"/><text x="110.0" y="390.5" text-anchor="middle">REM sleep loss</text><rect class="bx" x="270" y="366" width="160" height="40" rx="3"/><text x="350.0" y="390.5" text-anchor="middle">Surged wakefulness</text></svg></div>
+<div><p class="pl">c</p><svg class="dg" viewBox="0 0 460 396" role="img" aria-label="Diagram of factors affecting development of PTSD. Ageing (REM sleep disruption, pre-existing health disorder, medications), gender-specific variation (higher estrogen level, COMT polymorphism, LC sensitivity to CRF) and gene-environment interaction (abuse, violence and war, MAOA hypermethylation, COMT polymorphism) all feed a loop between raised noradrenaline level and REM sleep loss."><defs><marker id="dc1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fl"/></marker><marker id="dc2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fa"/></marker></defs><rect class="bx" x="2" y="2" width="456" height="278" rx="6" style="fill:none"/><text x="14" y="22" class="b">Factors affecting development of PTSD</text><rect class="bxa" x="12" y="34" width="154" height="72" rx="3"/><text x="89.0" y="74.5" text-anchor="middle" class="b">Ageing</text><path class="gr" d="M166 70 L180 70"/><text x="190" y="54">• REM sleep disruption</text><text x="190" y="74">• Pre-existing health disorder</text><text x="190" y="94">• Medications</text><rect class="bxa" x="12" y="116" width="154" height="72" rx="3"/><text x="89.0" y="148.5" text-anchor="middle" class="b">Gender-specific</text><text x="89.0" y="164.5" text-anchor="middle" class="b">variation</text><path class="gr" d="M166 152 L180 152"/><text x="190" y="136">• Estrogen level ↑</text><text x="190" y="156">• COMT polymorphism</text><text x="190" y="176">• LC sensitivity to CRF</text><rect class="bxa" x="12" y="198" width="154" height="72" rx="3"/><text x="89.0" y="230.5" text-anchor="middle" class="b">Gene-environment</text><text x="89.0" y="246.5" text-anchor="middle" class="b">interaction</text><path class="gr" d="M166 234 L180 234"/><text x="190" y="218">• Abuse, violence, war</text><text x="190" y="238">• MAOA hypermethylation</text><text x="190" y="258">• COMT polymorphism</text><path class="lna" d="M230 280 L230 306" marker-end="url(#dc2)"/><rect class="bxd" x="40" y="306" width="380" height="76" rx="8"/><rect class="bxa" x="56" y="322" width="132" height="44" rx="3"/><text x="122.0" y="348.5" text-anchor="middle" class="b">NA level ↑</text><rect class="bxa" x="272" y="322" width="132" height="44" rx="3"/><text x="338.0" y="348.5" text-anchor="middle" class="b">REM sleep loss</text><path class="lna" d="M188 336 L270 336" marker-end="url(#dc2)"/><path class="lna" d="M272 354 L190 354" marker-end="url(#dc2)"/></svg></div>
 </div>
-<figcaption class="cap"><b>Fig. 3 |</b> Module diagrams. <b>a,</b> Trauma exposure and sleep dysregulation. <b>b,</b> NA mechanism. <b>c,</b> Individual susceptibility. Diagrams: H. Kaur and I. Kaushik.</figcaption>
+<figcaption class="cap"><b>Fig. 3 |</b> Module diagrams. <b>a,</b> Trauma exposure and sleep dysregulation. <b>b,</b> NA mechanism. <b>c,</b> Individual susceptibility. Diagrams by H. Kaur and I. Kaushik, redrawn for this page.</figcaption>
 </figure>
 
-<h2>Workflow</h2>
+<h2 id="workflow">Workflow</h2>
 <p>Four proposed stages for settings without neuroimaging or a laboratory (Table 3), scaled to available resources (Table 4). The workflow is a concept and has not been tested.</p>
 
 <figure class="tbl">
@@ -135,9 +143,9 @@
 <div class="sx"><table>
 <thead><tr><th>Stage</th><th>Method</th></tr></thead>
 <tbody>
-<tr><td class="nw">Screen<br><span class="sm">wk 0–1</span></td><td>Brief check after trauma, when treatment is rare. Pittsburgh Sleep Quality Index (free, 5–10 min); 0–10 sleep-quality rating; nightmare-frequency log; 3–7-day sleep diary. Signals: trouble falling or staying asleep; recurrent distressing dreams.</td></tr>
-<tr><td class="nw">Stratify<br><span class="sm">wk 2–4</span></td><td>For persistent sleep problems, score six factors, 1 point each: persistent sleep disruption; female; older adult; previous trauma or PTSD episode; family history of anxiety or mood disorders (epigenetic proxy); pre-existing sleep disorder. The proposed threshold of 3 or more flags closer monitoring. Social support is assessed as a protective factor and not scored.</td></tr>
-<tr><td class="nw">REM proxies<br><span class="sm">wk 4–8</span></td><td>Sleep pattern: dream-recall frequency; nightmare timing (early morning, REM-dense); sleep fragmentation. Arousal: resting heart rate; hypervigilance rating; startle severity; wearable HRV where available. Consumer sleep trackers (about $50–200) give objective fragmentation data.</td></tr>
+<tr><td class="nw">Screen<br><span class="sm">wk 0 to 1</span></td><td>Brief check after trauma, when treatment is rare. Pittsburgh Sleep Quality Index (free, 5 to 10 min); 0 to 10 sleep-quality rating; nightmare-frequency log; 3 to 7 day sleep diary. Signals: trouble falling or staying asleep; recurrent distressing dreams.</td></tr>
+<tr><td class="nw">Stratify<br><span class="sm">wk 2 to 4</span></td><td>For persistent sleep problems, score six factors, 1 point each: persistent sleep disruption; female; older adult; previous trauma or PTSD episode; family history of anxiety or mood disorders (epigenetic proxy); pre-existing sleep disorder. The proposed threshold of 3 or more flags closer monitoring. Social support is assessed as a protective factor and not scored.</td></tr>
+<tr><td class="nw">REM proxies<br><span class="sm">wk 4 to 8</span></td><td>Sleep pattern: dream-recall frequency; nightmare timing (early morning, REM-dense); sleep fragmentation. Arousal: resting heart rate; hypervigilance rating; startle severity; wearable HRV where available. Consumer sleep trackers (about $50 to $200) give objective fragmentation data.</td></tr>
 <tr><td class="nw">Intervene<br><span class="sm">wk 8+</span></td><td>Targets NA hyperactivity that keeps breaking REM. Options: prazosin (alpha-1 antagonist) for nightmares; Image Rehearsal Therapy; sleep-hygiene protocols; CBT for insomnia (telehealth where feasible).</td></tr>
 </tbody></table></div>
 </figure>
@@ -147,18 +155,24 @@
 <div class="sx"><table>
 <thead><tr><th>Tier</th><th>Capability</th></tr></thead>
 <tbody>
-<tr><td>1 · Minimal</td><td>Stages 1–2 on paper; basic risk scoring; referral protocol for high-risk cases</td></tr>
+<tr><td>1 · Minimal</td><td>Stages 1 and 2 on paper; basic risk scoring; referral protocol for high-risk cases</td></tr>
 <tr><td>2 · Moderate</td><td>Consumer wearables; structured interventions; follow-up schedule</td></tr>
 <tr><td>3 · Research</td><td>Full polysomnography; biomarkers such as salivary cortisol; controlled trials</td></tr>
 </tbody></table></div>
 </figure>
 <p>Minimum record at any tier: initial risk score, sleep metrics over time, interventions given, and outcomes at 3, 6 and 12 months.</p>
 
-<h2>Discussion</h2>
+<h2 id="discussion">Discussion</h2>
 <p>Sleep problems are observable, measurable and treatable, which makes them a candidate source of early PTSD risk signals. The aim is actionable assessment, not perfect assessment.</p>
 
-<h2>Limitations</h2>
+<h2 id="limitations">Limitations</h2>
 <p>The framework is derived from the literature and has not been validated in patients or clinics. The workflow and the scoring threshold are untested, and Fig. 1a and Fig. 2 are illustrative. For feedback and new versions, contact the co-authors.</p>
+
+<nav class="pager" aria-label="More projects">
+<a class="pv" href="../DFSI-Project/index.html" rel="prev"><span class="dir">← Previous project</span><span class="nm">Farming nonprofit rebrand</span></a>
+<a class="nx" href="../Exp-Food-Psyc/index.html" rel="next"><span class="dir">Next project →</span><span class="nm">VICE: food delivery conversion</span></a>
+</nav>
+<p class="pager-foot"><a href="../index.html">← Back to home</a><a href="#top">↑ Back to top</a></p>
 
 <div class="corr"><p>Correspondence: <a href="mailto:ishakaushik12a@gmail.com">ishakaushik12a@gmail.com</a></p><p>© 2026 Isha Kaushik</p></div>
 </div>
