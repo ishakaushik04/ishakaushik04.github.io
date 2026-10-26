@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../project.css">
+<link rel="stylesheet" href="sim.css">
 </head>
 <body>
 <div class="page">
@@ -98,7 +99,36 @@
 <p class="kv"><span class="lab">Platform</span>A sensory-language library in English, Hindi and regional languages, A/B tested into a proprietary database.</p>
 
 <h2>Interaction</h2>
-<p>The weights do not sum to a conversion rate. Each pillar is assumed to amplify the others, so effects compound rather than add. This premise is untested. Table 2 contrasts an illustrative listing with no pillars applied and with all four.</p>
+<p>The weights do not sum to a conversion rate. Each pillar is assumed to amplify the others, so effects compound rather than add. This premise is untested. Fig. 3 renders an illustrative listing with each pillar switched on or off. Table 2 gives the text of the two end states.</p>
+
+<figure class="fig sim" id="simFig" hidden>
+  <div class="sim-box" id="simBox">
+    <canvas id="simCanvas" tabindex="0" role="img" aria-label="Interactive 3D model of a biryani listing. Drag or use the arrow keys to rotate."></canvas>
+    <div class="hud-tl">
+      <div class="co" id="co1">4.6★ from 2,347 orders</div>
+      <div class="co" id="co2">Most Ordered This Week</div>
+      <div class="co" id="co3">Ready in 25 min</div>
+    </div>
+    <div class="hud-tr">
+      <div class="tag" id="tagV"><b>Photo</b>low-res, flat lighting</div>
+      <div class="co" id="co4">Authentic Hyderabadi Dum style</div>
+    </div>
+    <div class="cap-bar"><div class="hint">Drag to rotate</div><b id="capT">Chicken biryani</b><span id="capD"></span></div>
+  </div>
+  <div class="sim-ctl" role="group" aria-label="Apply VICE pillars">
+    <button class="pb pv" data-p="v" aria-pressed="false"><b>V</b><span>Visual</span><em>35%</em></button>
+    <button class="pb pi" data-p="i" aria-pressed="false"><b>I</b><span>Informational</span><em>25%</em></button>
+    <button class="pb pc" data-p="c" aria-pressed="false"><b>C</b><span>Cultural</span><em>20%</em></button>
+    <button class="pb pe" data-p="e" aria-pressed="false"><b>E</b><span>Experiential</span><em>20%</em></button>
+  </div>
+  <div class="sim-row">
+    <button type="button" data-act="reset">Baseline</button>
+    <button type="button" data-act="seq">Apply in order</button>
+    <button type="button" data-act="all">Apply all</button>
+    <span class="st" id="simSt" aria-live="polite">0 of 4 pillars applied</span>
+  </div>
+  <figcaption class="cap"><b>Fig. 3 |</b> Interactive listing simulation. Toggle pillars to apply them to the baseline listing; drag to rotate. The model is procedural and illustrative. Not measured data.</figcaption>
+</figure>
 
 <figure class="tbl">
 <figcaption class="cap"><b>Table 2 |</b> Illustrative biryani listing, baseline and VICE-applied. Not measured data.</figcaption>
@@ -137,5 +167,7 @@
 
 <div class="corr"><p>Correspondence: <a href="mailto:ishakaushik12a@gmail.com">ishakaushik12a@gmail.com</a></p><p>© 2026 Isha Kaushik</p></div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="sim.js"></script>
 </body>
 </html>
