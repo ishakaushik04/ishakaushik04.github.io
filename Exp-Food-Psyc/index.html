@@ -9,26 +9,34 @@
 <meta name="description" content="VICE: four weighted behavioral pillars (visual, informational, cultural, experiential) translating gastrophysics into testable interface tactics for Indian food-delivery platforms.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&amp;family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..600&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../project.css">
 <link rel="stylesheet" href="sim.css">
 </head>
-<body>
+<body id="top">
+<header class="topnav"><div class="topnav-in">
+<a class="back" href="../index.html">← Home</a>
+<nav class="projects" aria-label="Projects"><a href="../Sleep%20Research%20Project/index.html">Sleep</a><a href="../Exp-Food-Psyc/index.html" aria-current="page">VICE</a><a href="../BCI-Project/index.html">BCI</a><a href="../DFSI-Project/index.html">Farming</a></nav>
+</div></header>
+<script>(function(){var p=document.querySelector(".projects"),a=p&&p.querySelector("[aria-current]");if(a)p.scrollLeft=a.offsetLeft-(p.clientWidth-a.offsetWidth)/2})()</script>
 <div class="page">
 
-<div class="mast"><a href="../index.html">← Index</a><span>Research artifact · Behavioral science</span></div>
+<p class="kicker">Research artifact · Behavioral science</p>
 
 <h1>VICE: A Weighted Framework for Behavioral Drivers of Conversion in Indian Food Delivery</h1>
 <p class="authors">Isha Kaushik</p>
 <p class="affil">Research Assistant, Cross-Modal Perception Lab, University of Oxford</p>
 <p class="affil">Guided by Prof. Charles Spence and Tianyi Zhang · Evidence base: 40+ peer-reviewed studies</p>
 
+<div class="tldr"><span class="lab">In short</span><p>A four-part framework (Visual, Informational, Cultural, Experiential) that turns food-psychology research into testable changes to Indian food-delivery listings. Built from 40+ studies and not yet tested.</p></div>
+
 <div class="abstract">
   <p><span class="lab">Abstract</span>Gastrophysics has decades of evidence on how sensory cues shape food choice, but little of it has been translated to Indian digital ordering, where empirical studies are close to absent. Forty-plus peer-reviewed studies were synthesized into VICE, four pillars (Visual 35%, Informational 25%, Cultural 20%, Experiential 20%) weighted from effect sizes across studies and adjusted for Indian market traits. The pillars are assumed to interact multiplicatively. The framework is complete and untested. It was written so that a platform product manager can launch A/B tests the following week.</p>
 </div>
 <p class="kw"><span class="lab">Keywords</span>gastrophysics · food delivery · conversion · cross-modal perception · cultural adaptation</p>
+<nav class="jump" aria-label="On this page"><span class="lab">Sections</span><a href="#background">Background</a><a href="#method">Method</a><a href="#framework">Framework</a><a href="#interaction">Interaction</a><a href="#rollout">Rollout</a><a href="#contributions">Contributions</a><a href="#discussion">Discussion</a><a href="#limitations">Limitations</a></nav>
 
-<h2>Background</h2>
+<h2 id="background">Background</h2>
 <p>India’s food-delivery market is projected to reach $28B by 2030. Platforms optimize delivery speed and discounts, and interface-level behavioral science is little used. The relevant literature is Western, and empirical studies of Indian food-delivery behavior are close to nil. Each recalibration in Table 1 is therefore an explicit assumption. Festival and seasonal food traditions add a further layer.</p>
 
 <figure class="tbl">
@@ -42,7 +50,7 @@
 </tbody></table></div>
 </figure>
 
-<h2>Method</h2>
+<h2 id="method">Method</h2>
 <ol class="t">
   <li><b>Literature.</b> A targeted read, not a systematic review, for what could work in a digital interface: gastrophysics and cross-modal perception, digital food commerce, cultural food psychology, hedonic versus utilitarian motivation, and Indian market studies (sparse) (Fig. 1).</li>
   <li><b>Convergence.</b> Four behavioral dimensions recurred as conversion drivers.</li>
@@ -55,11 +63,11 @@
 <figcaption class="cap"><b>Fig. 1 |</b> Part of the study-extraction table.</figcaption>
 </figure>
 
-<h2>Framework</h2>
+<h2 id="framework">Framework</h2>
 <p>VICE has four pillars, weighted as in Fig. 2.</p>
 
 <figure class="fig">
-<svg viewBox="0 0 680 84" role="img" aria-label="Stacked bar: Visual 35 percent, Informational 25 percent, Cultural 20 percent, Experiential 20 percent.">
+<div class="sx"><svg viewBox="0 0 680 84" role="img" aria-label="Stacked bar: Visual 35 percent, Informational 25 percent, Cultural 20 percent, Experiential 20 percent.">
   <rect x="20" y="10" width="224" height="42" fill="#1d1c1a"/>
   <rect x="244" y="10" width="160" height="42" fill="#5b574f"/>
   <rect x="404" y="10" width="128" height="42" fill="#7a4f1a"/>
@@ -74,7 +82,7 @@
     <text x="468" y="70" class="m s">Cultural</text>
     <text x="596" y="70" class="m s">Experiential</text>
   </g>
-</svg>
+</svg></div>
 <figcaption class="cap"><b>Fig. 2 |</b> VICE pillar weights. Segment width is proportional to weight.</figcaption>
 </figure>
 
@@ -98,7 +106,7 @@
 <p class="kv"><span class="lab">Tactics</span>Indulgent framing on weekends and practical framing at weekday lunch; words that match the photo (crispy, sizzling, velvety); time-of-day framing; nostalgia (“Mom’s recipe style”).</p>
 <p class="kv"><span class="lab">Platform</span>A sensory-language library in English, Hindi and regional languages, A/B tested into a proprietary database.</p>
 
-<h2>Interaction</h2>
+<h2 id="interaction">Interaction</h2>
 <p>The weights do not sum to a conversion rate. Each pillar is assumed to amplify the others, so effects compound rather than add. This premise is untested. Fig. 3 renders an illustrative listing with each pillar switched on or off. Table 2 gives the text of the two end states.</p>
 
 <figure class="fig sim" id="simFig" hidden>
@@ -142,7 +150,7 @@
 </tbody></table></div>
 </figure>
 
-<h2>Rollout</h2>
+<h2 id="rollout">Rollout</h2>
 <figure class="tbl">
 <figcaption class="cap"><b>Table 3 |</b> Proposed platform implementation.</figcaption>
 <div class="sx"><table>
@@ -155,15 +163,21 @@
 </tbody></table></div>
 </figure>
 
-<h2>Contributions</h2>
+<h2 id="contributions">Contributions</h2>
 <p class="kv"><span class="lab">Led</span>Identified the gap and scoped it as applied synthesis rather than literature review; mined 40+ studies for conversion-relevant findings; designed the four pillars and the 35/25/20/20 weights; adapted Western findings to India with assumptions stated; wrote platform-executable tactics.</p>
-<p class="kv"><span class="lab">Lab</span>Direction to the relevant literature (visual–taste interactions, hedonic motivation, interface psychology); the gastrophysics foundation; critical feedback on the logic, the weights, and which findings can support applied claims.</p>
+<p class="kv"><span class="lab">Lab</span>Direction to the relevant literature (visual-taste interactions, hedonic motivation, interface psychology); the gastrophysics foundation; critical feedback on the logic, the weights, and which findings can support applied claims.</p>
 
-<h2>Discussion</h2>
+<h2 id="discussion">Discussion</h2>
 <p>Platforms rarely apply interface-level behavioral science. For researchers, VICE narrows the gap between gastrophysics in the lab and its use in market, with cultural grounding. For restaurants, as platforms consolidate power, scoring well on VICE-type criteria becomes a condition of visibility.</p>
 
-<h2>Limitations</h2>
+<h2 id="limitations">Limitations</h2>
 <p>VICE rests on Western research adapted without Indian validation data. The weights are provisional and the interaction premise is untested. Next steps: a pilot with one or two Indian platforms, then extension to cloud kitchens, grocery delivery and reservations. Real conversion data will refine the weights.</p>
+
+<nav class="pager" aria-label="More projects">
+<a class="pv" href="../Sleep%20Research%20Project/index.html" rel="prev"><span class="dir">← Previous project</span><span class="nm">REM sleep and PTSD risk</span></a>
+<a class="nx" href="../BCI-Project/index.html" rel="next"><span class="dir">Next project →</span><span class="nm">Dry-EEG BCI validation</span></a>
+</nav>
+<p class="pager-foot"><a href="../index.html">← Back to home</a><a href="#top">↑ Back to top</a></p>
 
 <div class="corr"><p>Correspondence: <a href="mailto:ishakaushik12a@gmail.com">ishakaushik12a@gmail.com</a></p><p>© 2026 Isha Kaushik</p></div>
 </div>
