@@ -5,37 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="../media/Site logo.jpg" type="image/jpeg">
-<title>Convergent Validation of a Dry-EEG Brain–Computer Interface | Isha Kaushik</title>
+<title>Convergent Validation of a Dry-EEG Brain-Computer Interface | Isha Kaushik</title>
 <meta name="description" content="A framework that validates a dry-EEG BCI across five cognitive domains by convergence with recall, self-report and behavior, using real advertisements.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&amp;family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..600&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../project.css">
 <link rel="stylesheet" href="lab.css">
 </head>
-<body>
+<body id="top">
+<header class="topnav"><div class="topnav-in">
+<a class="back" href="../index.html">← Home</a>
+<nav class="projects" aria-label="Projects"><a href="../Sleep%20Research%20Project/index.html">Sleep</a><a href="../Exp-Food-Psyc/index.html">VICE</a><a href="../BCI-Project/index.html" aria-current="page">BCI</a><a href="../DFSI-Project/index.html">Farming</a></nav>
+</div></header>
+<script>(function(){var p=document.querySelector(".projects"),a=p&&p.querySelector("[aria-current]");if(a)p.scrollLeft=a.offsetLeft-(p.clientWidth-a.offsetWidth)/2})()</script>
 <div class="page">
 
-<div class="mast"><a href="../index.html">← Index</a><span>Research artifact · Neuromarketing · 2023</span></div>
+<p class="kicker">Research artifact · Neuromarketing · 2023</p>
 
-<h1>Convergent Validation of a Dry‑EEG Brain–Computer Interface</h1>
+<h1>Convergent Validation of a Dry‑EEG Brain-Computer Interface</h1>
 <p class="authors">Isha Kaushik</p>
-<p class="affil">Research Specialist, R&amp;D Validation Team, BehaveNeu · June–July 2023</p>
+<p class="affil">Research Specialist, R&amp;D Validation Team, BehaveNeu · June to July 2023</p>
 <p class="affil">Output: research report for the author’s undergraduate institution (on request)</p>
+
+<div class="tldr"><span class="lab">In short</span><p>How to check whether a wearable brain-signal device really measures attention, emotion and memory when there is no gold standard: by testing whether it agrees with what people recall, say and do while watching real ads.</p></div>
 
 <div class="abstract">
   <p><span class="lab">Abstract</span>Attention, emotion and memory are subjective states, so a neural device that measures them has no gold standard to be checked against. This framework tests a dry-EEG BCI on five cognitive domains at once and treats agreement between neural signals, recall, self-report and behavior as provisional ground truth. Sessions last 45 min and use real advertisements shown to Indian participants. The framework was implemented and the device commercialized. Predictive validity against downstream outcomes (sales, awareness, preference) is untested.</p>
 </div>
 <p class="kw"><span class="lab">Keywords</span>dry EEG · BCI · validation · convergent validity · neuromarketing</p>
+<nav class="jump" aria-label="On this page"><span class="lab">Sections</span><a href="#background">Background</a><a href="#design">Design</a><a href="#domains">Domains</a><a href="#protocol">Protocol</a><a href="#constraints">Constraints</a><a href="#contributions">Contributions</a><a href="#outcome">Outcome</a><a href="#limitations">Limitations</a><a href="#related-work">Related work</a></nav>
 
-<h2>Background</h2>
+<h2 id="background">Background</h2>
 <p>Advertising effectiveness is usually judged by self-report, which is distorted by rationalization and forgetting. Direct neural measurement avoids this, but nothing independent exists to validate it against. Existing paradigms test attention, emotion or memory one at a time.</p>
 
-<h2>Design</h2>
+<h2 id="design">Design</h2>
 <p>If neural signals agree with independent behavioral measures across several constructs, confidence in the device compounds (Fig. 1). The framework had to satisfy four criteria (Table 1).</p>
 
 <figure class="fig">
-<svg viewBox="0 0 680 190" role="img" aria-label="Neural signal is compared with recall, self-report ratings and behavior; agreement across all three gives provisional ground truth.">
+<div class="sx"><svg viewBox="0 0 680 190" role="img" aria-label="Neural signal is compared with recall, self-report ratings and behavior; agreement across all three gives provisional ground truth.">
   <defs><marker id="c1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="fl"/></marker></defs>
   <rect class="bx" x="8" y="68" width="136" height="54" rx="3"/>
   <text x="76" y="92" text-anchor="middle" class="b">Neural signal</text>
@@ -57,7 +65,7 @@
   <text x="606" y="89" text-anchor="middle" class="b">Convergence</text>
   <text x="606" y="106" text-anchor="middle" class="m s">provisional</text>
   <text x="606" y="119" text-anchor="middle" class="m s">ground truth</text>
-</svg>
+</svg></div>
 <figcaption class="cap"><b>Fig. 1 |</b> Convergence logic. The neural signal is compared with three independent measures. Agreement across constructs is taken as provisional ground truth.</figcaption>
 </figure>
 
@@ -123,7 +131,7 @@
   <figcaption class="cap"><b>Fig. 2 |</b> Convergence lab. A simulated device is checked against three independent measures for three ads (Table 1 criteria). Click an ad to view its signal. Schematic and synthetic; thresholds are illustrative. Not device data.</figcaption>
 </figure>
 
-<h2>Domains</h2>
+<h2 id="domains">Domains</h2>
 <p>Five domains were validated together (Table 2). They are causally linked (Fig. 3), and testing the links supplied much of the validation power.</p>
 
 <figure class="tbl">
@@ -131,7 +139,7 @@
 <div class="sx"><table>
 <thead><tr><th>Domain</th><th>Neural signal should predict</th><th>Constraint</th></tr></thead>
 <tbody>
-<tr><td>Attention</td><td>Recall, engagement ratings, depth of processing</td><td>Continuous; shifts across a 30–60 s ad</td></tr>
+<tr><td>Attention</td><td>Recall, engagement ratings, depth of processing</td><td>Continuous; shifts across a 30 to 60 s ad</td></tr>
 <tr><td>Memorability</td><td>Delayed recall, recognition accuracy, memory confidence</td><td>EEG indexes encoding; consolidation occurs offline</td></tr>
 <tr><td>Emotional arousal</td><td>Self-reported intensity, physiological arousal, behavioral impact</td><td>Arousal is not valence; display rules differ across cultures</td></tr>
 <tr><td>Attitude to ad</td><td>Explicit likeability; approach vs. avoidance patterns</td><td>Confounded by production quality, relevance, social desirability</td></tr>
@@ -140,7 +148,7 @@
 </figure>
 
 <figure class="fig">
-<svg viewBox="0 0 680 150" role="img" aria-label="Attention enables memory encoding; emotional arousal strengthens memory consolidation; liking the ad transfers to brand perception.">
+<div class="sx"><svg viewBox="0 0 680 150" role="img" aria-label="Attention enables memory encoding; emotional arousal strengthens memory consolidation; liking the ad transfers to brand perception.">
   <defs><marker id="c2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="fl"/></marker></defs>
   <rect class="bx" x="20" y="10" width="190" height="34" rx="3"/><text x="115" y="32" text-anchor="middle">Attention</text>
   <path class="ln" d="M210 27 L460 27" marker-end="url(#c2)"/><text x="335" y="21" text-anchor="middle" class="m s">enables</text>
@@ -153,11 +161,11 @@
   <rect class="bx" x="20" y="106" width="190" height="34" rx="3"/><text x="115" y="128" text-anchor="middle">Attitude to ad</text>
   <path class="ln" d="M210 123 L460 123" marker-end="url(#c2)"/><text x="335" y="117" text-anchor="middle" class="m s">transfers to</text>
   <rect class="bx" x="462" y="106" width="198" height="34" rx="3"/><text x="561" y="128" text-anchor="middle">Brand perception</text>
-</svg>
+</svg></div>
 <figcaption class="cap"><b>Fig. 3 |</b> Causal links between domains used as secondary validation targets.</figcaption>
 </figure>
 
-<h2>Protocol</h2>
+<h2 id="protocol">Protocol</h2>
 <p>Stimuli were real ads that brands paid to air, shown to Indian participants and scored against Indian baselines. Emotional triggers and narrative conventions differ from the Western norms underlying most neuromarketing. A device that works only on clean laboratory stimuli is not commercially viable (Table 3). Ads were organized in a stimulus sheet (Fig. 4) and rated on five-point scales (Table 4).</p>
 
 <figure class="tbl">
@@ -189,7 +197,7 @@
 <figcaption class="cap"><b>Fig. 4 |</b> Stimulus sheet used to organize the advertisements.</figcaption>
 </figure>
 
-<h2>Constraints</h2>
+<h2 id="constraints">Constraints</h2>
 <figure class="tbl">
 <figcaption class="cap"><b>Table 5 |</b> Methodological constraints and mitigations.</figcaption>
 <div class="sx"><table>
@@ -202,18 +210,24 @@
 </tbody></table></div>
 </figure>
 
-<h2>Contributions</h2>
+<h2 id="contributions">Contributions</h2>
 <p class="kv"><span class="lab">Led</span>Literature synthesis across neuroscience, psychology and neuromarketing; the ground-truth logic; scientific backing for each domain within dry-EEG limits; the 45-min protocol (flow, stimulus presentation, measurement order). Work was done under senior guidance.</p>
 <p class="kv"><span class="lab">Shared</span>Translating neural markers such as frontal alpha into predictions of memorability; trading experimental control against real-world validity; adapting the design to India (regional-language processing, emotion display rules, family and festival messaging, celebrity endorsements).</p>
 
-<h2>Outcome</h2>
+<h2 id="outcome">Outcome</h2>
 <p>The framework supported market entry of the device. The company has since moved into cognitive rehabilitation, and the validation work still underpins its product claims. The method is portable to other BCIs, metrics and cultures.</p>
 
-<h2>Limitations</h2>
+<h2 id="limitations">Limitations</h2>
 <p>The study was pre-market. Predictions have not been compared with downstream outcomes such as sales, awareness and preference, and validity outside India is untested.</p>
 
-<h2 class="un">Related work</h2>
+<h2 class="un" id="related-work">Related work</h2>
 <p>Questions of brain-data ownership and cognitive surveillance led to a master’s <a href="../media/Thesis%20Final%20Doc.pdf">thesis</a> on BCI thought-to-text with a governance framework.</p>
+
+<nav class="pager" aria-label="More projects">
+<a class="pv" href="../Exp-Food-Psyc/index.html" rel="prev"><span class="dir">← Previous project</span><span class="nm">VICE: food delivery conversion</span></a>
+<a class="nx" href="../DFSI-Project/index.html" rel="next"><span class="dir">Next project →</span><span class="nm">Farming nonprofit rebrand</span></a>
+</nav>
+<p class="pager-foot"><a href="../index.html">← Back to home</a><a href="#top">↑ Back to top</a></p>
 
 <div class="corr"><p>Correspondence: <a href="mailto:ishakaushik12a@gmail.com">ishakaushik12a@gmail.com</a></p><p>© 2026 Isha Kaushik</p></div>
 </div>
