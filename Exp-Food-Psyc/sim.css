@@ -1,0 +1,89 @@
+/* Listing simulation (Fig. 3). Uses the page's own tokens from ../project.css
+   and the pillar colors of Fig. 2. Hidden until WebGL is confirmed. */
+
+.sim{margin:1.7rem 0}
+.sim[hidden]{display:none}
+
+.sim-box{
+  position:relative;width:100%;aspect-ratio:16/10;max-height:27rem;overflow:hidden;
+  border:1px solid var(--rule);
+  background:radial-gradient(ellipse at 50% 42%,#fffefb 0%,#f5f1e8 66%,#ece7da 100%);
+  touch-action:pan-y;user-select:none;-webkit-user-select:none;
+}
+@media (max-width:560px){
+  .sim-box{aspect-ratio:5/6;max-height:none}
+  .hud-tl,.hud-tr{top:.45rem;gap:.28rem;max-width:46%}
+  .hud-tl{left:.45rem}.hud-tr{right:.45rem}
+  .co,.tag{font-size:.62rem;padding:.15rem .35rem}
+  .tag b{font-size:.56rem}
+  .cap-bar{padding:.4rem .6rem .45rem}
+  .cap-bar span{font-size:.78rem}
+  .pb{padding:.45rem .32rem}
+  .pb b{font-size:.9rem}.pb span{font-size:.57rem;white-space:nowrap;letter-spacing:-.005em}.pb em{font-size:.62rem}
+}
+.sim-box canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab}
+.sim-box canvas:active{cursor:grabbing}
+.sim-box canvas:focus-visible{outline:2px solid var(--acc);outline-offset:-3px}
+
+.sim-leads{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.sim-leads line{stroke:var(--ink);stroke-width:1;opacity:0}
+.sim-leads circle{fill:var(--paper);stroke:var(--ink);stroke-width:1.2;opacity:0}
+
+.hud-tl,.hud-tr{position:absolute;top:.6rem;display:flex;flex-direction:column;gap:.35rem;pointer-events:none;max-width:48%}
+.hud-tl{left:.6rem;align-items:flex-start}
+.hud-tr{right:.6rem;align-items:flex-end;text-align:right}
+
+.co,.tag{
+  font-family:var(--sans);font-size:.7rem;line-height:1.3;padding:.2rem .45rem;
+  background:rgba(252,251,248,.93);border:1px solid var(--ink);border-radius:2px;color:var(--ink);
+}
+.tag{border-color:var(--rule);color:var(--mute);letter-spacing:.01em}
+.tag b{color:var(--ink);font-weight:700;margin-right:.3rem;text-transform:uppercase;letter-spacing:.07em;font-size:.62rem}
+.co{opacity:0;transform:translateY(3px);transition:opacity .4s ease,transform .4s ease}
+.co.on{opacity:1;transform:none}
+
+.cap-bar{
+  position:absolute;left:0;right:0;bottom:0;padding:.5rem .75rem .55rem;pointer-events:none;
+  background:rgba(252,251,248,.94);border-top:1px solid var(--rule);
+}
+.cap-bar b{display:block;font-family:var(--sans);font-size:.82rem;font-weight:700;line-height:1.3}
+.cap-bar span{display:block;font-size:.83rem;line-height:1.4;color:#3a3833;transition:opacity .3s}
+.cap-bar span.sw{opacity:0}
+
+.hint{
+  position:absolute;right:.6rem;top:-1.35rem;font-family:var(--sans);font-size:.66rem;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--mute);pointer-events:none;transition:opacity .6s;
+}
+.hint.gone{opacity:0}
+
+/* pillar toggles: same colors as the weight bar in Fig. 2 */
+.sim-ctl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);border-top:0}
+.pb{
+  --c:#1d1c1a;--fg:#fff;
+  font-family:var(--sans);cursor:pointer;background:var(--paper);color:var(--ink);
+  border:0;border-right:1px solid var(--rule);border-top:3px solid var(--c);
+  padding:.5rem .6rem .5rem;text-align:left;min-height:46px;
+  display:flex;flex-direction:column;gap:.05rem;transition:background .25s,color .25s;
+}
+.pb:last-child{border-right:0}
+.pb b{font-size:.95rem;font-weight:700;line-height:1.2}
+.pb span{font-size:.72rem;line-height:1.2}
+.pb em{font-style:normal;font-size:.68rem;color:var(--mute);line-height:1.2;transition:color .25s}
+.pb:hover{background:var(--soft)}
+.pb[aria-pressed="true"]{background:var(--c);color:var(--fg)}
+.pb[aria-pressed="true"] em{color:inherit;opacity:.8}
+.pb:focus-visible,.sim-row button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.pv{--c:#1d1c1a}
+.pi{--c:#5b574f}
+.pc{--c:#7a4f1a}
+.pe{--c:#c9bfa8;--fg:#1d1c1a}
+
+.sim-row{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .5rem;margin-top:.55rem;font-family:var(--sans);font-size:.78rem}
+.sim-row button{
+  font:inherit;cursor:pointer;background:none;color:var(--ink);border:1px solid var(--rule);
+  border-radius:2px;padding:.25rem .65rem;transition:border-color .2s,background .2s;
+}
+.sim-row button:hover{border-color:var(--ink);background:var(--soft)}
+.sim-row .st{margin-left:auto;color:var(--mute)}
+
+@media print{.sim{display:none}}
