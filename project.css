@@ -1,15 +1,16 @@
-/* Shared stylesheet for the project pages. Journal-article layout: light paper,
-   serif text, sans labels, numbered sections, ruled tables, captioned figures.
-   No JavaScript required. */
+/* Shared stylesheet for the project pages. Journal-article layout: cream paper (matches the
+   homepage), serif text, sans labels, numbered sections, ruled tables, captioned figures.
+   Navigation: sticky top bar, jump links, previous/next block. No JavaScript required. */
 
 *,*::before,*::after{box-sizing:border-box}
 :root{
-  --paper:#fcfbf8; --ink:#1d1c1a; --mute:#66625a; --rule:#cfcac0; --faint:#e6e2d9; --soft:#f3f0e8;
+  --paper:#f8f3ea; --ink:#1d1c1a; --mute:#5f5a50; --rule:#cdc2aa; --faint:#e3dac6; --soft:#efe7d6;
   --acc:#7a4f1a;
   --serif:'Literata',Georgia,'Times New Roman',serif;
+  --display:'Fraunces','Literata',Georgia,serif;
   --sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
 }
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:72px}
 body{
   margin:0;background:var(--paper);color:var(--ink);
   font-family:var(--serif);font-weight:380;font-size:1rem;line-height:1.62;
@@ -26,28 +27,39 @@ p{margin:0 0 .85rem;hyphens:auto;text-wrap:pretty}
 b,strong{font-weight:600}
 sub,sup{line-height:0}
 
-/* ---------- masthead ---------- */
-.mast{
-  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
-  margin-top:1.4rem;padding-bottom:.5rem;border-bottom:2px solid var(--ink);
-  font-family:var(--sans);font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);
-}
-.mast a{color:var(--mute);text-decoration:none}
-.mast a:hover{color:var(--ink)}
+/* ---------- top navigation: sticky, bold, always visible ---------- */
+.topnav{position:sticky;top:0;z-index:30;background:rgba(248,243,234,.97);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-bottom:2px solid var(--ink);font-family:var(--sans)}
+.topnav-in{max-width:44rem;margin:0 auto;padding:0 clamp(18px,5vw,32px);display:flex;align-items:stretch}
+.topnav .back{flex:none;display:flex;align-items:center;min-height:50px;margin-right:.9rem;padding-right:1rem;border-right:1px solid var(--rule);font-size:1rem;font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap}
+.topnav .back:hover{color:var(--acc)}
+.topnav .projects{position:relative;flex:1;min-width:0;display:flex;gap:.1rem;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.topnav .projects::-webkit-scrollbar{display:none}
+.topnav .projects a{flex:none;display:flex;align-items:center;min-height:50px;padding:0 .8rem;font-size:.92rem;font-weight:600;color:var(--mute);text-decoration:none;white-space:nowrap}
+.topnav .projects a:hover{color:var(--ink)}
+.topnav .projects a[aria-current="page"]{color:var(--ink);font-weight:700;box-shadow:inset 0 -4px 0 var(--acc)}
+.topnav a:focus-visible{outline-offset:-3px}
+.kicker{font-family:var(--sans);font-size:.75rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);margin:1.8rem 0 0}
 
 /* ---------- title block ---------- */
 h1{
-  font-family:var(--serif);font-weight:600;font-size:clamp(1.55rem,4.2vw,2.1rem);
-  line-height:1.2;letter-spacing:-.01em;margin:1.7rem 0 .9rem;text-wrap:balance;
+  font-family:var(--display);font-weight:500;font-size:clamp(1.6rem,4.4vw,2.25rem);
+  line-height:1.18;letter-spacing:-.012em;margin:.5rem 0 .9rem;text-wrap:balance;
 }
 .authors{font-family:var(--sans);font-size:.95rem;font-weight:600;margin:0 0 .25rem}
 .affil{font-family:var(--sans);font-size:.8rem;line-height:1.5;color:var(--mute);margin:0 0 .15rem}
 
-.abstract{margin:1.6rem 0 .6rem;padding:1rem 0 .9rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font-size:.97rem}
+.tldr{margin:1.4rem 0 0;padding:.85rem 1.05rem .9rem;background:var(--soft);border-left:4px solid var(--acc);font-size:1.03rem;line-height:1.5}
+.tldr .lab{display:block;margin:0 0 .25rem;color:var(--acc)}
+.tldr p{margin:0}
+.abstract{margin:1.4rem 0 .6rem;padding:1rem 0 .9rem;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font-size:.97rem}
 .abstract p:last-child{margin-bottom:0}
 .lab{font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);margin-right:.45rem}
 .kw{font-family:var(--sans);font-size:.8rem;color:var(--mute);margin:0 0 1rem}
 .kw .lab{margin-right:.6rem}
+.jump{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1rem;margin:0 0 1.1rem;padding:.7rem 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font-family:var(--sans);font-size:.88rem;line-height:1.4}
+.jump .lab{margin:0}
+.jump a{font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--rule)}
+.jump a:hover{color:var(--acc);border-bottom-color:var(--acc)}
 
 .note{
   margin:1rem 0 1.2rem;padding:.65rem .95rem;border-left:3px solid var(--acc);background:var(--soft);
@@ -59,7 +71,7 @@ h1{
 h2{
   counter-increment:sec;counter-reset:sub;
   font-family:var(--sans);font-weight:700;font-size:1.02rem;letter-spacing:.005em;
-  margin:2.4rem 0 .6rem;
+  margin:2.4rem 0 .6rem;scroll-margin-top:72px;
 }
 h2::before{content:counter(sec);display:inline-block;min-width:1.7rem;color:var(--acc)}
 h3{
@@ -124,9 +136,44 @@ svg .fg{fill:#c9c4b8}
 svg .gr{stroke:var(--faint);stroke-width:1}
 svg .dash{stroke-dasharray:4 3}
 
+/* ---------- persona cards (HTML, so they reflow on phones) ---------- */
+.personas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+.persona{margin:0;padding:.75rem .95rem .95rem;border:1px solid var(--rule);border-top:4px solid var(--acc);background:var(--soft)}
+.persona .pn{display:block;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.09em;color:var(--acc)}
+.persona .pt{margin:.15rem 0 .2rem;font-family:var(--sans);font-size:1rem;font-weight:700;line-height:1.3}
+.persona .pe{margin:0 0 .55rem;font-family:var(--sans);font-size:.8rem;color:var(--mute)}
+.persona blockquote{margin:0;font-size:.93rem;font-style:italic;line-height:1.5}
+@media (max-width:560px){.topnav-in{padding:0 14px}.topnav .back{margin-right:.5rem;padding-right:.8rem;font-size:.95rem}.topnav .projects a{padding:0 .62rem;font-size:.9rem}}
+@media (max-width:560px){.personas{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- stacked diagrams (Sleep, Fig. 3) ---------- */
+.dgs{display:grid;gap:1.8rem}
+.dgs>div{width:100%;max-width:31rem;margin:0 auto}
+.dgs .pl{font-family:var(--sans);font-size:.78rem;font-weight:700;margin:0 0 .3rem}
+.dgs svg{display:block;width:100%;height:auto}
+/* wide diagrams: full width on desktop, readable and scrollable on phones */
+.fig .sx>svg{display:block;width:100%;height:auto}
+@media (max-width:560px){.fig .sx>svg{min-width:34rem}}
+svg.dg text{font-size:13px}
+svg.dg .s{font-size:11.5px}
+svg .bxd{fill:none;stroke:var(--acc);stroke-width:1.2;stroke-dasharray:5 4}
+
+/* ---------- previous / next ---------- */
+.pager{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin:2.8rem 0 0;font-family:var(--sans)}
+.pager a{display:block;padding:.85rem 1rem 1rem;border:2px solid var(--ink);background:var(--soft);color:var(--ink);text-decoration:none}
+.pager a:hover{background:var(--ink);color:var(--paper)}
+.pager .dir{display:block;font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--acc)}
+.pager a:hover .dir{color:#d6a566}
+.pager .nm{display:block;margin-top:.2rem;font-size:1.02rem;font-weight:700;line-height:1.3}
+.pager .nx{text-align:right}
+.pager-foot{display:flex;justify-content:space-between;gap:1rem;margin:1rem 0 0;font-family:var(--sans);font-size:.95rem;font-weight:700}
+.pager-foot a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--rule)}
+.pager-foot a:hover{color:var(--acc);border-bottom-color:var(--acc)}
+@media (max-width:560px){.pager{grid-template-columns:minmax(0,1fr)}.pager .nx{text-align:left}}
+
 /* ---------- footer ---------- */
 .corr{margin-top:2.6rem;padding-top:.8rem;border-top:1px solid var(--rule);font-family:var(--sans);font-size:.78rem;line-height:1.55;color:var(--mute)}
 .corr p{margin:0 0 .2rem}
 
-@media print{body{background:#fff}.mast a{display:none}.sx{overflow:visible}table{min-width:0}}
+@media print{body{background:#fff}.topnav,.jump,.pager,.pager-foot{display:none}.sx{overflow:visible}table{min-width:0}}
 
