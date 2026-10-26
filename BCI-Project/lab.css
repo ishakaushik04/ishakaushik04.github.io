@@ -1,0 +1,75 @@
+/* Fig. 2: convergence lab. Uses tokens from ../project.css. Hidden until JS runs. */
+
+.bcilab{margin:1.7rem 0}
+.bcilab[hidden]{display:none}
+
+.lab-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:.55rem 1rem;margin:0 0 .6rem;font-family:var(--sans);font-size:.78rem}
+.lab-ctl .lbl{font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--mute);margin-right:.45rem}
+.seg{display:inline-flex;align-items:center;flex-wrap:wrap}
+.seg .sb{display:inline-flex;border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+.seg button{
+  font:inherit;cursor:pointer;background:var(--paper);color:var(--ink);border:0;border-right:1px solid var(--rule);
+  padding:.32rem .65rem;transition:background .2s,color .2s;
+}
+.seg button:last-child{border-right:0}
+.seg button:hover{background:var(--soft)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.nz{display:inline-flex;align-items:center;gap:.5rem}
+.nz input{width:7.5rem;accent-color:var(--acc);margin:0}
+.nz output{min-width:2.2rem;color:var(--mute);font-variant-numeric:tabular-nums}
+.lab-ctl .rr{
+  font:inherit;cursor:pointer;background:none;color:var(--ink);border:1px solid var(--rule);
+  border-radius:2px;padding:.3rem .65rem;transition:border-color .2s,background .2s;
+}
+.lab-ctl .rr:hover{border-color:var(--ink);background:var(--soft)}
+.bcilab button:focus-visible,.bcilab input:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+
+.lab-box{border:1px solid var(--rule);background:#fffefb}
+
+/* signal strip */
+.lab-top{display:flex;align-items:center;gap:.8rem;padding:.6rem .8rem .5rem;border-bottom:1px solid var(--rule)}
+.head{flex:none;width:3.3rem;height:auto}
+.head .e{animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.head .e{animation:none}}
+.trace{flex:1;min-width:0}
+.trace-h{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.3rem .8rem;margin-bottom:.25rem;font-family:var(--sans);font-size:.72rem;color:var(--mute)}
+.trace-h .tabs{display:inline-flex;gap:.25rem}
+.trace-h .tabs button{
+  font:inherit;font-size:.7rem;cursor:pointer;background:none;color:var(--mute);border:1px solid var(--rule);
+  border-radius:2px;padding:.1rem .45rem;
+}
+.trace-h .tabs button[aria-pressed="true"]{color:#fff;background:var(--acc);border-color:var(--acc)}
+.trace canvas{display:block;width:100%;height:64px}
+
+/* chart */
+.lab-box svg.ch{display:block;width:100%;height:auto;padding:.4rem .5rem 0}
+.lab-box svg.ch text{font-size:11px}
+.lab-box svg.ch .gt{cursor:pointer}
+.lab-box svg.ch text.v{paint-order:stroke;stroke:#fffefb;stroke-width:3px;stroke-linejoin:round}
+.legend{display:flex;flex-wrap:wrap;gap:.25rem 1rem;padding:.1rem .8rem .65rem;font-family:var(--sans);font-size:.7rem;color:var(--mute)}
+.legend i{display:inline-block;width:.7rem;height:.7rem;margin-right:.35rem;vertical-align:-1px}
+.legend .dsh{display:inline-block;width:1.1rem;border-top:1.5px dashed var(--ink);margin-right:.35rem;vertical-align:3px}
+.legend .tk{display:inline-block;width:.9rem;border-top:2px solid var(--ink);margin-right:.35rem;vertical-align:3px}
+
+/* criteria */
+.crit{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule);font-family:var(--sans);font-size:.8rem;line-height:1.4}
+.crit li{display:grid;grid-template-columns:1.4rem 6.2rem 1fr;gap:.2rem .5rem;padding:.45rem .8rem;border-bottom:1px solid var(--faint)}
+.crit li:last-child{border-bottom:0}
+.crit .mk{font-weight:700}
+.crit .ok .mk{color:var(--ink)}
+.crit .no .mk,.crit .no .nm{color:var(--acc)}
+.crit .nm{font-weight:700}
+.crit .why{color:#3a3833}
+.verdict{margin:0;padding:.6rem .8rem;border-top:1px solid var(--rule);border-left:3px solid var(--ink);background:var(--soft);font-family:var(--sans);font-size:.82rem;font-weight:600}
+.verdict.no{border-left-color:var(--acc);color:var(--acc)}
+
+@media (max-width:560px){
+  .lab-box svg.ch text{font-size:17px}
+  .lab-box svg.ch text.v{stroke-width:4px}
+  .crit li{grid-template-columns:1.2rem 1fr}
+  .crit .why{grid-column:2}
+  .head{width:2.6rem}
+  .nz input{width:6rem}
+}
+@media print{.bcilab{display:none}}
