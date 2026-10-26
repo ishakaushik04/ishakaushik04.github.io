@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300..700;1,7..72,300..600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../project.css">
+<link rel="stylesheet" href="lab.css">
 </head>
 <body>
 <div class="page">
@@ -72,8 +73,58 @@
 </tbody></table></div>
 </figure>
 
+<p>Fig. 2 applies the four criteria to a simulated device. Change how the device behaves, or add noise, to see which criterion fails.</p>
+
+<figure class="fig bcilab" id="labFig" hidden>
+  <div class="lab-ctl">
+    <div class="seg" role="group" aria-label="Device behavior">
+      <span class="lbl">Device</span>
+      <span class="sb">
+        <button type="button" data-m="valid" aria-pressed="true">Tracks all measures</button>
+        <button type="button" data-m="attn" aria-pressed="false">Attention only</button>
+        <button type="button" data-m="flat" aria-pressed="false">Compressed</button>
+      </span>
+    </div>
+    <label class="nz"><span class="lbl">Dry-EEG noise</span><input type="range" id="labNz" min="0" max="100" value="10"><output id="labNzv" for="labNz">10%</output></label>
+    <button type="button" class="rr" data-act="rerun">Re-run</button>
+  </div>
+
+  <div class="lab-box">
+    <div class="lab-top">
+      <svg class="head" viewBox="0 0 56 64" role="img" aria-label="Schematic head wearing a dry-EEG headband">
+        <circle cx="26" cy="33" r="19" fill="none" stroke="#1d1c1a" stroke-width="1.3"/>
+        <path d="M44 31 L50 37 L44 39" fill="none" stroke="#1d1c1a" stroke-width="1.3" stroke-linejoin="round"/>
+        <path d="M23 34 q-4.5 2.5 -1 7" fill="none" stroke="#1d1c1a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M9 29 Q26 11 43 25" fill="none" stroke="#7a4f1a" stroke-width="3" stroke-linecap="round"/>
+        <circle class="e" cx="17.5" cy="22" r="2.4" fill="#fffefb" stroke="#7a4f1a" stroke-width="1.3"/>
+        <circle class="e" cx="26" cy="19" r="2.4" fill="#fffefb" stroke="#7a4f1a" stroke-width="1.3" style="animation-delay:.35s"/>
+        <circle class="e" cx="34.5" cy="20" r="2.4" fill="#fffefb" stroke="#7a4f1a" stroke-width="1.3" style="animation-delay:.7s"/>
+      </svg>
+      <div class="trace">
+        <div class="trace-h">
+          <span id="labTraceLbl">Neural signal, Ad A (schematic)</span>
+          <span class="tabs" role="group" aria-label="Choose ad"><button type="button" aria-pressed="true">Ad A</button><button type="button" aria-pressed="false">Ad B</button><button type="button" aria-pressed="false">Ad C</button></span>
+        </div>
+        <canvas id="labTrace" aria-hidden="true"></canvas>
+      </div>
+    </div>
+    <svg class="ch" id="labChart" viewBox="0 0 640 220" role="img" aria-label="Bar chart comparing the neural index with independent measures for three ads."></svg>
+    <div class="legend">
+      <span><i style="background:#7a4f1a"></i>Neural index</span>
+      <span><i style="background:#1d1c1a"></i>Recall</span>
+      <span><i style="background:#5b574f"></i>Self-report</span>
+      <span><i style="background:#c9bfa8"></i>Behavior</span>
+      <span><span class="dsh"></span>Independent mean</span>
+      <span><span class="tk"></span>Re-run</span>
+    </div>
+    <ul class="crit" id="labCrit"></ul>
+    <p class="verdict" id="labVerdict" aria-live="polite"></p>
+  </div>
+  <figcaption class="cap"><b>Fig. 2 |</b> Convergence lab. A simulated device is checked against three independent measures for three ads (Table 1 criteria). Click an ad to view its signal. Schematic and synthetic; thresholds are illustrative. Not device data.</figcaption>
+</figure>
+
 <h2>Domains</h2>
-<p>Five domains were validated together (Table 2). They are causally linked (Fig. 2), and testing the links supplied much of the validation power.</p>
+<p>Five domains were validated together (Table 2). They are causally linked (Fig. 3), and testing the links supplied much of the validation power.</p>
 
 <figure class="tbl">
 <figcaption class="cap"><b>Table 2 |</b> Cognitive domains, predicted correlates and constraints.</figcaption>
@@ -103,11 +154,11 @@
   <path class="ln" d="M210 123 L460 123" marker-end="url(#c2)"/><text x="335" y="117" text-anchor="middle" class="m s">transfers to</text>
   <rect class="bx" x="462" y="106" width="198" height="34" rx="3"/><text x="561" y="128" text-anchor="middle">Brand perception</text>
 </svg>
-<figcaption class="cap"><b>Fig. 2 |</b> Causal links between domains used as secondary validation targets.</figcaption>
+<figcaption class="cap"><b>Fig. 3 |</b> Causal links between domains used as secondary validation targets.</figcaption>
 </figure>
 
 <h2>Protocol</h2>
-<p>Stimuli were real ads that brands paid to air, shown to Indian participants and scored against Indian baselines. Emotional triggers and narrative conventions differ from the Western norms underlying most neuromarketing. A device that works only on clean laboratory stimuli is not commercially viable (Table 3). Ads were organized in a stimulus sheet (Fig. 3) and rated on five-point scales (Table 4).</p>
+<p>Stimuli were real ads that brands paid to air, shown to Indian participants and scored against Indian baselines. Emotional triggers and narrative conventions differ from the Western norms underlying most neuromarketing. A device that works only on clean laboratory stimuli is not commercially viable (Table 3). Ads were organized in a stimulus sheet (Fig. 4) and rated on five-point scales (Table 4).</p>
 
 <figure class="tbl">
 <figcaption class="cap"><b>Table 3 |</b> Typical laboratory design versus this validation.</figcaption>
@@ -135,7 +186,7 @@
 
 <figure class="fig">
 <a href="Screenshot%202025-12-10%20220614.png"><img src="Screenshot 2025-12-10 220614.png" alt="Spreadsheet listing each ad video with category and coding columns." loading="lazy"></a>
-<figcaption class="cap"><b>Fig. 3 |</b> Stimulus sheet used to organize the advertisements.</figcaption>
+<figcaption class="cap"><b>Fig. 4 |</b> Stimulus sheet used to organize the advertisements.</figcaption>
 </figure>
 
 <h2>Constraints</h2>
@@ -166,5 +217,6 @@
 
 <div class="corr"><p>Correspondence: <a href="mailto:ishakaushik12a@gmail.com">ishakaushik12a@gmail.com</a></p><p>© 2026 Isha Kaushik</p></div>
 </div>
+<script src="lab.js"></script>
 </body>
 </html>
