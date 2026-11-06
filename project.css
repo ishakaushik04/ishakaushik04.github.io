@@ -29,12 +29,15 @@ sub,sup{line-height:0}
 
 /* ---------- top navigation: sticky, bold, always visible ---------- */
 .topnav{position:sticky;top:0;z-index:30;background:rgba(248,243,234,.97);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-bottom:2px solid var(--ink);font-family:var(--sans)}
-.topnav-in{max-width:44rem;margin:0 auto;padding:0 clamp(18px,5vw,32px);display:flex;align-items:stretch}
+.topnav-in{max-width:62rem;margin:0 auto;padding:0 clamp(18px,5vw,32px);display:flex;align-items:stretch}
 .topnav .back{flex:none;display:flex;align-items:center;min-height:50px;margin-right:.9rem;padding-right:1rem;border-right:1px solid var(--rule);font-size:1rem;font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap}
 .topnav .back:hover{color:var(--acc)}
-.topnav .projects{position:relative;flex:1;min-width:0;display:flex;gap:.1rem;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.topnav .projects{position:relative;flex:1;min-width:0;display:flex;gap:.55rem;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .topnav .projects::-webkit-scrollbar{display:none}
-.topnav .projects a{flex:none;display:flex;align-items:center;min-height:50px;padding:0 .8rem;font-size:.92rem;font-weight:600;color:var(--mute);text-decoration:none;white-space:nowrap}
+/* soft fade on the right edge, so a scrolling bar looks like it continues */
+.topnav .projects{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 22px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 22px),transparent)}
+@media (max-width:900px){.topnav .projects{gap:.3rem}.topnav .projects a{padding:0 .7rem;font-size:.88rem}}
+.topnav .projects a{flex:none;display:flex;align-items:center;min-height:50px;padding:0 .95rem;font-size:.92rem;font-weight:600;color:var(--mute);text-decoration:none;white-space:nowrap}
 .topnav .projects a:hover{color:var(--ink)}
 .topnav .projects a[aria-current="page"]{color:var(--ink);font-weight:700;box-shadow:inset 0 -4px 0 var(--acc)}
 .topnav a:focus-visible{outline-offset:-3px}
@@ -143,7 +146,7 @@ svg .dash{stroke-dasharray:4 3}
 .persona .pt{margin:.15rem 0 .2rem;font-family:var(--sans);font-size:1rem;font-weight:700;line-height:1.3}
 .persona .pe{margin:0 0 .55rem;font-family:var(--sans);font-size:.8rem;color:var(--mute)}
 .persona blockquote{margin:0;font-size:.93rem;font-style:italic;line-height:1.5}
-@media (max-width:560px){.topnav-in{padding:0 14px}.topnav .back{margin-right:.5rem;padding-right:.8rem;font-size:.95rem}.topnav .projects a{padding:0 .62rem;font-size:.9rem}}
+@media (max-width:560px){.topnav-in{padding:0 14px}.topnav .back{margin-right:.5rem;padding-right:.8rem;font-size:.95rem}.topnav .projects a{padding:0 .7rem;font-size:.9rem}.topnav .projects{gap:.3rem}}
 @media (max-width:560px){.personas{grid-template-columns:minmax(0,1fr)}}
 
 /* ---------- stacked diagrams (Sleep, Fig. 3) ---------- */
