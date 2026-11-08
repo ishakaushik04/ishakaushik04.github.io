@@ -72,7 +72,8 @@ body.home{background:var(--cream);color:var(--ink)}
   background:var(--dk);color:var(--cream)
 }
 .end p{margin:0}
-.end .closing{max-width:40rem;font-family:'Fraunces',Georgia,serif;font-size:.975rem;line-height:1.5;color:var(--cream)}
+.end .closing{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.05rem,1.7vw,1.3rem);line-height:1.5;color:var(--cream)}
+@media (min-width:761px){.end .closing{white-space:nowrap}}
 .end a{color:var(--amber);text-decoration-color:rgba(214,165,102,.55)}
 .end a:hover{color:var(--cream);text-decoration-color:var(--cream)}
 .end .copy-line{font-size:.75rem;letter-spacing:.02em;color:rgba(248,243,234,.5)}
