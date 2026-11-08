@@ -39,37 +39,43 @@ body.home{background:var(--cream);color:var(--ink)}
 @keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
 /* ---------- THE STORY: a title on the left, text on the right. What you're reading is bright, the rest dims. ---------- */
-main{background:linear-gradient(180deg,var(--dk) 0,var(--cream) 34vh)}
-.story{max-width:64rem;margin:0 auto;padding:24vh var(--edge) 6vh}
-.chapter{
-  display:grid;grid-template-columns:minmax(0,13rem) minmax(0,36rem);justify-content:center;
-  column-gap:clamp(2rem,6vw,4.5rem);padding:13vh 0
-}
+.story{max-width:66rem;margin:0 auto;padding:9vh var(--edge) 9vh}
+
+/* a thin line down the left of all the text; it fills as you scroll through it */
+.frame{position:relative;padding:0 0 0 clamp(1.25rem,3.5vw,2.75rem)}
+.rail{position:absolute;top:0;bottom:0;left:0;width:2px;background:rgba(26,46,28,.12);border-radius:2px}
+.rail::after{content:"";position:absolute;inset:0;background:var(--bn);border-radius:2px;transform-origin:top;transform:scaleY(var(--p,0))}
+
+.chapter{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr);column-gap:clamp(1.75rem,4.5vw,3.5rem);padding:9vh 0}
 .label{
-  position:sticky;top:34vh;align-self:start;margin:0;
-  font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(1.4rem,2.2vw,1.9rem);line-height:1.15;letter-spacing:-.01em;color:#5c3a10
+  position:sticky;top:22vh;align-self:start;margin:0;
+  font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(1.15rem,1.7vw,1.4rem);line-height:1.15;letter-spacing:-.01em;color:#5c3a10
 }
-.label::before{content:"";display:block;width:2.4rem;height:2px;background:var(--bn);margin-bottom:.9rem}
-.chapter p{margin:0;font-size:1.125rem;line-height:1.75;color:var(--ink)}
+.label::before{content:"";display:block;width:2rem;height:2px;background:var(--bn);margin-bottom:.7rem}
+.chapter p{margin:0;font-size:.975rem;line-height:1.75;color:var(--ink)}
 .chapter a{color:var(--bn);font-weight:440;text-decoration-color:rgba(122,79,26,.45)}
 .chapter a:hover{color:var(--ink);text-decoration-color:var(--ink)}
 .chapter .hi{color:var(--bn);background:rgba(122,79,26,.1)}
 
-.js .chapter{opacity:.22;transition:opacity .6s ease}
-.js .chapter.on{opacity:1}
+/* "off the clock": one section, a compact two-column grid */
+.offgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.7rem 2.75rem}
+.offgrid h3{margin:0 0 .25rem;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--bn)}
 
-/* ---------- THE END: flat, full width, nothing above it but a hairline ---------- */
+/* each section fades up once as it arrives, then stays put */
+.js .chapter{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .chapter.in{opacity:1;transform:none}
+
+/* ---------- THE END: one slim, centered line, flat and dark ---------- */
 .end{
-  min-height:70vh;min-height:70svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-  padding:12vh var(--edge) calc(3rem + env(safe-area-inset-bottom,0px));
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem;
+  padding:1.9rem var(--edge) calc(1.9rem + env(safe-area-inset-bottom,0px));
   background:var(--dk);color:var(--cream)
 }
 .end p{margin:0}
-.end .closing{max-width:34rem;font-family:'Fraunces',Georgia,serif;font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.4;color:var(--cream)}
-.end .closing + .closing{margin-top:1.1rem}
+.end .closing{max-width:40rem;font-family:'Fraunces',Georgia,serif;font-size:.975rem;line-height:1.5;color:var(--cream)}
 .end a{color:var(--amber);text-decoration-color:rgba(214,165,102,.55)}
 .end a:hover{color:var(--cream);text-decoration-color:var(--cream)}
-.end .copy-line{margin-top:4rem;font-size:.82rem;letter-spacing:.02em;color:rgba(248,243,234,.5)}
+.end .copy-line{font-size:.75rem;letter-spacing:.02em;color:rgba(248,243,234,.5)}
 
 /* ---------- PHONES AND TALL, NARROW WINDOWS ---------- */
 @media (max-width:760px),(max-aspect-ratio:1/1){
@@ -80,13 +86,13 @@ main{background:linear-gradient(180deg,var(--dk) 0,var(--cream) 34vh)}
   #hero .copy{font-size:clamp(1.25rem,5.6vw,2rem)}
 }
 @media (max-width:760px){
-  .chapter{grid-template-columns:minmax(0,1fr);row-gap:1rem;padding:9vh 0}
-  .label{position:static;font-size:1.3rem}
-  .chapter p{font-size:1.0625rem}
+  .chapter{grid-template-columns:minmax(0,1fr);row-gap:.9rem;padding:5vh 0}
+  .label{position:static;font-size:1.15rem}
+  .offgrid{grid-template-columns:minmax(0,1fr);gap:1.1rem}
 }
 
 @media (prefers-reduced-motion:reduce){
   .portrait::before,.cue{animation:none!important}
   .portrait,.rule,#hero .copy,.hero-links{opacity:1!important;animation:none!important}
-  .js .chapter{opacity:1!important;transition:none!important}
+  .js .chapter{opacity:1!important;transform:none!important;transition:none!important}
 }
