@@ -38,32 +38,13 @@ body.home{background:var(--cream);color:var(--ink)}
 .cue{position:absolute;left:50%;bottom:22px;width:1px;height:46px;background:linear-gradient(var(--amber),transparent);transform-origin:top;animation:cue 2.4s ease-in-out infinite;opacity:.7}
 @keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
-/* ---------- THE STORY: a title on the left, text on the right. What you're reading is bright, the rest dims. ---------- */
-.story{max-width:66rem;margin:0 auto;padding:9vh var(--edge) 9vh}
-
-/* a thin line down the left of all the text; it fills as you scroll through it */
-.frame{position:relative;padding:0 0 0 clamp(1.25rem,3.5vw,2.75rem)}
-.rail{position:absolute;top:0;bottom:0;left:0;width:2px;background:rgba(26,46,28,.12);border-radius:2px}
-.rail::after{content:"";position:absolute;inset:0;background:var(--bn);border-radius:2px;transform-origin:top;transform:scaleY(var(--p,0))}
-
-.chapter{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr);column-gap:clamp(1.75rem,4.5vw,3.5rem);padding:9vh 0}
-.label{
-  position:sticky;top:22vh;align-self:start;margin:0;
-  font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(1.15rem,1.7vw,1.4rem);line-height:1.15;letter-spacing:-.01em;color:#5c3a10
-}
-.label::before{content:"";display:block;width:2rem;height:2px;background:var(--bn);margin-bottom:.7rem}
-.chapter p{margin:0;font-size:.975rem;line-height:1.75;color:var(--ink)}
-.chapter a{color:var(--bn);font-weight:440;text-decoration-color:rgba(122,79,26,.45)}
-.chapter a:hover{color:var(--ink);text-decoration-color:var(--ink)}
-.chapter .hi{color:var(--bn);background:rgba(122,79,26,.1)}
-
-/* "off the clock": one section, a compact two-column grid */
-.offgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.7rem 2.75rem}
-.offgrid h3{margin:0 0 .25rem;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--bn)}
-
-/* each section fades up once as it arrives, then stays put */
-.js .chapter{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
-.js .chapter.in{opacity:1;transform:none}
+/* ---------- THE TEXT: one plain column, read straight down ---------- */
+.story{max-width:64rem;margin:0 auto;padding:10vh var(--edge) 11vh}
+.prose p{margin:0;font-size:.975rem;line-height:1.75;color:var(--ink)}
+.prose p + p{margin-top:1.2em}
+.prose a{color:var(--bn);font-weight:440;text-decoration-color:rgba(122,79,26,.45)}
+.prose a:hover{color:var(--ink);text-decoration-color:var(--ink)}
+.prose .hi{color:var(--bn);background:rgba(122,79,26,.1)}
 
 /* ---------- THE END: one slim, centered line, flat and dark ---------- */
 .end{
@@ -72,7 +53,7 @@ body.home{background:var(--cream);color:var(--ink)}
   background:var(--dk);color:var(--cream)
 }
 .end p{margin:0}
-.end .closing{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.05rem,1.7vw,1.3rem);line-height:1.5;color:var(--cream)}
+.end .closing{font-family:'Fraunces',Georgia,serif;font-size:.975rem;line-height:1.5;color:var(--cream)}
 @media (min-width:761px){.end .closing{white-space:nowrap}}
 .end a{color:var(--amber);text-decoration-color:rgba(214,165,102,.55)}
 .end a:hover{color:var(--cream);text-decoration-color:var(--cream)}
@@ -86,14 +67,8 @@ body.home{background:var(--cream);color:var(--ink)}
   .hero-links{justify-content:center}
   #hero .copy{font-size:clamp(1.25rem,5.6vw,2rem)}
 }
-@media (max-width:760px){
-  .chapter{grid-template-columns:minmax(0,1fr);row-gap:.9rem;padding:5vh 0}
-  .label{position:static;font-size:1.15rem}
-  .offgrid{grid-template-columns:minmax(0,1fr);gap:1.1rem}
-}
 
 @media (prefers-reduced-motion:reduce){
   .portrait::before,.cue{animation:none!important}
   .portrait,.rule,#hero .copy,.hero-links{opacity:1!important;animation:none!important}
-  .js .chapter{opacity:1!important;transform:none!important;transition:none!important}
 }
