@@ -44,7 +44,7 @@ body.home{background:var(--cream);color:var(--ink)}
 .prose p + p{margin-top:1.2em}
 .prose a{color:var(--bn);font-weight:440;text-decoration-color:rgba(122,79,26,.45)}
 .prose a:hover{color:var(--ink);text-decoration-color:var(--ink)}
-.prose .hi{color:var(--bn);background:rgba(122,79,26,.1)}
+.prose .hi{color:inherit;font-weight:500;background:linear-gradient(transparent 62%,rgba(122,79,26,.16) 62%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
 
 /* ---------- THE END: one slim, centered line, flat and dark ---------- */
 .end{
@@ -53,8 +53,7 @@ body.home{background:var(--cream);color:var(--ink)}
   background:var(--dk);color:var(--cream)
 }
 .end p{margin:0}
-.end .closing{font-family:'Fraunces',Georgia,serif;font-size:.975rem;line-height:1.5;color:var(--cream)}
-@media (min-width:761px){.end .closing{white-space:nowrap}}
+.end .closing{max-width:44rem;font-family:'Fraunces',Georgia,serif;font-size:.975rem;line-height:1.6;color:var(--cream);text-wrap:balance}
 .end a{color:var(--amber);text-decoration-color:rgba(214,165,102,.55)}
 .end a:hover{color:var(--cream);text-decoration-color:var(--cream)}
 .end .copy-line{font-size:.75rem;letter-spacing:.02em;color:rgba(248,243,234,.5)}
