@@ -44,7 +44,8 @@ body.home{background:var(--cream);color:var(--ink)}
 .prose p + p{margin-top:1.2em}
 .prose a{color:var(--bn);font-weight:440;text-decoration-color:rgba(122,79,26,.45)}
 .prose a:hover{color:var(--ink);text-decoration-color:var(--ink)}
-.prose .hi{color:inherit;font-weight:500;background:linear-gradient(transparent 62%,rgba(122,79,26,.16) 62%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* key phrases: same ink, a touch heavier, and a faint hairline that sits below the letters (never behind them) */
+.prose .hi{color:inherit;font-weight:500;text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:rgba(122,79,26,.4);text-underline-offset:.3em;text-decoration-skip-ink:auto}
 
 /* ---------- THE END: one slim, centered line, flat and dark ---------- */
 .end{
