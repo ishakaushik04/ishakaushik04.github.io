@@ -1,74 +1,68 @@
-/* Homepage. Dark hero, a long fade into the cream story, then a flat dark footer as the end.
-   Base type and links come from style.css. */
+/* Homepage: a dark left plate (intro, links, photo) that stays put while the story scrolls on the right. */
 
-:root{--dk:#0b0a09;--cream:#f8f3ea;--amber:#d6a566;--ink:#1a2e1c;--bn:#7a4f1a}
-html{background:var(--dk)}
-body.home{background:var(--cream);color:var(--ink)}
-.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+:root{--dk:#0b0a09;--cream:#f8f3ea;--amber:#d6a566;--ink:#1a2e1c;--bn:#7a4f1a;--rule:#d9cfb9;--mute:#6b6459}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--cream)}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Newsreader',Georgia,serif;font-size:.9rem;line-height:1.6;-webkit-font-smoothing:antialiased}
 
-/* ---------- HERO ---------- */
-#hero{
-  position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:center;color:var(--cream);
-  padding:calc(40px + env(safe-area-inset-top,0px)) var(--edge) 72px;
-  background:radial-gradient(60% 60% at 27% 48%,rgba(214,165,102,.14),transparent 70%),var(--dk)
-}
-.hero-inner{display:grid;grid-template-columns:auto minmax(0,36rem);align-items:center;column-gap:clamp(2.5rem,7vw,6.5rem)}
-.portrait{position:relative;margin:0;aspect-ratio:3/4;width:max(170px,min(30vw,360px,calc((100svh - 200px) * .75)))}
-.portrait::before{content:"";position:absolute;inset:-14px;pointer-events:none;border:1px solid rgba(214,165,102,.5);border-radius:999px 999px 34px 34px;transform:rotate(-2.2deg);animation:sway 9s ease-in-out infinite alternate}
-@keyframes sway{to{transform:rotate(2deg)}}
-.portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 66%;border-radius:999px 999px 24px 24px;box-shadow:0 30px 70px rgba(0,0,0,.55)}
+/* two columns: a dark plate on the left, the story on the right; the plate's photo crosses the seam */
+.wrap{display:grid;grid-template-columns:minmax(0,36%) minmax(0,1fr);padding-bottom:1.25rem}
 
-.hero-text{display:flex;flex-direction:column;align-items:flex-start;gap:1.6rem}
-.rule{display:block;width:3.2rem;height:2px;background:var(--amber)}
-#hero .copy{margin:0;color:var(--cream);font-family:'Fraunces',Georgia,serif;font-weight:400;font-size:clamp(1.4rem,2.5vw,2.3rem);line-height:1.28;letter-spacing:-.012em;text-wrap:pretty}
-#hero .copy .hl{color:var(--amber)}
-.hero-links{display:flex;flex-wrap:wrap;gap:.6rem;margin:0}
-.hero-links a{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:rgba(248,243,234,.82);border:1px solid rgba(248,243,234,.28);line-height:0;text-decoration:none;transition:all .25s ease}
-.hero-links a:hover{color:var(--dk);background:var(--amber);border-color:var(--amber);transform:translateY(-2px)}
-.hero-links a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-.hero-links svg{width:20px;height:20px;fill:currentColor}
-.hero-links svg.stroke{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+/* the plate: sticky, full height, never scrolls away while reading */
+.rail{position:sticky;top:0;height:100vh;height:100svh;z-index:2;display:flex;flex-direction:column;justify-content:space-between;gap:1.1rem;padding:3vh 2rem;background:radial-gradient(60% 60% at 30% 42%,rgba(214,165,102,.14),transparent 70%),var(--dk);color:var(--cream)}
+.ph{margin:0 0 0 11rem;width:min(calc((100svh - 250px) * .6667),30rem)}
+.ph img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;object-position:50% 12%;box-shadow:0 18px 40px rgba(0,0,0,.45)}
 
-/* entrance: a staggered rise, pure CSS */
-.portrait,.rule,#hero .copy,.hero-links{opacity:0;animation:rise 1s cubic-bezier(.2,.7,.2,1) forwards}
-.rule{animation-delay:.15s}#hero .copy{animation-delay:.3s}.hero-links{animation-delay:.55s}
-@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+/* intro and links: centred on the plate, links directly beneath */
+.rt{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.8rem}
+.rt{order:-1}
+.rt p{margin:0;max-width:22rem;font-family:'Fraunces',Georgia,serif;font-size:.95rem;line-height:1.4;color:var(--cream)}
+.rt .hl{color:var(--amber)}
+.links{display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin:0}
+.links a{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;color:rgba(248,243,234,.82);border:1px solid rgba(248,243,234,.28);line-height:0;text-decoration:none;transition:all .25s ease}
+.links a:hover{color:var(--dk);background:var(--amber);border-color:var(--amber);transform:translateY(-2px)}
+.links svg{width:15px;height:15px;fill:currentColor}
+.links svg.stroke{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
-/* a thin line at the bottom that says "keep going" */
-.cue{position:absolute;left:50%;bottom:22px;width:1px;height:46px;background:linear-gradient(var(--amber),transparent);transform-origin:top;animation:cue 2.4s ease-in-out infinite;opacity:.7}
-@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
-
-/* ---------- THE TEXT: one plain column, read straight down ---------- */
-.story{max-width:64rem;margin:0 auto;padding:10vh var(--edge) 11vh}
-.prose p{margin:0;font-size:.975rem;line-height:1.75;color:var(--ink)}
-.prose p + p{margin-top:1.2em}
-.prose a{color:var(--bn);font-weight:440;text-decoration-color:rgba(122,79,26,.45)}
-.prose a:hover{color:var(--ink);text-decoration-color:var(--ink)}
-/* key phrases: slightly deeper, warmer ink with a little weight. No underline, no background, so they never read as links and the letters stay clear */
+/* story: tight vertical rhythm, text centred in its column */
+.story{display:flex;justify-content:center;padding:4vh var(--edge,3rem) 4vh}
+.prose{max-width:34rem}
+.prose p{margin:0 0 .85em;font-size:.9rem;line-height:1.6}
+.prose p:last-child{margin-bottom:0}
+.prose a{color:var(--bn);font-weight:440;text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:rgba(214,165,102,.9);text-underline-offset:3px}
+.prose a:hover{color:var(--ink)}
 .prose .hi{color:#4a2d0c;font-weight:600}
 
-/* ---------- THE END: one slim, centered line, flat and dark ---------- */
-.end{
-  display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem;
-  padding:1.9rem var(--edge) calc(1.9rem + env(safe-area-inset-bottom,0px));
-  background:var(--dk);color:var(--cream)
-}
-.end p{margin:0}
-.end .closing{max-width:44rem;font-family:'Fraunces',Georgia,serif;font-size:.975rem;line-height:1.6;color:var(--cream);text-wrap:balance}
-.end a{color:var(--amber);text-decoration-color:rgba(214,165,102,.55)}
-.end a:hover{color:var(--cream);text-decoration-color:var(--cream)}
-.end .copy-line{font-size:.75rem;letter-spacing:.02em;color:rgba(248,243,234,.5)}
+/* footer: no rule, just a quiet line */
+.end{padding:1.25rem 1.5rem 1.75rem;text-align:center}
+.end p{margin:0 auto .2rem;max-width:36rem;font-size:.85rem;line-height:1.5}
+.end .copy-line{font-size:.75rem;color:var(--mute)}
+.end a{color:var(--bn)}
 
-/* ---------- PHONES AND TALL, NARROW WINDOWS ---------- */
-@media (max-width:760px),(max-aspect-ratio:1/1){
-  .hero-inner{grid-template-columns:minmax(0,1fr);justify-items:center;row-gap:1.8rem}
-  .portrait{width:max(150px,min(56vw,320px,calc((100svh - 400px) * .75)))}
-  .hero-text{align-items:center;text-align:center;gap:1.2rem;max-width:32rem}
-  .hero-links{justify-content:center}
-  #hero .copy{font-size:clamp(1.25rem,5.6vw,2rem)}
+@media (max-width:760px){
+  .wrap{grid-template-columns:minmax(0,1fr);padding-bottom:0}
+  .rail{position:static;height:auto;padding:2rem 1.25rem}
+  .ph{margin:0 auto;width:min(60%,13rem)}
+  .story{padding:1.5rem 1.25rem}
 }
 
-@media (prefers-reduced-motion:reduce){
-  .portrait::before,.cue{animation:none!important}
-  .portrait,.rule,#hero .copy,.hero-links{opacity:1!important;animation:none!important}
-}
+:root{--acc:#7a4f1a;--rule:#d9cfb9}
+html,body.home{background:var(--cream)}
+a:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:2px}
+.links a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+/* ---------- PROJECT PANEL: a small sheet over the page, like a Notion peek ---------- */
+.sheet-wrap{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:clamp(12px,3vh,36px) 16px;background:rgba(26,46,28,.22)}
+.sheet-wrap.open{display:flex;animation:fade .18s ease-out}
+.sheet{position:relative;width:min(820px,100%);height:min(88svh,1000px);display:flex;flex-direction:column;background:var(--cream);border:1px solid var(--rule);border-radius:12px;box-shadow:0 24px 70px rgba(26,46,28,.2);overflow:hidden;animation:rise-in .22s ease-out}
+.sheet-bar{flex:none;display:flex;justify-content:flex-end;padding:.35rem .5rem;border-bottom:1px solid var(--rule)}
+.sheet-close{display:grid;place-items:center;width:38px;height:38px;padding:0;border:0;border-radius:50%;background:none;color:var(--ink);cursor:pointer;line-height:0}
+.sheet-close:hover{background:rgba(26,46,28,.08)}
+.sheet-close:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.sheet iframe{flex:1;min-height:0;width:100%;border:0;background:var(--cream)}
+body.locked{overflow:hidden}
+@keyframes fade{from{opacity:0}}
+@keyframes rise-in{from{opacity:0;transform:translateY(12px)}}
+@media (max-width:760px){.sheet-wrap{padding:0}.sheet{width:100%;height:100%;border:0;border-radius:0}}
+
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}

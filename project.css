@@ -180,3 +180,9 @@ svg .bxd{fill:none;stroke:var(--acc);stroke-width:1.2;stroke-dasharray:5 4}
 
 @media print{body{background:#fff}.topnav,.jump,.pager,.pager-foot{display:none}.sx{overflow:visible}table{min-width:0}}
 
+
+/* Standalone fallback link to the homepage. Hidden when the page is shown inside the homepage panel. */
+.home-link{margin:0 0 1.6rem;font-family:var(--sans);font-size:.9rem;font-weight:700}
+.home-link a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--rule)}
+.home-link a:hover{color:var(--acc);border-bottom-color:var(--acc)}
+.framed .home-link{display:none}
