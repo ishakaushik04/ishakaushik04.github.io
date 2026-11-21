@@ -1,37 +1,46 @@
 /* Homepage: a dark left plate (intro, links, photo) that stays put while the story scrolls on the right. */
 
-:root{--dk:#0b0a09;--cream:#f8f3ea;--amber:#d6a566;--ink:#1a2e1c;--bn:#7a4f1a;--rule:#d9cfb9;--mute:#6b6459}
+:root{--dk:#0b0a09;--cream:#f8f3ea;--amber:#d6a566;--ink:#1a2e1c;--acc:#7a4f1a;--bn:#7a4f1a;--rule:#d9cfb9;--mute:#6b6459;--edge:3rem}
 *,*::before,*::after{box-sizing:border-box}
 html{background:var(--cream)}
 body{margin:0;background:var(--cream);color:var(--ink);font-family:'Newsreader',Georgia,serif;font-size:.9rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+body.locked{overflow:hidden}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 
-/* two columns: a dark plate on the left, the story on the right; the plate's photo crosses the seam */
+/* two columns: a dark plate on the left, the story on the right; the photo crosses the seam */
 .wrap{display:grid;grid-template-columns:minmax(0,36%) minmax(0,1fr);padding-bottom:1.25rem}
 
 /* the plate: sticky, full height, never scrolls away while reading */
 .rail{position:sticky;top:0;height:100vh;height:100svh;z-index:2;display:flex;flex-direction:column;justify-content:space-between;gap:1.1rem;padding:3vh 2rem;background:radial-gradient(60% 60% at 30% 42%,rgba(214,165,102,.14),transparent 70%),var(--dk);color:var(--cream)}
-.ph{margin:0 0 0 13rem;width:min(calc((100svh - 250px) * .6667),30rem)}
+
+/* intro: centred on the plate, a little lower and set larger */
+.rt{order:-1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.6rem;margin-top:4.5vh}
+.rt p{margin:0;max-width:24rem;font-family:'Fraunces',Georgia,serif;font-size:1.2rem;line-height:1.6;color:var(--cream)}
+.rt .hl{color:var(--amber)}
+
+/* photo: plain box, original crop, sitting into the story column */
+.ph{margin:0 0 0 11rem;width:min(calc((100svh - 250px) * .6667),30rem)}
 .ph img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;object-position:50% 12%;box-shadow:0 18px 40px rgba(0,0,0,.45)}
 
-/* intro and links: centred on the plate, links directly beneath */
-.rt{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.8rem}
-.rt{order:-1;margin-top:2.5vh;padding:0 2rem}
-.rt p{margin:0;max-width:20rem;font-family:'Fraunces',Georgia,serif;font-size:.95rem;line-height:1.4;color:var(--cream)}
-.rt .hl{color:var(--amber)}
-.links{display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin:0}
-.links a{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;color:rgba(248,243,234,.82);border:1px solid rgba(248,243,234,.28);line-height:0;text-decoration:none;transition:all .25s ease}
-.links a:hover{color:var(--dk);background:var(--amber);border-color:var(--amber);transform:translateY(-2px)}
-.links svg{width:15px;height:15px;fill:currentColor}
+/* social links: a column beside the photo's lower edge, icon then handle, right-aligned */
+.links{position:absolute;left:.75rem;bottom:3vh;width:calc(11rem + 2rem - .75rem - 12px);display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;gap:.5rem;margin:0}
+.links a{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:rgba(248,243,234,.8);transition:color .25s ease}
+.links a:hover{color:var(--amber)}
+.links svg{width:34px;height:34px;padding:8px;box-sizing:border-box;flex:none;border:1px solid rgba(248,243,234,.28);border-radius:50%;fill:currentColor;transition:all .25s ease}
+.links a:hover svg{background:var(--amber);border-color:var(--amber);color:var(--dk);transform:translateY(-2px)}
 .links svg.stroke{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.links .lbl{font-family:'Newsreader',Georgia,serif;font-size:.76rem;letter-spacing:.02em;white-space:nowrap}
+.links a:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:50%}
 
 /* story: tight vertical rhythm, text centred in its column */
-.story{display:flex;justify-content:center;padding:4vh var(--edge,3rem) 4vh}
+.story{display:flex;justify-content:center;padding:4vh var(--edge) 4vh}
 .prose{max-width:34rem}
 .prose p{margin:0 0 .85em;font-size:.9rem;line-height:1.6}
 .prose p:last-child{margin-bottom:0}
 .prose a{color:var(--bn);font-weight:440;text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:rgba(214,165,102,.9);text-underline-offset:3px}
 .prose a:hover{color:var(--ink)}
 .prose .hi{color:#4a2d0c;font-weight:600}
+a:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:2px}
 
 /* footer: no rule, just a quiet line */
 .end{padding:1.25rem 1.5rem 1.75rem;text-align:center}
@@ -39,17 +48,16 @@ body{margin:0;background:var(--cream);color:var(--ink);font-family:'Newsreader',
 .end .copy-line{font-size:.75rem;color:var(--mute)}
 .end a{color:var(--bn)}
 
+/* phones: stacked, the plate scrolls with the page, links become a row */
 @media (max-width:760px){
   .wrap{grid-template-columns:minmax(0,1fr);padding-bottom:0}
   .rail{position:static;height:auto;padding:2rem 1.25rem}
+  .rt p{font-size:1.05rem}
   .ph{margin:0 auto;width:min(60%,13rem)}
+  .links{position:static;width:auto;flex-direction:row;justify-content:center;align-items:center;gap:.5rem}
+  .links .lbl{display:none}
   .story{padding:1.5rem 1.25rem}
 }
-
-:root{--acc:#7a4f1a;--rule:#d9cfb9}
-html,body.home{background:var(--cream)}
-a:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:2px}
-.links a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 
 /* ---------- PROJECT PANEL: a small sheet over the page, like a Notion peek ---------- */
 .sheet-wrap{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:clamp(12px,3vh,36px) 16px;background:rgba(26,46,28,.22)}
@@ -60,9 +68,12 @@ a:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:2p
 .sheet-close:hover{background:rgba(26,46,28,.08)}
 .sheet-close:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .sheet iframe{flex:1;min-height:0;width:100%;border:0;background:var(--cream)}
-body.locked{overflow:hidden}
 @keyframes fade{from{opacity:0}}
 @keyframes rise-in{from{opacity:0;transform:translateY(12px)}}
 @media (max-width:760px){.sheet-wrap{padding:0}.sheet{width:100%;height:100%;border:0;border-radius:0}}
 
-.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .sheet-wrap.open,.sheet{animation:none}
+  .links a,.links svg{transition:none}
+}
