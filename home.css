@@ -11,10 +11,10 @@ body.locked{overflow:hidden}
 .wrap{display:grid;grid-template-columns:minmax(0,36%) minmax(0,1fr);padding-bottom:1.25rem}
 
 /* the plate: sticky, full height, never scrolls away while reading */
-.rail{position:sticky;top:0;height:100vh;height:100svh;z-index:2;display:flex;flex-direction:column;justify-content:space-between;gap:1.1rem;padding:3vh 2rem;background:radial-gradient(60% 60% at 30% 42%,rgba(214,165,102,.14),transparent 70%),var(--dk);color:var(--cream)}
+.rail{position:sticky;top:0;height:100vh;height:100svh;z-index:2;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:0 2rem 3vh;background:radial-gradient(60% 60% at 30% 42%,rgba(214,165,102,.14),transparent 70%),var(--dk);color:var(--cream)}
 
 /* intro: centred on the plate, a little lower and set larger */
-.rt{order:-1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.8rem;margin-top:2.5vh;padding:0 2rem}
+.rt{order:-1;flex:1 1 auto;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:.8rem;margin:0;padding:0 2rem}
 .rt p{margin:0;max-width:20rem;font-family:'Fraunces',Georgia,serif;font-size:.95rem;line-height:1.4;color:var(--cream)}
 .rt .hl{color:var(--amber)}
 
@@ -49,7 +49,8 @@ a:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:2p
 /* phones: stacked, the plate scrolls with the page, links become a row */
 @media (max-width:760px){
   .wrap{grid-template-columns:minmax(0,1fr);padding-bottom:0}
-  .rail{position:static;height:auto;padding:2rem 1.25rem}
+  .rail{position:static;height:auto;gap:1.5rem;padding:2rem 1.25rem}
+  .rt{flex:none}
   .rt p{font-size:1.05rem}
   .ph{margin:0 auto;width:min(60%,13rem)}
   .story{padding:1.5rem 1.25rem}
